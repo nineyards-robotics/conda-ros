@@ -18,15 +18,17 @@ A **snapshot** is a coherent set of packages built together from a rosdistro rel
 
 The output of a snapshot build is:
 - **Built conda packages** published to a channel
-- **A pin file** listing the exact `name=version=buildstring` for every package
+- **Per-platform pin files** listing the exact `name=version=buildstring` for every package that built successfully on that platform
 
-The rosdistro tag is an input to recipe generation, not persistent state — the generated packages and pin file *are* the snapshot.
+The rosdistro tag is an input to recipe generation, not persistent state — the generated packages and pin files *are* the snapshot.
 
 ### Pin files vs lockfiles
 
-A snapshot's **pin file** is not a lockfile — it's a set of constraints. It lists every ROS package at its exact `version=buildstring` but does not include non-ROS dependencies or represent a solved environment.
+A snapshot's **pin files** are not lockfiles — they're sets of constraints. Each platform gets its own pin file listing every ROS package at its exact `version=buildstring` for that platform. Pin files don't include non-ROS dependencies or represent a solved environment.
 
-Downstream tooling uses the pin file to constrain ROS packages to their snapshot versions, then solves the full environment including non-ROS dependencies (pytorch, numpy, etc.) against both the ROS channel and conda-forge. The buildstring pin is essential — it's what guarantees ABI consistency, since it encodes which dependency versions a package was compiled against. Pinning by version alone is not sufficient.
+Pin files are per-platform because the buildstring hash is derived from variant config values the recipe uses, and platform-conditional dependencies (e.g., `libx11` on linux only) change which variant keys feed into the hash. The same package version will have different buildstrings on different platforms.
+
+Downstream tooling selects the pin file matching its platform, then solves the full environment including non-ROS dependencies (pytorch, numpy, etc.) against both the ROS channel and conda-forge. The buildstring pin is essential — it's what guarantees ABI consistency, since it encodes which dependency versions a package was compiled against. Pinning by version alone is not sufficient.
 
 ### Snapshot lifecycle
 
@@ -61,7 +63,7 @@ Build a dependency graph from all recipes and topological sort to get the build 
 
 #### Step 5: Build in dependency order
 
-For each package in topological order:
+The build runs independently per target platform, each on a native runner for that architecture. For each platform, for each package in topological order:
 - Use rattler-build with `--skip-existing=all` against the remote channel
 - The snapshot's `conda_build_config.yaml` provides variant resolution — dependency versions feed into the hash
 - rattler-build computes the hash, checks the channel, and skips if the artifact already exists
@@ -70,14 +72,16 @@ For each package in topological order:
 
 This is where incremental builds happen naturally. If `rclcpp` bumped between snapshots, every package that depends on it gets a new hash (because the rclcpp version in `conda_build_config.yaml` changed), misses the cache, and rebuilds. Packages whose dependencies didn't change produce the same hash and are skipped.
 
+Platform builds run in parallel. The build order is the same across platforms (derived from package dependencies, not platform), but the set of packages that build successfully may differ — a package that fails on `win-64` can still succeed on all other platforms.
+
 #### Step 6: Publish and record
 
 - Push built artifacts to the remote public channel
-- Record every successfully built package's `name=version=buildstring` in `distros/{distro}/snapshots/{date}/pins.yaml`
+- Record every successfully built package's `name=version=buildstring` in per-platform pin files under `distros/{distro}/snapshots/{date}/`
 
 #### Step 7: Verify
 
-Create a temporary pixi project with all pins as constraints and solve against the channel + conda-forge. This proves the full package set is installable as a coherent environment — catching any conflicts between ROS packages or with system dependencies that individual builds wouldn't surface.
+For each platform, create a temporary pixi project with that platform's pins as constraints and solve against the channel + conda-forge. This proves the full package set is installable as a coherent environment per platform — catching any conflicts between ROS packages or with system dependencies that individual builds wouldn't surface.
 
 #### Step 8: Commit
 
@@ -136,8 +140,12 @@ conda-ros/
         │               └── fix-something.patch
         └── snapshots/
             └── {YYYY-MM-DD}/
-                ├── pins.yaml
-                └── conda_build_config.yaml
+                ├── conda_build_config.yaml
+                ├── pins-linux-64.yaml
+                ├── pins-linux-aarch64.yaml
+                ├── pins-osx-64.yaml
+                ├── pins-osx-arm64.yaml
+                └── pins-win-64.yaml
 ```
 
 ### Why per-distro, per-version?
@@ -158,7 +166,7 @@ Some configuration is shared across distros:
 - **`rosdep.yaml`** — maps rosdep keys to conda package names. Most mappings are universal. Platform-specific overrides use `linux`/`osx`/`win` sub-keys.
 - **`conda_build_config.yaml`** (root) — pins system dependency versions (compilers, protobuf, spdlog, etc.) shared across snapshots. Tracks conda-forge's `conda-forge-pinning` feedstock to maximize compatibility with the broader conda ecosystem.
 
-Each snapshot also gets its own **`conda_build_config.yaml`** under `snapshots/{date}/`, which merges the root system pins with all ROS package versions for that snapshot (generated from `distribution.yaml`). This is what makes the build hash work — rattler-build only hashes variant config entries that a recipe actually uses, so each package's hash reflects exactly the dependency versions it was built against, with no unnecessary coupling to unrelated packages. Keeping the per-snapshot build config means the custom pinning service has everything it needs to rebuild old packages.
+Each snapshot also gets its own **`conda_build_config.yaml`** under `snapshots/{date}/`, which merges the root system pins with all ROS package versions for that snapshot (generated from `distribution.yaml`). This is what makes the build hash work — rattler-build only hashes variant config entries that a recipe actually uses, so each package's hash reflects exactly the dependency versions it was built against, with no unnecessary coupling to unrelated packages.
 
 ## Platforms
 
