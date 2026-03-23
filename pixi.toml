@@ -1,0 +1,11 @@
+[project]
+name = "conda-ros"
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[dependencies]
+python = ">=3.11"
+pyyaml = "*"
+rattler-build = "*"
+
+[tasks]

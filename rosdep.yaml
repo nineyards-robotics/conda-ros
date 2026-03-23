@@ -1,0 +1,10 @@
+# Mapping from rosdep keys to conda package names.
+# Platform-specific overrides use linux/osx/win keys.
+#
+# Example:
+#   boost:
+#     conda: [libboost-devel]
+#   gtk3:
+#     conda:
+#       linux: [gtk3]
+#       osx: [gtk3]
