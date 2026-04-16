@@ -2,7 +2,7 @@
 
 Pre-built ROS2 conda packages, inspired by [RoboStack](https://robostack.github.io/).
 
-This repo contains the build pipeline, recipes, patches, and snapshot pin files for distributing ROS2 packages as conda binaries. It supports multiple ROS2 distributions from a single repo.
+This repo contains the build pipeline, recipes, patches, and snapshot metapackages for distributing ROS2 packages as conda binaries. It supports multiple ROS2 distributions from a single repo.
 
 ## How it works
 
@@ -18,23 +18,37 @@ A **snapshot** is a coherent set of packages built together from a rosdistro rel
 
 The output of a snapshot build is:
 - **Built conda packages** published to a channel
-- **Per-platform pin files** listing the exact `name=version=buildstring` for every package that built successfully on that platform
+- **Snapshot constraint metapackage** — a per-platform package using `run_constrained` to pin every ROS package to its exact `version=buildstring` for that snapshot
 
-The rosdistro tag is an input to recipe generation, not persistent state — the generated packages and pin files *are* the snapshot.
+The rosdistro tag is an input to recipe generation, not persistent state — the generated packages and metapackages *are* the snapshot.
 
-### Pin files vs lockfiles
+### Metapackages
 
-A snapshot's **pin files** are not lockfiles — they're sets of constraints. Each platform gets its own pin file listing every ROS package at its exact `version=buildstring` for that platform. Pin files don't include non-ROS dependencies or represent a solved environment.
+There are two kinds of metapackage, serving different purposes:
 
-Pin files are per-platform because the buildstring hash is derived from variant config values the recipe uses, and platform-conditional dependencies (e.g., `libx11` on linux only) change which variant keys feed into the hash. The same package version will have different buildstrings on different platforms.
+**Snapshot constraint metapackages** (`ros-{distro}-snapshot-{date}`) define *which versions* to use. An empty per-platform package whose `run_constrained` entries pin every ROS package to its exact `version=buildstring`. This acts as an ABI fence — it doesn't pull in any packages, but if a ROS package appears in the environment, the solver forces it to the exact build from this snapshot. Buildstring pinning is essential because the same package version can exist with different builds across snapshots (compiled against different dependency versions), and version-only pins cannot disambiguate them. The metapackage is per-platform because buildstring hashes differ across platforms (platform-conditional dependencies change which variant keys feed into the hash). A new snapshot constraint metapackage is generated for each snapshot.
 
-Downstream tooling selects the pin file matching its platform, then solves the full environment including non-ROS dependencies (pytorch, numpy, etc.) against both the ROS channel and conda-forge. The buildstring pin is essential — it's what guarantees ABI consistency, since it encodes which dependency versions a package was compiled against. Pinning by version alone is not sufficient.
+**Variant metapackages** (`ros-{distro}-desktop`, `ros-{distro}-base`, etc.) define *what packages* to install. These list ROS package names as `run` dependencies without version pins — the snapshot constraint metapackage handles all pinning. Variant metapackages are snapshot-independent and only change when the package list for that variant changes (e.g., a new package is added to the desktop set).
+
+Users install a snapshot and a variant together:
+
+```
+conda install ros-jazzy-snapshot-2026-01-28 ros-jazzy-desktop
+```
+
+Or install a snapshot with specific packages for a custom subset:
+
+```
+conda install ros-jazzy-snapshot-2026-01-28 ros-jazzy-nav2 ros-jazzy-rclcpp
+```
+
+The solver resolves the full environment — ROS packages constrained to the snapshot's exact builds, plus non-ROS dependencies (pytorch, numpy, etc.) solved against conda-forge. No custom tooling or pin file parsing required.
 
 ### Snapshot lifecycle
 
-Snapshots are maintained on `main`. If a package has a build failure, we fix it (add a patch, update the recipe), rebuild, and update the pin file in place. Git history tracks what changed.
+Snapshots are maintained on `main`. If a package has a build failure, we fix it (add a patch, update the recipe), rebuild, and republish the snapshot constraint metapackage. Git history tracks what changed.
 
-Old snapshot pin files remain available so teams can stay locked to a known-good set. Built packages persist in the channel indefinitely. Teams roll forward by changing the snapshot they reference.
+Old snapshot metapackages remain available in the channel so teams can stay locked to a known-good set. Built packages persist in the channel indefinitely. Teams roll forward by changing the snapshot they reference.
 
 Old snapshots are not patched retroactively. If a team needs a newer package version against an older snapshot, that's handled by rebuilding the package against the old snapshot's dependency set.
 
@@ -74,18 +88,21 @@ This is where incremental builds happen naturally. If `rclcpp` bumped between sn
 
 Platform builds run in parallel. The build order is the same across platforms (derived from package dependencies, not platform), but the set of packages that build successfully may differ — a package that fails on `win-64` can still succeed on all other platforms.
 
-#### Step 6: Publish and record
+#### Step 6: Generate snapshot constraint metapackage
 
-- Push built artifacts to the remote public channel
-- Record every successfully built package's `name=version=buildstring` in per-platform pin files under `distros/{distro}/snapshots/{date}/`
+After all packages are built, generate the snapshot constraint metapackage from the build results — one per platform. Uses `run_constrained` to pin every successfully built ROS package to its exact `version=buildstring` on that platform. This is an empty package — no files, just constraint metadata.
 
-#### Step 7: Verify
+#### Step 7: Publish
 
-For each platform, create a temporary pixi project with that platform's pins as constraints and solve against the channel + conda-forge. This proves the full package set is installable as a coherent environment per platform — catching any conflicts between ROS packages or with system dependencies that individual builds wouldn't surface.
+- Push built ROS packages and the snapshot constraint metapackage to the remote public channel
 
-#### Step 8: Commit
+#### Step 8: Verify
 
-- Commit recipes, snapshot build config, and pin file to `main`
+For each platform, create a temporary environment that installs the snapshot constraint metapackage alongside each variant metapackage and solve against the channel + conda-forge. This proves the package set is installable as a coherent environment per platform — catching any conflicts between ROS packages or with system dependencies that individual builds wouldn't surface.
+
+#### Step 9: Commit
+
+- Commit recipes and snapshot build config to `main`
 
 ### Patches
 
@@ -140,12 +157,7 @@ conda-ros/
         │               └── fix-something.patch
         └── snapshots/
             └── {YYYY-MM-DD}/
-                ├── conda_build_config.yaml
-                ├── pins-linux-64.yaml
-                ├── pins-linux-aarch64.yaml
-                ├── pins-osx-64.yaml
-                ├── pins-osx-arm64.yaml
-                └── pins-win-64.yaml
+                └── conda_build_config.yaml
 ```
 
 ### Why per-distro, per-version?
@@ -182,7 +194,7 @@ Recipes are mostly platform-agnostic, using selectors for platform-specific diff
 
 ## Commit conventions
 
-Commits use structured tags in the message body so changes are machine-searchable. A script in `pipeline/` generates these tags by diffing the working tree.
+Commits use structured tags in the message body so changes are machine-searchable. A script in `commit_tags.py` generates these tags by diffing the working tree.
 
 ### Tag format
 
@@ -225,6 +237,41 @@ fix nav2 1.2.0 build on jazzy
 [snapshot-update][jazzy][2026-03-15]
 ```
 
+## Design alternatives considered
+
+### Per-platform pin files (original design)
+
+The original approach was to output per-platform pin files — YAML files listing every package's exact `name=version=buildstring` — committed to the repo under each snapshot directory. Downstream tooling would parse the pin file matching its platform and inject the entries as solver constraints.
+
+**Why we moved away from this:**
+
+- **Custom downstream tooling.** Pin files are not a native conda concept. Every consumer needs tooling to parse and inject them as constraints, whereas metapackages work with a standard `conda install`.
+- **Per-platform files in git.** Buildstrings differ across platforms, so each snapshot needs 5 separate pin files. This multiplies the file count in the repo and requires downstream tooling to select the correct file. With metapackages, conda's native platform matching handles this transparently.
+- **Opaque buildstrings.** Debugging a pin file means tracing `hABCDEF_0` back to the dependency versions that produced it. Metapackage constraints are equally opaque, but users interact through variant metapackages (e.g., `ros-jazzy-desktop`) and never need to see buildstrings directly.
+
+Pin files and metapackages encode the same data from the same source — the difference is delivery mechanism. Metapackages are native to the conda ecosystem; pin files require bespoke tooling.
+
+### Mutex package (RoboStack approach)
+
+RoboStack uses a `ros2-distro-mutex` package to prevent cross-epoch mixing. Every ROS package depends on the mutex at a specific version (e.g., `ros2-distro-mutex 0.14.* jazzy_*`). The mutex also carries `run_constraints` pinning key shared libraries (libboost, pcl, vtk, etc.) to ensure ABI-compatible non-ROS deps.
+
+**Why we didn't adopt this:**
+
+- **Blunt rebuild cost.** If system dependency pins are carried on the mutex (via `run_constraints`), bumping any system dep requires a new mutex version (new epoch). Since every package depends on the mutex, a new epoch forces every package to rebuild — even packages that don't use the changed system dep. Our content-addressed build hashes are more granular: only packages whose recipes actually reference the changed dependency get new hashes and rebuild.
+- **Incompatible with incremental builds.** The mutex version change propagates to every package, defeating `--skip-existing` for unchanged packages. Our design preserves incremental builds — if a package and its dependencies didn't change, it keeps the same hash and is skipped.
+- **A bare mutex (without system dep pins) doesn't help enough.** Stripping `run_constraints` from the mutex to avoid the rebuild cost reduces it to just an epoch marker. But the epoch marker still needs to be part of the package metadata, which either affects the build hash (causing full rebuilds) or doesn't (creating ambiguity about which build has which mutex dep).
+
+### Exact ROS version pins only (no buildstring pinning)
+
+Since all recipes are generated centrally from the same snapshot data, the pipeline could emit exact version pins for all ROS-on-ROS run dependencies (e.g., `ros-jazzy-rclcpp ==28.1.4`). The solver would then resolve a consistent set through transitive dependency constraints, without needing buildstring-level pins.
+
+**Why this is insufficient on its own:**
+
+- **Cross-snapshot ambiguity for non-ROS deps.** The same ROS package version can exist in the channel with multiple builds across snapshots — e.g., `rclcpp ==28.1.4` compiled against `spdlog 1.12` in one snapshot and `spdlog 1.13` in another. Version-only pins cannot disambiguate these builds. The solver may pick a build whose non-ROS deps are incompatible with other packages in the intended snapshot.
+- **Relies on non-ROS dep ranges being tight enough.** Non-ROS dependencies use conda-forge-style ranges (e.g., `spdlog >=1.12,<1.13`). If these ranges admit multiple versions, the solver has wiggle room to select an ABI-incompatible combination. Buildstring pins eliminate this wiggle room entirely.
+
+Exact ROS version pins in run dependencies are still valuable — they handle ROS-on-ROS ABI consistency and help the solver. But they are complementary to buildstring pinning, not a replacement.
+
 ## Relationship to RoboStack
 
 This project is inspired by and builds on [RoboStack](https://robostack.github.io/). Key similarities:
@@ -236,6 +283,7 @@ This project is inspired by and builds on [RoboStack](https://robostack.github.i
 Key differences:
 
 - Snapshots derived from rosdistro release tags (vs RoboStack's mutex-based epoch system)
-- Incremental builds using content-addressed build hashes (vs full-distro rebuilds)
+- Snapshot constraint metapackages with buildstring pins (vs mutex-based epoch mixing prevention)
+- Incremental builds using content-addressed build hashes (vs full-distro rebuilds on epoch bump)
 - Per-version recipe and patch storage enabling custom version pinning
 - Pipeline kept in-repo, invoked via pixi tasks (vs separate vinca tool)
