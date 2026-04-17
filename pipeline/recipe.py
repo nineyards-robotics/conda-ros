@@ -7,6 +7,7 @@ shared rosdep mapping — no network access happens here.
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -141,14 +142,127 @@ def _dedupe(entries: list[Any]) -> list[Any]:
     return out
 
 
+# SPDX identifiers we recognize directly — license strings that already
+# match one of these pass through unchanged.
+_SPDX_VALID: set[str] = {
+    "Apache-2.0",
+    "BSD-1-Clause", "BSD-2-Clause", "BSD-3-Clause",
+    "MIT", "MIT-0",
+    "MPL-1.1", "MPL-2.0",
+    "EPL-2.0",
+    "GPL-2.0-only", "GPL-2.0-or-later",
+    "GPL-3.0-only", "GPL-3.0-or-later",
+    "LGPL-2.1-only", "LGPL-2.1-or-later",
+    "LGPL-3.0-only", "LGPL-3.0-or-later",
+    "AGPL-3.0-only", "AGPL-3.0-or-later",
+    "BSL-1.0", "CC0-1.0", "Zlib", "HPND",
+    "CC-BY-3.0", "CC-BY-NC-SA-3.0",
+}
+
+# Mapping of normalized freeform license strings -> SPDX identifier.
+# Keys are the result of _license_key (lowercase, alphanumeric-only).
+# Bare family names default to the most common ROS variant: "BSD" ->
+# 3-Clause, "GPL"/"LGPL" -> 3.0-or-later.
+_SPDX_ALIASES: dict[str, str] = {
+    # Apache 2.0
+    "apache": "Apache-2.0",
+    "apache2": "Apache-2.0",
+    "apache20": "Apache-2.0",
+    "apache20license": "Apache-2.0",
+    "apachelicense20": "Apache-2.0",
+    "apachelicence20": "Apache-2.0",
+    "apachelicenseversion20": "Apache-2.0",
+    "alv2": "Apache-2.0",
+    # BSD
+    "bsd": "BSD-3-Clause",
+    "bsd2": "BSD-2-Clause",
+    "bsd2clause": "BSD-2-Clause",
+    "bsd3": "BSD-3-Clause",
+    "bsd3clause": "BSD-3-Clause",
+    "3clausebsd": "BSD-3-Clause",
+    "bsdclause3": "BSD-3-Clause",
+    "bsd3clauselicense": "BSD-3-Clause",
+    "bsdlicense20": "BSD-3-Clause",
+    # MIT
+    "mit": "MIT",
+    "mitlicense": "MIT",
+    "mit0": "MIT-0",
+    # GPL
+    "gpl": "GPL-3.0-or-later",
+    "gplv2": "GPL-2.0-or-later",
+    "gplv2license": "GPL-2.0-or-later",
+    "gpl20orlater": "GPL-2.0-or-later",
+    "gnugeneralpubliclicensev20": "GPL-2.0-or-later",
+    "gpl30": "GPL-3.0-or-later",
+    "gpl30only": "GPL-3.0-only",
+    "gpl30orlater": "GPL-3.0-or-later",
+    "gplv3": "GPL-3.0-or-later",
+    # LGPL
+    "lgpl": "LGPL-3.0-or-later",
+    "lgpl21orlater": "LGPL-2.1-or-later",
+    "lgplv21": "LGPL-2.1-or-later",
+    "gnulesserpubliclicense21": "LGPL-2.1-or-later",
+    "lgpl30orlater": "LGPL-3.0-or-later",
+    "lgplv3": "LGPL-3.0-or-later",
+    # AGPL
+    "agplv3": "AGPL-3.0-or-later",
+    # MPL / EPL
+    "mpl11": "MPL-1.1",
+    "mpl20": "MPL-2.0",
+    "mpl20license": "MPL-2.0",
+    "mozillapubliclicense20": "MPL-2.0",
+    "eclipsepubliclicense20": "EPL-2.0",
+    # SPDX retired EDL-1.0 — semantically equivalent to BSD-3-Clause.
+    "eclipsedistributionlicense10": "BSD-3-Clause",
+    # Misc SPDX
+    "bsl10": "BSL-1.0",
+    "cc0": "CC0-1.0",
+    "cc01": "CC0-1.0",
+    "cc010": "CC0-1.0",
+    "zlib": "Zlib",
+    "zliblicense": "Zlib",
+    "hpnd": "HPND",
+    "publicdomain": "LicenseRef-PublicDomain",
+}
+
+# Split compound license strings on " AND " / " and " / commas.
+_LICENSE_SPLIT_RE = re.compile(r"\s+and\s+|,\s+", re.IGNORECASE)
+
+
+def _license_key(s: str) -> str:
+    return "".join(c for c in s.lower() if c.isalnum())
+
+
+def _normalize_license_part(part: str) -> str:
+    s = part.strip()
+    if not s:
+        return ""
+    lowered = s.lower()
+    for suffix in (" license", " licence"):
+        if lowered.endswith(suffix):
+            s = s[: -len(suffix)]
+            break
+    if s in _SPDX_VALID:
+        return s
+    return _SPDX_ALIASES.get(_license_key(s), "LicenseRef-Unknown")
+
+
+def _normalize_license(licenses: list[str]) -> str:
+    parts: list[str] = []
+    for lic in licenses:
+        for chunk in _LICENSE_SPLIT_RE.split(lic):
+            normalized = _normalize_license_part(chunk)
+            if normalized and normalized not in parts:
+                parts.append(normalized)
+    return " AND ".join(parts) if parts else "LicenseRef-Unknown"
+
+
 def _about(manifest: PackageManifest) -> dict[str, Any]:
     about: dict[str, Any] = {}
     if manifest.description:
         about["summary"] = manifest.description
     if manifest.licenses:
-        # Multiple licenses joined with AND. Not SPDX-compliant in every
-        # case but a reasonable default; recipes can be hand-edited.
-        about["license"] = " AND ".join(manifest.licenses)
+        about["license"] = _normalize_license(manifest.licenses)
     if "website" in manifest.urls:
         about["homepage"] = manifest.urls["website"]
     if "repository" in manifest.urls:
@@ -194,7 +308,11 @@ def build_recipe(
     build_deps = _resolve_keys(manifest.buildtool_deps, snapshot, rosdep_map, unknown)
     host_deps = _resolve_keys(manifest.build_deps, snapshot, rosdep_map, unknown)
     run_deps = _resolve_keys(manifest.run_deps, snapshot, rosdep_map, unknown)
-    test_deps = _resolve_keys(manifest.test_deps, snapshot, rosdep_map, unknown)
+    # Test deps are parsed but not currently emitted — rattler-build v1
+    # requires tests to declare a type (python/script/package_contents
+    # etc.), and we don't have a generic test definition to emit yet.
+    # Resolve them anyway so unknown-key reporting stays complete.
+    _resolve_keys(manifest.test_deps, snapshot, rosdep_map, unknown)
 
     if not is_vendor:
         build_deps = build_deps + list(implicit["build"])
@@ -215,11 +333,6 @@ def build_recipe(
             requirements["run"] = _dedupe(run_deps)
     if requirements:
         recipe["requirements"] = requirements
-
-    if test_deps:
-        recipe["tests"] = [
-            {"requirements": {"run": _dedupe(test_deps)}}
-        ]
 
     about = _about(manifest)
     if about:

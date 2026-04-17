@@ -1,9 +1,10 @@
-"""Orchestrator for Step 3: generate a snapshot conda_build_config.yaml.
+"""Orchestrator for Step 3: generate the snapshot variant config files.
 
 Fetches rosdistro at the snapshot ref, scans existing recipes for
 non-ROS dependency names, looks up current versions on conda-forge for
-any not already pinned, and writes the merged variant config under
-``distros/{distro}/snapshots/{date}/``.
+any not already pinned, and writes two variant config files under
+``distros/{distro}/snapshots/{date}/`` — see ``pipeline.build_config``
+for the layering rationale.
 """
 
 from __future__ import annotations
@@ -28,7 +29,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 
 @dataclass
 class BuildConfigSummary:
-    output_path: Path | None = None
+    output_paths: list[Path] = field(default_factory=list)
     pinning_commit: str = ""
     scanned: int = 0
     already_pinned: int = 0
@@ -49,7 +50,7 @@ def generate_build_config(
     print(f"  {len(snapshot.packages)} packages in snapshot")
 
     print("Fetching conda-forge-pinning")
-    cf_pins, cf_commit = fetch_pinning(pinning_commit)
+    cf_raw, cf_pins, cf_commit = fetch_pinning(pinning_commit)
     print(f"  commit {cf_commit[:10]} ({len(cf_pins)} keys)")
 
     overrides_path = repo_root / "conda_build_config.yaml"
@@ -77,26 +78,20 @@ def generate_build_config(
     resolved, missing = resolve_unpinned(scanned, cf_pins, overrides, latest)
     print(f"  {len(resolved)} resolved, {len(missing)} missing on conda-forge")
 
-    output_path = (
-        repo_root
-        / "distros"
-        / distro
-        / "snapshots"
-        / date
-        / "conda_build_config.yaml"
-    )
-    generate_snapshot_build_config(
+    output_dir = repo_root / "distros" / distro / "snapshots" / date
+    output_paths = generate_snapshot_build_config(
         snapshot=snapshot,
-        conda_forge_pins=cf_pins,
+        conda_forge_pinning_raw=cf_raw,
         conda_forge_pinning_commit=cf_commit,
         local_overrides=overrides,
         resolved_deps=resolved,
-        output_path=output_path,
+        output_dir=output_dir,
     )
-    print(f"Wrote {output_path.relative_to(repo_root)}")
+    for p in output_paths:
+        print(f"Wrote {p.relative_to(repo_root)}")
 
     return BuildConfigSummary(
-        output_path=output_path,
+        output_paths=output_paths,
         pinning_commit=cf_commit,
         scanned=len(scanned),
         already_pinned=already_pinned,

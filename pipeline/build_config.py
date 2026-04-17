@@ -1,20 +1,35 @@
-"""Generate snapshot conda_build_config.yaml.
+"""Generate snapshot variant configuration files.
 
-Step 3 of the build pipeline: merge conda-forge system pins, local
-overrides, resolved versions for deps that aren't otherwise pinned, and
-ROS package versions into a per-snapshot variant config that
-rattler-build uses for version resolution and build hash computation.
+Step 3 of the build pipeline emits two files under
+``distros/{distro}/snapshots/{date}/``:
 
-Layering order (later wins):
-    1. conda-forge-pinning (ecosystem-wide pins)
-    2. Local conda_build_config.yaml (our overrides)
-    3. Resolved dependency versions (current conda-forge versions for
-       deps referenced by recipes but not pinned by layers 1 or 2)
-    4. ROS package versions from distribution.yaml
+    conda_forge_pinning.yaml
+        Raw passthrough of upstream conda-forge-pinning at a specific
+        commit.  Platform selector comments (``# [linux64]``,
+        ``# [armv7l]``, etc.) are preserved verbatim so rattler-build
+        can subset per target platform at build time.  Never written to
+        by hand — regenerate the snapshot to bump the pinning commit.
+
+    conda_build_config.yaml
+        Our additions on top of conda-forge-pinning:
+            - local overrides (from the repo-root conda_build_config.yaml)
+            - resolved dep versions (conda-forge latest for deps
+              referenced by recipes but not otherwise pinned)
+            - ROS package versions from distribution.yaml
+        All values are flat lists — no selectors — so this file is
+        inherently single-platform-agnostic for the keys it touches.
+
+Step 5 passes both files via repeated ``-m`` / ``--variant-config``
+flags, in that order.  rattler-build treats later ``-m`` as overriding
+earlier ones, so our additions win over anything in upstream.  That
+lets the repo-root ``conda_build_config.yaml`` override individual
+conda-forge-pinning entries cleanly, without any textual manipulation
+of the upstream file.
 """
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -107,42 +122,191 @@ def load_local_overrides(path: Path) -> dict:
     return yaml.safe_load(text) or {}
 
 
+def _as_variant_list(value: Any) -> list:
+    """Normalize a variant value to a list.
+
+    rattler-build rejects scalar variant values (``key: foo``) with an
+    "expected a sequence" error.  We only emit our own layers (which
+    may have scalars in local overrides), so this is used on the
+    non-upstream file.  The raw upstream file keeps scalars that carry
+    platform selectors — rattler-build filters them correctly.
+    """
+    if isinstance(value, list):
+        return value
+    return [value]
+
+
+PINNING_FILENAME = "conda_forge_pinning.yaml"
+OUR_CONFIG_FILENAME = "conda_build_config.yaml"
+
+
+# Top-level key-with-scalar-value lines in conda-forge-pinning.  The
+# character class in the value excludes anything that'd be a list/map
+# opener or a comment so we don't misfire on `key: [1, 2]` or
+# `key: {a: b}` or blank keys.
+_TOP_LEVEL_SCALAR = re.compile(
+    r"^([A-Za-z_][A-Za-z0-9_]*):[ \t]+([^\s#\-\[\{][^#]*?)(\s*#.*)?$"
+)
+
+
+# Top-level keys we drop from upstream conda-forge-pinning before
+# handing it to rattler-build.  Each entry here has a concrete reason:
+#
+#   zip_keys
+#       Declares groups of variant keys that must be chosen together
+#       by index.  Upstream relies on a full conda-smithy-grade
+#       selector pass (including ``os.environ.get(...)`` selectors)
+#       that rattler-build does not implement, leaving zip members
+#       with mismatched lengths.  In practice dropping this doesn't
+#       multiply builds: ROS recipes use ``${{ compiler('c') }}``
+#       which resolves the toolchain internally, so no recipe
+#       references zip-grouped keys as plain variants.
+#
+#   channel_sources / channel_targets
+#       conda-smithy hints telling feedstock CI which channels to
+#       pull from and publish to.  rattler-build rejects them when
+#       ``--channel`` is also set on the CLI, and we set ``--channel``
+#       in Step 5 so the remote and local-output channels are
+#       available for dep resolution.
+#
+# If we ever need real support for one of these, the right fix is to
+# pull in a proper selector evaluator (conda-build / conda-smithy)
+# rather than partially reimplementing it here.
+_DROP_TOP_LEVEL_KEYS: tuple[str, ...] = (
+    "zip_keys",
+    "channel_sources",
+    "channel_targets",
+)
+
+
+def _strip_top_level_blocks(raw: str, keys: Iterable[str]) -> str:
+    """Drop the named top-level keys and their bodies from ``raw``.
+
+    Matches a line starting with ``{key}:`` at column 0 and skips
+    every subsequent indented or blank line until the next non-blank
+    line at column 0.  That next line is then itself re-evaluated —
+    so back-to-back drop blocks (e.g. ``channel_sources`` immediately
+    followed by ``channel_targets``) are both removed.
+    """
+    drop = tuple(f"{k}:" for k in keys)
+    out: list[str] = []
+    dropping = False
+    for line in raw.splitlines():
+        if dropping:
+            if not line or line[0].isspace():
+                continue
+            dropping = False  # fall through — re-check this new line
+        if any(line.startswith(prefix) for prefix in drop):
+            dropping = True
+            continue
+        out.append(line)
+    tail = "\n" if raw.endswith("\n") else ""
+    return "\n".join(out) + tail
+
+
+def _wrap_top_level_scalars(raw: str) -> str:
+    """Rewrite top-level scalar entries into single-element lists.
+
+    rattler-build validates the shape of every top-level variant value
+    before applying ``# [selector]`` comments, so a line like
+    ``cdt_arch: armv7l  # [armv7l]`` is rejected as a scalar on
+    linux-64 even though the selector would exclude it.  Rewriting to::
+
+        cdt_arch:  # [armv7l]
+          - armv7l
+
+    keeps the selector on the key (same filtering semantics) while
+    giving rattler-build the list shape it demands.  Nested mappings
+    (children of ``pin_run_as_build`` etc.) stay as-is because the
+    regex only anchors at column 0.
+    """
+    out: list[str] = []
+    for line in raw.splitlines():
+        m = _TOP_LEVEL_SCALAR.match(line)
+        if not m:
+            out.append(line)
+            continue
+        key, value, comment = m.group(1), m.group(2).rstrip(), m.group(3) or ""
+        out.append(f"{key}:{comment}")
+        out.append(f"  - {value}")
+    tail = "\n" if raw.endswith("\n") else ""
+    return "\n".join(out) + tail
+
+
+def snapshot_config_paths(output_dir: Path) -> list[Path]:
+    """Return the variant-config paths for a snapshot in rattler-build order.
+
+    The first entry is the upstream passthrough; the second is our
+    layered additions.  Step 5 passes these to rattler-build as
+    repeated ``-m`` flags in this order so later-wins semantics put
+    our values on top of upstream.
+    """
+    return [
+        output_dir / PINNING_FILENAME,
+        output_dir / OUR_CONFIG_FILENAME,
+    ]
+
+
 def generate_snapshot_build_config(
     snapshot: DistroSnapshot,
-    conda_forge_pins: dict,
+    conda_forge_pinning_raw: str,
     conda_forge_pinning_commit: str,
     local_overrides: dict,
     resolved_deps: dict[str, str],
-    output_path: Path,
-) -> Path:
-    """Write the snapshot conda_build_config.yaml.
+    output_dir: Path,
+) -> list[Path]:
+    """Write the snapshot variant config files.
 
-    Layers conda-forge-pinning, local overrides, resolved dep versions,
-    and ROS package versions. Each non-CF-pinning entry is a
-    single-element list so rattler-build treats it as a variant key.
+    Two files are emitted (see module docstring for the rationale):
 
-    Returns the path written.
+        ``conda_forge_pinning.yaml`` is the raw upstream text with a
+        small provenance header prepended.  Selector comments are
+        preserved so rattler-build can subset per target platform.
+
+        ``conda_build_config.yaml`` holds our overrides, resolved dep
+        versions, and ROS package versions — all as flat lists.
+
+    Returns the paths in rattler-build ``-m`` order.
     """
-    config: dict = dict(conda_forge_pins)
-    config.update(local_overrides)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    pinning_path, our_path = snapshot_config_paths(output_dir)
 
+    pinning_header = (
+        "# Auto-generated — DO NOT EDIT.  Upstream conda-forge-pinning\n"
+        f"# rosdistro: {snapshot.distro}  ref: {snapshot.ref}\n"
+        f"# conda-forge-pinning commit: {conda_forge_pinning_commit}\n"
+        "# Kept near-verbatim so rattler-build sees '# [selector]'\n"
+        "# comments.  Top-level scalar entries are wrapped as single-\n"
+        "# element lists to satisfy rattler-build's shape check —\n"
+        "# see _wrap_top_level_scalars for details.\n"
+        "#\n"
+        "# This is layered under conda_build_config.yaml in the same\n"
+        "# directory — duplicate keys in the other file win.\n\n"
+    )
+    pinning_body = _wrap_top_level_scalars(
+        _strip_top_level_blocks(conda_forge_pinning_raw, _DROP_TOP_LEVEL_KEYS)
+    )
+    pinning_path.write_text(pinning_header + pinning_body)
+
+    our_config: dict = dict(local_overrides)
     for name in sorted(resolved_deps):
-        config[name] = [resolved_deps[name]]
-
+        our_config[name] = [resolved_deps[name]]
     for pkg in sorted(snapshot.packages.values(), key=lambda p: p.name):
         key = conda_package_name(snapshot.distro, pkg.name)
-        config[key] = [pkg.version]
+        our_config[key] = [pkg.version]
+    our_config = {k: _as_variant_list(v) for k, v in our_config.items()}
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w") as f:
+    with open(our_path, "w") as f:
         f.write(
-            "# Auto-generated snapshot build config.\n"
+            "# Auto-generated snapshot overrides.\n"
             f"# rosdistro: {snapshot.distro}  ref: {snapshot.ref}\n"
-            f"# conda-forge-pinning: {conda_forge_pinning_commit}\n\n"
+            f"# conda-forge-pinning commit: {conda_forge_pinning_commit}\n"
+            "# Layered on top of conda_forge_pinning.yaml via repeated\n"
+            "# `-m` flags to rattler-build — later wins on duplicate keys.\n\n"
         )
-        yaml.dump(config, f, default_flow_style=False, sort_keys=True)
+        yaml.dump(our_config, f, default_flow_style=False, sort_keys=True)
 
-    return output_path
+    return [pinning_path, our_path]
 
 
 def resolve_unpinned(

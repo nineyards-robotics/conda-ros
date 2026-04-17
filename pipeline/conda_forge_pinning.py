@@ -27,12 +27,15 @@ def get_main_commit() -> str:
         return resp.read().decode().strip()
 
 
-def fetch_pinning(commit: str | None = None) -> tuple[dict, str]:
+def fetch_pinning(commit: str | None = None) -> tuple[str, dict, str]:
     """Fetch conda-forge-pinning config.
 
     If *commit* is None, resolves main to its current commit first.
 
-    Returns (parsed_config, commit_hash).
+    Returns ``(raw_text, parsed_config, commit_hash)``.  Both raw and
+    parsed forms are needed: rattler-build consumes the raw text so the
+    ``# [selector]`` comments drive per-platform subsetting, while the
+    parsed dict is used for key-membership checks during dep resolution.
     """
     if commit is None:
         commit = get_main_commit()
@@ -40,6 +43,7 @@ def fetch_pinning(commit: str | None = None) -> tuple[dict, str]:
     url = f"{_RAW_URL}/{commit}/{_CONFIG_PATH}"
     req = urllib.request.Request(url)
     with urllib.request.urlopen(req, timeout=30) as resp:
-        config = yaml.safe_load(resp.read())
+        raw = resp.read().decode()
 
-    return config or {}, commit
+    config = yaml.safe_load(raw) or {}
+    return raw, config, commit

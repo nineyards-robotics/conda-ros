@@ -1,90 +1,25 @@
-# Auto-generated snapshot build config.
+# Auto-generated snapshot overrides.
 # rosdistro: jazzy  ref: jazzy/2026-04-13
-# conda-forge-pinning: 6974716f7874695969c69b5d38c377a9e77f3c39
+# conda-forge-pinning commit: 6974716f7874695969c69b5d38c377a9e77f3c39
+# Layered on top of conda_forge_pinning.yaml via repeated
+# `-m` flags to rattler-build — later wins on duplicate keys.
 
-BUILD: armv7-conda_cos7-linux-gnueabihf
-VERBOSE_AT:
-- V=1
-VERBOSE_CM:
-- VERBOSE=1
-_libgcc_mutex:
-- 0.1 conda_forge
-ace:
-- 8.0.5
 adwaita-icon-theme:
 - '49.0'
-alsa_lib:
-- '1.2'
-antic:
-- 0.2
 antlr4-python3-runtime:
 - 4.13.2
-aom:
-- '3.9'
-arb:
-- '2.23'
 argcomplete:
 - 3.6.3
-arm_variant_type:
-- sbsa
-arpack:
-- '3.9'
 asio:
 - 1.36.0
-assimp:
-- 6.0.3
-attr:
-- 2.5
 attrs:
 - 26.1.0
-autobahn:
-- 25.12.2
 autoconf:
 - '2.72'
 automake:
 - '1.17'
 avahi:
 - '0.8'
-aws_c_auth:
-- 0.10.1
-aws_c_cal:
-- 0.9.13
-aws_c_common:
-- 0.12.6
-aws_c_compression:
-- 0.3.2
-aws_c_event_stream:
-- 0.6.0
-aws_c_http:
-- 0.10.12
-aws_c_io:
-- 0.26.3
-aws_c_mqtt:
-- 0.15.2
-aws_c_s3:
-- 0.11.5
-aws_c_sdkutils:
-- 0.2.4
-aws_checksums:
-- 0.2.10
-aws_crt_cpp:
-- 0.37.4
-aws_sdk_cpp:
-- 1.11.747
-azure_core_cpp:
-- 1.16.2
-azure_identity_cpp:
-- 1.13.3
-azure_storage_blobs_cpp:
-- 12.16.0
-azure_storage_common_cpp:
-- 12.12.0
-azure_storage_files_datalake_cpp:
-- 12.14.0
-azure_storage_files_shares_cpp:
-- 12.16.0
-azure_storage_queues_cpp:
-- 12.6.0
 babeltrace:
 - 1.5.8
 benchmark:
@@ -97,69 +32,18 @@ black:
 - 26.3.1
 blas-devel:
 - 3.11.0
-blas_impl:
-- openblas
-- mkl
-- blis
 blosc:
 - 1.21.6
 boto3:
 - 1.42.89
-brotli:
-- '1.2'
 bullet:
 - '3.25'
-bullet_cpp:
-- 3.25
-bzip2:
-- 1
-c_ares:
-- 1
-c_blosc2:
-- '2.23'
-c_compiler:
-- gcc
-- clang
-- vs2022
-c_compiler_version:
-- 14
-- 19
-- 14
-c_stdlib:
-- sysroot
-- macosx_deployment_target
-- vs
-c_stdlib_version:
-- 2.17
-- 2.17
-- 11.0
-cairo:
-- 1
-capnproto:
-- 1.4.0
-casadi:
-- 3.7
-catch2:
-- 3.14.0
 catkin_pkg:
 - 1.1.0
 cbor2:
 - 5.9.0
-ccr:
-- 1.3
-cdt_arch: armv7l
-cdt_name:
-- conda
 ceres-solver:
 - 2.2.0
-cfitsio:
-- 4.6.3
-cgo_compiler:
-- go-cgo
-channel_sources:
-- conda-forge
-channel_targets:
-- conda-forge main
 chrony:
 - '4.8'
 clang:
@@ -168,24 +52,12 @@ clang-format:
 - 22.1.3
 clang-tools:
 - 22.1.3
-clang_compiler:
-- clang
-- clang-cl
-clang_compiler_version:
-- 19
-clangxx_compiler:
-- clangxx
-- clang-cl
-clangxx_compiler_version:
-- 19
 cli11:
 - 2.6.2
 click:
 - 8.3.2
 cmake:
 - 4.3.1
-cmocka:
-- 2.0.1
 coin-or-cbc:
 - 2.10.13
 coin-or-cgl:
@@ -194,24 +66,8 @@ coin-or-clp:
 - 1.17.11
 coin-or-utils:
 - 2.11.13
-coin_or_cbc:
-- 2.1
-coin_or_cgl:
-- 0.6
-coin_or_clp:
-- 1.17
-coin_or_osi:
-- 0.108
-coin_or_utils:
-- 2.11
-coincbc:
-- 2.1
-console_bridge:
-- 1.0
 construct:
 - 2.10.70
-coverage:
-- 7.13.5
 cpp-expected:
 - 1.3.1
 cppcheck:
@@ -220,95 +76,36 @@ cppzmq:
 - 4.11.0
 cryptography:
 - 46.0.7
-cuda_compiler:
-- cuda-nvcc
-cuda_compiler_version:
-- None
-- 12.9
-cuda_compiler_version_min:
-- None
-- 12.9
-cudnn:
-- '9'
-curl:
-- 8
-cutensor:
-- 2
-cxx_compiler:
-- gxx
-- clangxx
-- vs2022
-cxx_compiler_version:
-- 14
-- 19
-- 14
 cxxopts:
 - 3.2.1
-dartsim_cpp:
-- '6.16'
-dav1d:
-- 1.2.1
-davix:
-- '0.8'
-dbus:
-- 1
 dbus-python:
 - 1.3.2
-dcap:
-- 2.47
 defusedxml:
 - 0.7.1
 deprecated:
 - 1.3.1
 distro:
 - 1.9.0
-docker_image:
-- quay.io/condaforge/linux-anvil-x86_64:cos7
-- quay.io/condaforge/linux-anvil-aarch64:cos7
-- quay.io/condaforge/linux-anvil-ppc64le:cos7
-- quay.io/condaforge/linux-anvil-x86_64:alma8
-- quay.io/condaforge/linux-anvil-aarch64:alma8
-- quay.io/condaforge/linux-anvil-ppc64le:alma8
-- quay.io/condaforge/linux-anvil-x86_64:alma9
-- quay.io/condaforge/linux-anvil-aarch64:alma9
-- quay.io/condaforge/linux-anvil-ppc64le:alma9
-- quay.io/condaforge/linux-anvil-x86_64:alma10
-- quay.io/condaforge/linux-anvil-aarch64:alma10
-- quay.io/condaforge/linux-anvil-ppc64le:alma10
 doxygen:
 - 1.13.2
 draco:
 - 1.5.7
-eclib:
-- '20250627'
 eigen:
 - 5.0.1
 eigen-abi-devel:
 - 5.0.1.100
-eigen_abi_devel:
-- 3.4.0
-elfutils:
-- '0.194'
 embree:
 - 4.4.1
 empy:
 - 3.3.4
 epoxy:
 - 1.5.10
-exiv2:
-- '0.28'
-expat:
-- 2
 expiringdict:
 - 1.2.2
 fastapi:
 - 0.136.0
 fcl:
 - 0.7.0
-ffmpeg:
-- '8'
-fftw:
-- 3
 file:
 - '5.47'
 filelock:
@@ -327,232 +124,70 @@ flake8-import-order:
 - 0.19.2
 flake8-quotes:
 - 3.4.0
-flann:
-- 1.9.2
 flask:
 - 3.1.3
 flask-socketio:
 - 5.6.1
-flatbuffers:
-- 25.9.23
 flex:
 - 2.6.4
-fmt:
-- '12.0'
-fontconfig:
-- 2
 fortran-compiler:
 - 1.11.0
-fortran_compiler:
-- gfortran
-- gfortran
-- flang
-fortran_compiler_version:
-- 14
-- 14
-- 5
-- 14
 freeglut:
 - 3.2.2
 freeimage:
 - 3.18.0
-freetype:
-- 2
 future:
 - 1.0.0
-gcc_compiler:
-- gcc
-gcc_compiler_version:
-- 14
-- 15
-gct:
-- 6.2.1705709074
-gdal:
-- '3.12'
-gdk_pixbuf:
-- 2
 geographiclib-cpp:
 - '2.7'
-geos:
-- 3.14.1
-geotiff:
-- '1.7'
-gf2x:
-- '1.3'
-gfal2:
-- '2.23'
-gflags:
-- 2.2
-giflib:
-- 5.2
 git:
 - 2.54.0.dev0
 gitpython:
 - 3.1.46
-givaro:
-- 4.2.1
-glew:
-- '2.3'
 glfw:
 - 3.5.0
-glib:
-- '2'
-glog:
-- '0.7'
-glpk:
-- '5.0'
 glslang:
 - 16.2.0
 gmock:
 - 1.17.0
-gmp:
-- 6
-gnuradio_core:
-- 3.10.12
-gnutls:
-- '3.8'
-go_compiler:
-- go-nocgo
 gobject-introspection:
 - 1.86.0
-google_cloud_cpp:
-- '3.3'
-google_cloud_cpp_common:
-- 0.25.0
-googleapis_cpp:
-- '0.10'
 gpsd:
 - '3.26'
 graphicsmagick:
 - 1.3.46
-graphviz:
-- '14'
-gsl:
-- 2.7
-gsoap:
-- 2.8.123
 gst-plugins-base:
 - 1.28.2
-gst_plugins_base:
-- '1.26'
-gstreamer:
-- '1.26'
 gtest:
 - 1.17.0
 gtk4:
 - 4.22.2
 gts:
 - 0.7.6
-gxx_compiler:
-- gxx
-gxx_compiler_version:
-- 14
-- 15
-hdf4:
-- 4.2.15
-hdf5:
-- 1.14.6
-hdrhistogram_c:
-- 0.11.9
-hepmc2:
-- '2.06'
-hepmc3:
-- '3.3'
 httpx:
 - 0.28.1
-icu:
-- '75'
-idyntree:
-- '15'
-imath:
-- 3.2.2
 img2pdf:
 - 0.6.1
-impi_devel:
-- 2021.16.0
 importlib-metadata:
 - 8.8.0
 importlib_resources:
 - 7.1.0
-include-what-you-use:
-- '0.26'
 inflection:
 - 0.5.1
-ipopt:
-- 3.14.19
-is_abi3:
-- true
-is_freethreading:
-- false
-is_python_min:
-- true
-- false
-- false
-- false
-isl:
-- '0.26'
-jasper:
-- 4
 jinja2:
 - 3.1.6
-jpeg:
-- 9
 json-c:
 - '0.18'
-json_c:
-- '0.18'
-jsoncpp:
-- 1.9.6
 jsonschema:
 - 4.26.0
-junitparser:
-- 5.0.0
-kealib:
-- '1.6'
-krb5:
-- '1.22'
 lark-parser:
 - 0.12.0
-lcms2:
-- 2
 lcov:
 - '1.16'
-ldas_tools_framecpp:
-- '2.9'
-lerc:
-- '4'
-libabseil:
-- 20250512
 libacl:
 - 2.3.2
 libadwaita:
 - 1.9.0
-libaec:
-- '1'
-libamd:
-- '3'
-libarchive:
-- '3.8'
-libarrow:
-- '23.0'
-- '22.0'
-- '21.0'
-- '20.0'
-libarrow_all:
-- '23.0'
-- '22.0'
-- '21.0'
-- '20.0'
-libattr:
-- 2.5
-libavif:
-- 1
-libblas:
-- 3.9.* *netlib
-libblitz:
-- 1.0.2
-libblst:
-- '0.3'
 libboost:
 - 1.90.0
 libboost-devel:
@@ -561,130 +196,16 @@ libboost-python:
 - 1.90.0
 libboost-python-devel:
 - 1.90.0
-libboost_devel:
-- '1.86'
-libboost_headers:
-- '1.86'
-libboost_python_devel:
-- '1.86'
-libbrotlicommon:
-- '1.2'
-libbrotlidec:
-- '1.2'
-libbrotlienc:
-- '1.2'
-libbtf:
-- '2'
-libcamd:
-- '3'
-libcap:
-- '2.77'
-libcblas:
-- 3.9.* *netlib
 libccd-double:
 - '2.1'
-libccolamd:
-- '3'
-libcholmod:
-- '5'
-libcint:
-- '6.1'
-libclang:
-- 22.1.3
-libcolamd:
-- '3'
-libcrc32c:
-- 1.1
-libcudnn_dev:
-- '9'
-libcurl:
-- 8
-libcxsparse:
-- '4'
-libdap4:
-- 3.20.6
-libdeflate:
-- '1.25'
-libduckdb_devel:
-- '1'
-libeantic:
-- '2'
-libev:
-- 4.33
-libevent:
-- 2.1.12
-libexactreal:
-- '4'
-libffi:
-- '3.5'
-libflac:
-- '1.5'
-libflatsurf:
-- 3
-libflint:
-- '3.3'
-libframel:
-- '8.41'
-libfuse:
-- '2'
-libfuse3:
-- '3'
-libgdal:
-- '3.12'
-libgdal_core:
-- '3.12'
-libgit2:
-- '1.9'
 libgl-devel:
 - 1.7.0
 libglib:
 - 2.86.4
 libgomp:
 - 15.2.0
-libgoogle_cloud:
-- '3.3'
-libgoogle_cloud_aiplatform_devel:
-- '3.3'
-libgoogle_cloud_all_devel:
-- '3.3'
-libgoogle_cloud_automl_devel:
-- '3.3'
-libgoogle_cloud_bigquery_devel:
-- '3.3'
-libgoogle_cloud_bigtable_devel:
-- '3.3'
-libgoogle_cloud_compute_devel:
-- '3.3'
-libgoogle_cloud_devel:
-- '3.3'
-libgoogle_cloud_dialogflow_cx_devel:
-- '3.3'
-libgoogle_cloud_dialogflow_es_devel:
-- '3.3'
-libgoogle_cloud_discoveryengine_devel:
-- '3.3'
-libgoogle_cloud_dlp_devel:
-- '3.3'
-libgoogle_cloud_iam_devel:
-- '3.3'
-libgoogle_cloud_oauth2_devel:
-- '3.3'
-libgoogle_cloud_policytroubleshooter_devel:
-- '3.3'
-libgoogle_cloud_pubsub_devel:
-- '3.3'
-libgoogle_cloud_spanner_devel:
-- '3.3'
-libgoogle_cloud_speech_devel:
-- '3.3'
-libgoogle_cloud_storage_devel:
-- '3.3'
 libgpiod:
 - 2.2.1
-libgrpc:
-- '1.73'
-libgsasl:
-- '2'
 libgz-cmake3:
 - 3.5.5
 libgz-common5:
@@ -715,340 +236,74 @@ libgz-transport13:
 - 13.5.0
 libgz-utils2:
 - 2.2.1
-libheif:
-- 1.19
-libhugetlbfs:
-- 2
-libhwloc:
-- 2.12.2
-libhwy:
-- '1.3'
-libiconv:
-- 1
-libidn2:
-- 2
-libiio:
-- 0
-libintervalxt:
-- 3
-libitk_devel:
-- 5.4
 libjpeg-turbo:
 - 3.1.4.1
-libjpeg_turbo:
-- '3'
-libklu:
-- '2'
-libkml:
-- 1.3
-libkml_devel:
-- 1.3
-liblapack:
-- 3.9.* *netlib
-liblapacke:
-- 3.9.* *netlib
-libldl:
-- '3'
-liblzma_devel:
-- 5
-libmagma:
-- '2.9'
-libmagma_devel:
-- '2.9'
-libmagma_sparse:
-- '2.9'
-libmatio:
-- 1.5.30
-libmatio_cpp:
-- 0.3.0
-libmed:
-- '4.2'
-libmicrohttpd:
-- '1.0'
-libnetcdf:
-- 4.9.3
-libntlm:
-- 1
-libode:
-- 0.16.6
-libogg:
-- 1.3
-libopencv:
-- 4.13.0
 libopengl-devel:
 - 1.7.0
-libopentelemetry_cpp:
-- '1.26'
-libopenvino_dev:
-- 2026.0.0
-libosqp:
-- 1.0.0
-libparu:
-- '1'
-libpcap:
-- '1.10'
-libpdal:
-- '2.10'
-libpdal_core:
-- '2.10'
-libpnetcdf:
-- 1.14.1
-libpng:
-- 1.6
-libpq:
-- '18'
-libprotobuf:
-- 6.31.1
-libptscotch:
-- 7.0.11
-libpulsar:
-- 4.0.1
 libqglviewer:
 - 2.9.1
-libraw:
-- '0.21'
-librbio:
-- '4'
-librdkafka:
-- '2.12'
-librealsense:
-- '2.56'
-librerun_sdk:
-- 0.31.2
-librsvg:
-- 2
-libscotch:
-- 7.0.11
 libsdformat14:
 - 14.8.0
-libsecret:
-- '0.21'
-libsentencepiece:
-- 0.2.1
-libsndfile:
-- '1.2'
-libsodium:
-- 1.0.21
-libsoup:
-- 3
-libspatialindex:
-- 2.1.0
-libspex:
-- '3'
 libspnav:
 - '1.1'
-libspqr:
-- '4'
-libsqlite:
-- 3
-libssh:
-- '0.12'
-libssh2:
-- 1
-libsuitesparseconfig:
-- '7'
-libsvm:
-- '335'
-libsystemd:
-- '257'
-libtensorflow:
-- '2.16'
-libtensorflow_cc:
-- '2.16'
 libtheora:
 - 1.1.1
-libthrift:
-- 0.22.0
-libtiff:
-- '4.7'
 libtins:
 - '4.5'
 libtool:
 - 2.5.4
-libtorch:
-- '2.9'
-libudev:
-- '257'
-libumfpack:
-- '6'
-libunwind:
-- '1.8'
-liburing:
-- 2.14
 libusb:
 - 1.0.29
-libutf8proc:
-- '2.11'
-libuuid:
-- 2
-libv8:
-- 8.9.83
-libvigra:
-- '1.12'
-libvips:
-- 8
-libvpl:
-- '2.16'
 libvulkan-headers:
 - 1.4.341.0
 libvulkan-loader:
 - 1.4.341.0
-libwebp:
-- 1
-libwebp_base:
-- 1
 libwebsockets:
 - 4.3.5
-libx86emu:
-- 3.7
-libxcb:
-- '1'
 libxkbcommon:
 - 1.13.1
-libxml2:
-- '2.14'
-libxml2_devel:
-- '2.14'
-libxsmm:
-- 1
-libyarp:
-- 3.12.2
-libzip:
-- 1
 llvm-openmp:
 - 22.1.3
-llvm_openmp:
-- 19
 lm-sensors:
 - 3.6.0
-lmdb:
-- 0.9.29
-log4cxx:
-- 1.2.0
-lol_html:
-- 2.7.2
-ls_hpack:
-- 2.3.4
 lua:
 - 5.5.0
 lxml:
 - 6.0.4
 lz4:
 - 4.4.5
-lz4_c:
-- '1.10'
-lzo:
-- 2
-m2w64_c_compiler:
-- gcc
-m2w64_c_compiler_version:
-- 14
-m2w64_c_stdlib:
-- m2w64-sysroot
-m2w64_c_stdlib_version:
-- 12
-m2w64_cxx_compiler:
-- gxx
-m2w64_cxx_compiler_version:
-- 14
-m2w64_fortran_compiler:
-- gfortran
-m2w64_fortran_compiler_version:
-- 14
-macos_machine:
-- x86_64-apple-darwin13.4.0
-- arm64-apple-darwin20.0.0
-magma:
-- '2.9'
 marisa-trie:
 - 1.2.1
 matplotlib-base:
 - 3.10.8
 meson:
 - 1.11.0
-metis:
-- 5.1.0
-mimalloc:
-- 3.3.0
-mkl:
-- '2025'
-- '2023'
-mkl_devel:
-- '2025'
-- '2023'
-mock:
-- 5.2.0
-mpfr:
-- 4
-mpg123:
-- '1.32'
-mpich:
-- 4
-mppp:
-- '2.0'
 msgpack-numpy:
 - 0.4.8
 msgpack-python:
 - 1.1.2
-msgpack_c:
-- 6
-msgpack_cxx:
-- '7'
 multipledispatch:
 - 0.6.0
-mumps_mpi:
-- 5.8.2
-mumps_seq:
-- 5.8.2
 muparser:
 - 2.3.5
 mypy:
 - 1.20.1
-mysql_devel:
-- '9.6'
 nanobind:
 - 2.12.0
 nanoflann:
 - 1.6.1
 natsort:
 - 8.4.0
-nccl:
-- 2
-ncurses:
-- 6
-netcdf_cxx4:
-- 4.3
-netcdf_fortran:
-- '4.6'
-nettle:
-- '3.10'
 networkx:
 - 3.6.1
 ninja:
 - 1.13.2
 nlohmann_json:
 - 3.12.0
-nlopt:
-- '2.10'
-nodejs:
-- '24'
-- '22'
 notebook:
 - 7.5.5
-nspr:
-- 4
-nss:
-- 3
-ntl:
-- 11.6.0
 ntplib:
 - 0.4.0
-numpy:
-- 2
-obake_devel:
-- '0.9'
-occt:
-- 7.9.3
 ocl-icd:
 - 2.3.3
 octomap:
@@ -1057,127 +312,46 @@ ogre:
 - 14.5.2
 openai:
 - 2.32.0
-openblas:
-- 0.3.*
 opencl-headers:
 - 2025.06.13
-openexr:
-- '3.4'
-openh264:
-- 2.6.0
 openjdk:
 - 25.0.2
-openjpeg:
-- '2'
-openjph:
-- '0.27'
-openmpi:
-- 4
 openscenegraph:
 - 3.6.5
-openslide:
-- 4
-openssl:
-- '3.5'
 openvdb:
 - 13.0.0
-orc:
-- 2.3.0
 orocos-kdl:
 - 1.5.3
-osqp_eigen:
-- '0.11'
-p11_kit:
-- '0.26'
 packaging:
 - '26.1'
 paho-mqtt:
 - 2.1.0
 pandas:
 - 3.0.2
-pango:
-- '1'
-pari:
-- 2.17.* *_pthread
 patchelf:
 - 0.18.0
-pcl:
-- 1.15.1
-pcre:
-- '8'
-pcre2:
-- '10.47'
-pdal:
-- '2.10'
-perl:
-- 5.32.1
-petsc:
-- '3.25'
-petsc4py:
-- '3.25'
-pexpect:
-- 4.9.0
 pillow:
 - 12.2.0
-pin_run_as_build:
-  libblst:
-    max_pin: x.x
-  netcdf-cxx4:
-    max_pin: x.x
-  vlfeat:
-    max_pin: x.x.x
 pip:
 - 26.0.1
 pip-tools:
 - 7.5.3
-pixman:
-- 0
 pkg-config:
 - 0.29.2
 platformdirs:
 - 4.9.6
-plutosvg:
-- 0.0.7
-plutovg:
-- 1.3.2
 ply:
 - '3.11'
-poco:
-- 1.15.1
-poppler:
-- '26.02'
-portaudio:
-- '19.7'
-postgresql:
-- '18'
-postgresql_plpython:
-- '18'
-pre-commit:
-- 4.5.1
 procps-ng:
 - 4.0.6
-proj:
-- '9.7'
 protobuf:
 - 6.33.5
 psutil:
 - 7.2.2
-ptscotch:
-- 7.0.11
-pugixml:
-- '1.15'
-pulseaudio:
-- '17.0'
-pulseaudio_client:
-- '17.0'
-pulseaudio_daemon:
-- '17.0'
 py-opencv:
 - 4.13.0
 pybind11:
 - 3.0.3
-pybind11_abi:
-- 4
 pycairo:
 - 1.29.0
 pycodestyle:
@@ -1202,88 +376,32 @@ pymongo:
 - 4.16.0
 pyproj:
 - 3.7.2
-pyqt:
-- 5.15
 pyqt-builder:
 - 1.18.2
-pyqtchart:
-- 5.15
-pyqtwebengine:
-- 5.15
 pyserial:
 - '3.5'
 pytest:
 - 9.0.3
-pytest-cov:
-- 7.1.0
-pytest-mock:
-- 3.15.1
-pytest-timeout:
-- 2.4.0
 python:
 - 3.12.* *_cpython
 python-orocos-kdl:
 - 1.5.3
-python_impl:
-- cpython
-python_min:
-- '3.10'
-- '3.14'
-pytorch:
-- '2.9'
 pyudev:
 - 0.24.3
 pyyaml:
 - 6.0.3
-pyzmq:
-- 27.1.0
-qhull:
-- 2020.2
-qpdf:
-- '12'
-qt:
-- 5.15
 qt-main:
 - 5.15.15
 qt6-main:
 - 6.11.0
-qt6_main:
-- '6.10'
-qt_main:
-- 5.15
-qtkeychain:
-- '0.15'
-qwt:
-- 6.3.0
-r_base:
-- 4.4
-- 4.5
 range-v3:
 - 0.12.0
 rapidjson:
 - 1.1.0.post20240409
-rav1e:
-- '0.8'
-rdma_core:
-- '61'
-re2:
-- 2025.11.05
-readline:
-- '8'
 requests:
 - 2.33.1
 rich:
 - 15.0.0
-rocksdb:
-- '10.9'
-root_base:
-- 6.36.8
-- 6.38.0
-- 6.38.0
-root_cxx_standard:
-- 20
-- 20
-- 23
 ros-jazzy-acado-vendor:
 - 1.0.0
 ros-jazzy-ackermann-msgs:
@@ -5300,28 +4418,8 @@ ruby:
 - 4.0.2
 rust:
 - 1.94.0
-rust_compiler:
-- rust
-s2geography:
-- 0.1.2
-s2geometry:
-- 0.11.1
-s2n:
-- 1.7.1
 scipy:
 - 1.17.1
-scotch:
-- 7.0.11
-sdl2:
-- '2'
-sdl2_image:
-- '2'
-sdl2_mixer:
-- '2'
-sdl2_net:
-- '2'
-sdl2_ttf:
-- '2'
 semver:
 - 3.0.4
 setproctitle:
@@ -5336,92 +4434,30 @@ shapely:
 - 2.1.2
 simde:
 - 0.8.2
-singular:
-- 4.4.1
-slepc:
-- '3.25'
-slepc4py:
-- '3.25'
 smbus2:
 - 0.4.3
-snappy:
-- 1.2
-soapysdr:
-- '0.8'
 socat:
 - 1.8.1.1
-sox:
-- 14.4.2
-spdlog:
-- '1.16'
 sphinx:
 - 9.1.0
 spirv-headers:
 - 1.4.341.0
 spirv-tools:
 - '2026.1'
-spirv_tools:
-- '2026'
-sqlite:
-- 3
-srm_ifce:
-- 1.24.6
-starlink_ast:
-- 9.3.1
 subversion:
 - 1.14.5
-suitesparse:
-- '7'
-suitesparse_mongoose:
-- '3'
-sundials:
-- '7.7'
-superlu_dist:
-- '9'
-svt_av1:
-- 4.0.1
 swig:
 - 4.4.1
-swig_abi:
-- '5'
 tabulate:
 - 0.10.0
 tar:
 - '1.35'
-target_goarch:
-- amd64
-- arm64
-- ppc64le
-target_gobin:
-- ${PREFIX}/bin/
-- '%PREFIX%\bin\'
-target_goexe:
-- null
-- .exe
-target_goos:
-- linux
-- darwin
-- windows
-tbb:
-- '2022'
 tbb-devel:
 - 2022.3.0
-tbb_devel:
-- '2022'
-tensorflow:
-- '2.16'
 termcolor:
 - 3.3.0
-thrift_cpp:
-- 0.22.0
-tiledb:
-- '2.30'
 tinyxml:
 - 2.6.2
-tinyxml2:
-- '11.0'
-tk:
-- 8.6
 toml:
 - 0.10.2
 tornado:
@@ -5430,18 +4466,10 @@ tqdm:
 - 4.67.3
 transforms3d:
 - 0.4.2
-twisted:
-- 25.5.0
 typeguard:
 - 4.5.1
 typing_extensions:
 - 4.15.0
-ucc:
-- 1
-ucx:
-- '1.20'
-uhd:
-- 4.9.0
 ujson:
 - 5.12.0
 uncrustify:
@@ -5450,8 +4478,6 @@ unidiff:
 - 0.7.5
 unzip:
 - '6.0'
-urdfdom:
-- '5.1'
 urdfdom_headers:
 - 2.1.1
 uvicorn:
@@ -5460,34 +4486,18 @@ uvloop:
 - 0.22.1
 validators:
 - 0.35.0
-vc:
-- 14
 vcstool:
 - 1.1.7
-vigra:
-- '1.12'
 virtualenv:
 - 21.2.4
-vlfeat:
-- 0.9.21
-volk:
-- '3.3'
-vtk:
-- 9.6.0
 vtk-base:
 - 9.6.1
-vtk_base:
-- 9.6.0
 waitress:
 - 3.0.2
 watchdog:
 - 6.0.0
 wayland:
 - 1.25.0
-wcslib:
-- '8'
-websocket-client:
-- 1.9.0
 websocketpp:
 - 0.8.2
 websockets:
@@ -5500,16 +4510,8 @@ whichcraft:
 - 0.6.1
 wxpython:
 - 4.2.5
-wxwidgets:
-- 3.3.2
-x264:
-- 1!164.*
-x265:
-- '3.5'
 xclip:
 - '0.13'
-xerces_c:
-- '3.3'
 xkeyboard-config:
 - '2.47'
 xmlrpc-c:
@@ -5528,16 +4530,10 @@ xorg-libxrandr:
 - 1.5.5
 xorg-xorgproto:
 - '2025.1'
-xrootd:
-- '5'
 xsimd:
 - 14.1.0
 xtensor:
 - 0.27.1
-xxhash:
-- 0.8.3
-xz:
-- 5
 yaml:
 - 0.2.5
 yaml-cpp:
@@ -5546,29 +4542,7 @@ zbar:
 - 0.23.93
 zeroconf:
 - 1.0.0
-zeromq:
-- 4.3.5
-zfp:
-- 1.0
 zip:
 - '3.0'
-zip_keys:
-- - c_compiler_version
-  - cxx_compiler_version
-  - fortran_compiler_version
-  - c_stdlib_version
-  - cuda_compiler_version
-- - python
-  - is_python_min
-- - libarrow
-  - libarrow_all
-- - root_base
-  - root_cxx_standard
-zlib:
-- 1
-zlib_ng:
-- '2.3'
-zstd:
-- '1.5'
 zziplib:
 - 0.13.69
