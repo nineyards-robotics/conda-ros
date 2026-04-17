@@ -58,18 +58,29 @@ The build pipeline is implemented as Python modules in `pipeline/`, invoked via 
 
 #### Step 1: Fetch snapshot metadata
 
-Fetch rosdistro at the release tag and parse `distribution.yaml` to get every package's release URL, version, and tag format.
+Fetch rosdistro at the release tag (e.g. `jazzy/2026-04-13`) and parse `distribution.yaml` to get every package's release URL, version, and tag format.
 
-#### Step 2: Generate snapshot build config
-
-Start with the root `conda_build_config.yaml` (system pins) and merge in every ROS package version from `distribution.yaml`, writing the result to `distros/{distro}/snapshots/{date}/conda_build_config.yaml`. This file is a **version lookup table**, not a dependency list — it doesn't add dependencies to any package. Dependencies come from `package.xml` via recipe generation (step 3). At build time, rattler-build looks up only the entries that a recipe actually references to resolve version pins and compute the build hash. The remaining entries are ignored.
-
-#### Step 3: Generate recipes
+#### Step 2: Generate recipes
 
 For each package in `distribution.yaml`:
 - If `packages/{pkg}/{version}/recipe.yaml` already exists, skip — the version hasn't changed since a previous snapshot
 - If new version: fetch release repo source, parse `package.xml`, generate recipe
 - Handles build type detection (ament_cmake, ament_python, cmake), rosdep key → conda mapping, vendor package passthrough, and implicit dependency injection
+
+Recipes are pure metadata transformation from rosdistro — they don't depend on the build config.
+
+#### Step 3: Generate snapshot build config
+
+Assemble the snapshot's `conda_build_config.yaml` under `distros/{distro}/snapshots/{date}/`. This file is a **version lookup table**, not a dependency list — it doesn't add dependencies to any package. At build time, rattler-build looks up only the entries that a recipe actually references to resolve version pins and compute the build hash.
+
+The config is built from three layers (later wins):
+
+1. **conda-forge-pinning** — fetched from `conda-forge/conda-forge-pinning-feedstock` at `main`. Provides ecosystem-wide pins (compilers, boost, protobuf, spdlog, etc.) so our packages stay compatible with conda-forge.
+2. **Local overrides** — the root `conda_build_config.yaml`. Only used when we need to diverge from conda-forge on a specific pin. Empty by default.
+3. **Dependency resolution** — scan all generated recipes for dependency names and resolve any packages not already pinned by the above layers to their current versions on conda-forge. This ensures every dependency feeds into the build hash, not just the ones conda-forge-pinning tracks.
+4. **ROS package versions** — every package version from `distribution.yaml`, keyed by conda package name.
+
+The conda-forge-pinning commit hash is recorded in the generated file for reproducibility.
 
 #### Step 4: Resolve build order
 
@@ -143,7 +154,7 @@ The build hash is content-addressed: if nothing about a package or its dependenc
 conda-ros/
 ├── pixi.toml                   # Environment and task definitions
 ├── rosdep.yaml                 # rosdep key → conda package mapping
-├── conda_build_config.yaml     # System dependency version pins
+├── conda_build_config.yaml     # Local overrides for conda-forge-pinning
 ├── pipeline/                   # Build pipeline (Python, invoked via pixi tasks)
 │
 └── distros/
@@ -176,9 +187,9 @@ This mirrors how rosdistro release repos work — old release tags stick around 
 Some configuration is shared across distros:
 
 - **`rosdep.yaml`** — maps rosdep keys to conda package names. Most mappings are universal. Platform-specific overrides use `linux`/`osx`/`win` sub-keys.
-- **`conda_build_config.yaml`** (root) — pins system dependency versions (compilers, protobuf, spdlog, etc.) shared across snapshots. Tracks conda-forge's `conda-forge-pinning` feedstock to maximize compatibility with the broader conda ecosystem.
+- **`conda_build_config.yaml`** (root) — local overrides for conda-forge-pinning. Only used when we need to diverge from conda-forge on a specific pin. Empty by default.
 
-Each snapshot also gets its own **`conda_build_config.yaml`** under `snapshots/{date}/`, which merges the root system pins with all ROS package versions for that snapshot (generated from `distribution.yaml`). This is what makes the build hash work — rattler-build only hashes variant config entries that a recipe actually uses, so each package's hash reflects exactly the dependency versions it was built against, with no unnecessary coupling to unrelated packages.
+Each snapshot gets its own **`conda_build_config.yaml`** under `snapshots/{date}/`, assembled from conda-forge-pinning (fetched at snapshot creation time), local overrides, resolved dependency versions, and ROS package versions. This is what makes the build hash work — rattler-build only hashes variant config entries that a recipe actually uses, so each package's hash reflects exactly the dependency versions it was built against, with no unnecessary coupling to unrelated packages.
 
 ## Platforms
 
