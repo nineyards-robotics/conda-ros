@@ -1,10 +1,2733 @@
-# Mapping from rosdep keys to conda package names.
-# Platform-specific overrides use linux/osx/win keys.
+# rosdep key -> conda package name mapping.
+# Platform-specific overrides use linux/osx/win sub-keys.
 #
-# Example:
-#   boost:
-#     conda: [libboost-devel]
-#   gtk3:
-#     conda:
-#       linux: [gtk3]
-#       osx: [gtk3]
+# Keys with no known conda-forge equivalent (mapped to `conda: []`):
+#   aravis-dev, cwiid-dev, libatomic, libbluetooth, libbluetooth-dev,
+#   libcpp-httplib-dev, libmodbus-dev, libopenni2-dev, libpaho-mqtt-dev,
+#   libpaho-mqttpp-dev, libpng++-dev, libserial-dev, libsick_ldmrs,
+#   libv4l-dev, libyuv-dev.
+# If you find a conda-forge package for any of these, update the entry.
+
+acl:
+  conda:
+    linux:
+    - libacl
+    osx: []
+    win: []
+adwaita-icon-theme:
+  conda:
+  - adwaita-icon-theme
+alsa-oss:
+  conda:
+  - alsa-lib
+ament_cmake_ros_core:
+  conda: null
+apr:
+  conda:
+  - apr
+aravis-dev:
+  conda: []
+armadillo:
+  conda:
+  - armadillo
+asio:
+  conda:
+  - asio
+assimp:
+  conda:
+  - assimp
+assimp-dev:
+  conda:
+  - assimp
+autoconf:
+  conda:
+  - autoconf
+automake:
+  conda:
+  - automake
+avahi-daemon:
+  conda:
+  - python-avahi
+benchmark:
+  conda:
+  - benchmark
+binutils:
+  conda:
+    linux:
+    - binutils
+    osx: []
+    win: []
+bison:
+  conda:
+  - bison
+black:
+  conda:
+  - black
+bluez: &id001
+  conda: null
+boost:
+  conda:
+  - libboost-devel
+  - libboost-python-devel
+bullet:
+  conda:
+  - bullet
+bzip2:
+  conda:
+  - bzip2
+ca-certificates:
+  conda:
+  - ca-certificates
+can-utils: *id001
+cargo:
+  conda:
+  - rust
+catch2:
+  conda:
+  - catch2
+catkin:
+  conda: null
+chrony:
+  conda:
+    linux:
+    - chrony
+    osx:
+    - chrony
+    win: []
+clang:
+  conda:
+  - clang
+clang-format:
+  conda:
+  - clang-format
+clang-tidy:
+  conda:
+  - clang-tools
+cli11:
+  conda:
+  - cli11
+cmake:
+  conda:
+  - cmake
+coinor-libcbc-dev:
+  conda:
+  - coin-or-cbc
+coinor-libcgl-dev:
+  conda:
+  - coin-or-cgl
+coinor-libclp-dev:
+  conda:
+  - coin-or-clp
+coinor-libcoinutils-dev:
+  conda:
+  - coin-or-utils
+coinor-libipopt-dev:
+  conda:
+  - ipopt
+collada-dom:
+  conda:
+  - collada-dom
+costmap_2d: *id001
+cppcheck:
+  conda:
+  - cppcheck
+cppunit:
+  conda:
+    linux:
+    - cppunit
+    osx:
+    - cppunit
+    win: []
+cppzmq:
+  conda:
+  - cppzmq
+curl:
+  conda:
+  - libcurl
+curlpp-dev:
+  conda:
+  - curlpp
+cwiid: *id001
+cwiid-dev:
+  conda: []
+cython:
+  conda:
+  - cython
+dkms: *id001
+doxygen:
+  conda:
+  - doxygen
+  - graphviz
+dpkg: *id001
+draco:
+  conda:
+  - draco
+dynamic_reconfigure: *id001
+eigen:
+  conda:
+  - eigen
+  - eigen-abi-devel
+emacs:
+  conda:
+  - emacs
+embree:
+  conda:
+  - embree
+festival:
+  conda:
+    linux:
+    - festival
+    - festvox-kallpc16k
+    osx: []
+    win: []
+ffmpeg:
+  conda:
+  - ffmpeg
+ffmpeg-dev:
+  conda:
+  - ffmpeg
+file:
+  conda:
+    linux:
+    - file
+    osx:
+    - file
+    win: []
+flac:
+  conda:
+  - libflac
+flex:
+  conda:
+  - flex
+fmt:
+  conda:
+  - fmt
+fri_client_sdk:
+  conda:
+  - lbr-fri-client-sdk
+g++-static:
+  conda: []
+gawk:
+  conda:
+  - gawk
+gazebo:
+  conda:
+  - gazebo
+  - libprotobuf
+  - libabseil
+gazebo11:
+  conda:
+  - gazebo
+  - libprotobuf
+  - libabseil
+gazebo9:
+  conda:
+  - gazebo
+  - libprotobuf
+  - libabseil
+gazebo_ros_pkgs: *id001
+geographiclib:
+  conda:
+  - geographiclib-cpp
+geographiclib-tools:
+  conda:
+  - geographiclib-cpp
+geos:
+  conda:
+  - geos
+gfortran:
+  conda:
+  - fortran-compiler
+git:
+  conda:
+  - git
+glslang-dev:
+  conda:
+  - glslang
+glslc:
+  conda:
+  - shaderc
+glut:
+  conda:
+    linux:
+    - freeglut
+    osx: []
+    win:
+    - freeglut
+google-mock:
+  conda:
+    emscripten: []
+    linux:
+    - gmock
+    osx:
+    - gmock
+    win:
+    - gmock
+gps_common: *id001
+graphicsmagick:
+  conda:
+  - graphicsmagick
+graphviz:
+  conda:
+  - graphviz
+gstreamer1.0:
+  conda:
+  - gstreamer
+gstreamer1.0-alsa:
+  conda:
+  - gstreamer
+gstreamer1.0-plugins-base:
+  conda:
+  - gst-plugins-base
+gstreamer1.0-plugins-good:
+  conda:
+  - gst-plugins-good
+gstreamer1.0-plugins-ugly:
+  conda:
+  - gst-plugins-ugly
+gtest:
+  conda:
+  - gtest
+gtk2:
+  conda:
+  - gtk2
+gtk3:
+  conda:
+    linux:
+    - libglib
+    - glib
+    - gtk3
+    - harfbuzz
+    - libxcb
+    - pthread-stubs
+    - xorg-libxau
+    - xorg-libxi
+    - xorg-libxrandr
+    - xorg-libxcursor
+    - xorg-libxtst
+    - xorg-libxcomposite
+    - xorg-libxdamage
+    - xorg-libxinerama
+    - xorg-xineramaproto
+    - epoxy
+    - libgl-devel
+    osx:
+    - libglib
+    - glib
+    - gtk3
+    - harfbuzz
+    - libxcb
+    - pthread-stubs
+    - xorg-libxau
+    - xorg-libxi
+    - xorg-libxrandr
+    - xorg-libxcursor
+    - xorg-libxtst
+    - xorg-libxcomposite
+    - xorg-libxdamage
+    - xorg-libxinerama
+    - xorg-xineramaproto
+    - epoxy
+    win:
+    - libglib
+    - glib
+    - gtk3
+    - harfbuzz
+    - libxcb
+    - pthread-stubs
+    - xorg-libxau
+    - xorg-libxi
+    - xorg-libxrandr
+    - xorg-libxcursor
+    - xorg-libxtst
+    - xorg-libxcomposite
+    - xorg-libxdamage
+    - xorg-libxinerama
+    - xorg-xineramaproto
+    - epoxy
+gtk4:
+  conda:
+  - gtk4
+gurumdds-3.2: *id001
+gz-cmake3:
+  conda:
+  - libgz-cmake3
+gz-common5:
+  conda:
+  - libgz-common5
+gz-fuel_tools9:
+  conda:
+  - libgz-fuel-tools9
+gz-gui8:
+  conda:
+  - libgz-gui8
+gz-launch7:
+  conda:
+  - libgz-launch7
+gz-math7:
+  conda:
+  - libgz-math7
+gz-msgs10:
+  conda:
+  - libgz-msgs10
+gz-physics7:
+  conda:
+  - libgz-physics7
+gz-plugin2:
+  conda:
+  - libgz-plugin2
+gz-rendering8:
+  conda:
+  - libgz-rendering8
+gz-sensors8:
+  conda:
+  - libgz-sensors8
+gz-sim8:
+  conda:
+  - libgz-sim8
+gz-tools2:
+  conda:
+  - libgz-tools2
+gz-transport13:
+  conda:
+  - libgz-transport13
+gz-utils2:
+  conda:
+  - libgz-utils2
+hdf5-tools:
+  conda:
+  - hdf5
+husarion_gz_worlds: *id001
+ignition-cmake2:
+  conda:
+  - libignition-cmake2
+ignition-common4:
+  conda:
+  - libignition-common4
+ignition-gazebo3:
+  conda:
+  - libignition-gazebo5
+ignition-gazebo5:
+  conda:
+  - libignition-gazebo5
+ignition-gazebo6:
+  conda:
+  - libignition-gazebo6
+ignition-gui5:
+  conda:
+  - libignition-gui5
+ignition-math6:
+  conda:
+  - libignition-math6
+ignition-msgs5:
+  conda:
+  - libignition-msgs5
+ignition-msgs7:
+  conda:
+  - libignition-msgs7
+ignition-msgs8:
+  conda:
+  - libignition-msgs8
+ignition-rendering5:
+  conda:
+  - libignition-rendering5
+ignition-transport10:
+  conda:
+  - libignition-transport10
+ignition-transport11:
+  conda:
+  - libignition-transport11
+ignition-transport8:
+  conda:
+  - libignition-transport8
+iproute2: *id001
+ipython3:
+  conda:
+  - ipython
+iwyu:
+  conda:
+  - include-what-you-use
+java:
+  conda:
+  - openjdk
+jupyter-notebook:
+  conda:
+  - notebook
+kitchen:
+  conda:
+  - kitchen
+language-pack-en: *id001
+lcov:
+  conda:
+  - lcov
+leveldb:
+  conda:
+  - leveldb
+libabsl-dev:
+  conda:
+  - libabseil
+libadwaita-dev:
+  conda:
+  - libadwaita
+libatomic:
+  conda: []
+libavahi-client-dev:
+  conda:
+    linux:
+    - avahi
+    osx: []
+    win: []
+libavdevice-dev:
+  conda:
+  - ffmpeg
+libblas-dev:
+  conda:
+  - libblas
+  - libcblas
+libblosc-dev:
+  conda:
+  - blosc
+libbluetooth:
+  conda: []
+libbluetooth-dev:
+  conda: []
+libboost:
+  conda:
+  - libboost
+libboost-atomic:
+  conda:
+  - libboost
+libboost-chrono:
+  conda:
+  - libboost
+libboost-chrono-dev:
+  conda:
+  - libboost-devel
+libboost-date-time:
+  conda:
+  - libboost
+libboost-date-time-dev:
+  conda:
+  - libboost-devel
+libboost-dev:
+  conda:
+  - libboost-devel
+libboost-filesystem:
+  conda:
+  - libboost
+libboost-filesystem-dev:
+  conda:
+  - libboost-devel
+libboost-iostreams-dev:
+  conda:
+  - libboost-devel
+libboost-program-options:
+  conda:
+  - libboost
+libboost-program-options-dev:
+  conda:
+  - libboost-devel
+libboost-python:
+  conda:
+  - libboost-python
+libboost-python-dev:
+  conda:
+  - libboost-python-devel
+libboost-random:
+  conda:
+  - libboost
+libboost-random-dev:
+  conda:
+  - libboost-devel
+libboost-regex:
+  conda:
+  - libboost
+libboost-regex-dev:
+  conda:
+  - libboost-devel
+libboost-serialization:
+  conda:
+  - libboost
+libboost-serialization-dev:
+  conda:
+  - libboost-devel
+libboost-system:
+  conda:
+  - libboost
+libboost-system-dev:
+  conda:
+  - libboost-devel
+libboost-thread:
+  conda:
+  - libboost
+libboost-thread-dev:
+  conda:
+  - libboost-devel
+libboost-timer-dev:
+  conda:
+  - libboost-devel
+libcairo2-dev:
+  conda:
+  - cairo
+libcap-dev:
+  conda:
+    linux:
+    - libcap
+    osx: []
+    win: []
+libccd-dev:
+  conda:
+  - libccd-double
+libceres-dev:
+  conda:
+  - ceres-solver
+libclang-dev:
+  conda:
+  - libclang
+libconsole-bridge-dev:
+  conda:
+  - console_bridge
+libcpp-httplib-dev:
+  conda: []
+libcunit-dev:
+  conda:
+  - cunit
+libcurl:
+  conda:
+  - libcurl
+libcurl-dev:
+  conda:
+  - libcurl
+libcxxopts-dev:
+  conda:
+  - cxxopts
+libdbus-dev:
+  conda:
+    linux:
+    - dbus
+    osx:
+    - dbus
+    win: []
+libdc1394-dev:
+  conda:
+  - libdc1394
+libdraco-dev:
+  conda:
+  - draco
+libdw-dev:
+  conda:
+    linux:
+    - elfutils
+    osx: []
+    win: []
+libepoxy-dev:
+  conda:
+  - epoxy
+libexpected-dev:
+  conda:
+  - cpp-expected
+libfcl:
+  conda:
+  - fcl
+libfcl-dev:
+  conda:
+  - fcl
+libffi-dev:
+  conda:
+  - libffi
+libfl-dev:
+  conda:
+  - flex
+libflann-dev:
+  conda:
+  - flann
+libfltk-dev:
+  conda:
+  - fltk
+libfreeimage-dev:
+  conda:
+  - freeimage
+libfreenect-dev:
+  conda: []
+libfreetype-dev:
+  conda:
+  - freetype
+libfreetype6:
+  conda:
+  - freetype
+libfreetype6-dev:
+  conda:
+  - freetype
+libftdi-dev:
+  conda:
+  - libftdi
+  - libusb
+libgazebo11-dev:
+  conda:
+  - gazebo
+  - libprotobuf
+  - libabseil
+libgazebo9-dev:
+  conda:
+  - gazebo
+  - libprotobuf
+  - libabseil
+libgdal-dev:
+  conda:
+  - libgdal
+libgeos++-dev:
+  conda:
+  - geos
+libgflags-dev:
+  conda:
+  - gflags
+libgirepository-dev:
+  conda:
+  - gobject-introspection
+libglew-dev:
+  conda:
+  - glew
+libglfw3-dev:
+  conda:
+  - glfw 3.*
+libglib-dev:
+  conda:
+  - glib
+  - libglib
+libglu-dev:
+  conda:
+    linux:
+    - libglu
+    osx: []
+    win: []
+libgmock-dev:
+  conda:
+  - gmock
+libgoogle-glog-dev:
+  conda:
+  - glog
+libgpgme-dev:
+  conda:
+    linux:
+    - gpgme
+    osx:
+    - gpgme
+    win: []
+libgpiod-dev:
+  conda:
+    linux:
+    - libgpiod
+    osx: []
+    win: []
+libgps:
+  conda:
+  - gpsd
+libgsl:
+  conda:
+  - gsl
+libgstreamer-plugins-base1.0-dev:
+  conda:
+  - gst-plugins-base
+libgstreamer1.0-dev:
+  conda:
+  - gstreamer
+libgts:
+  conda:
+  - gts
+libhdf5-dev:
+  conda:
+  - hdf5
+libi2c-dev:
+  conda:
+  - libi2c
+libicu-dev:
+  conda:
+  - icu
+libjpeg:
+  conda:
+  - libjpeg-turbo
+libjson-c-dev:
+  conda:
+  - json-c
+libjsoncpp:
+  conda:
+  - jsoncpp
+libjsoncpp-dev:
+  conda:
+  - jsoncpp
+liblapack-dev:
+  conda:
+  - liblapack
+liblttng-ctl-dev:
+  conda:
+  - ${{ "lttng-ust" if linux }}
+liblttng-ust-dev:
+  conda:
+  - ${{ "lttng-ust" if linux }}
+liblz4:
+  conda:
+  - lz4
+liblz4-dev:
+  conda:
+  - lz4
+libmicrohttpd:
+  conda:
+  - libmicrohttpd
+libmodbus-dev:
+  conda: []
+libnanoflann-dev:
+  conda:
+  - nanoflann
+libncurses-dev:
+  conda:
+    linux:
+    - ncurses
+    osx:
+    - ncurses
+    win: []
+libnl-3:
+  conda:
+  - libnl 3.*
+libnl-3-dev:
+  conda:
+  - libnl 3.*
+libnlopt-cxx-dev:
+  conda:
+  - nlopt
+libnlopt-dev:
+  conda:
+  - nlopt
+libnlopt0:
+  conda:
+  - nlopt
+liboctomap-dev:
+  conda:
+  - octomap
+libogg:
+  conda:
+  - libogg
+libogre:
+  conda:
+  - ogre
+libogre-dev:
+  conda:
+  - ogre
+libomp-dev:
+  conda:
+    linux:
+    - libgomp
+    osx:
+    - llvm-openmp
+    win: []
+libopen3d-dev:
+  conda:
+    linux:
+    - open3d
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - open3d
+    win:
+    - open3d
+libopenblas-dev:
+  conda:
+  - libblas
+libopencv-core:
+  conda:
+    linux:
+    - py-opencv
+    - libopencv
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - py-opencv
+    - libopencv
+    win:
+    - py-opencv
+    - libopencv
+libopencv-dev:
+  conda:
+    linux:
+    - py-opencv
+    - libopencv
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - py-opencv
+    - libopencv
+    win:
+    - py-opencv
+    - libopencv
+libopencv-highgui:
+  conda:
+    linux:
+    - py-opencv
+    - libopencv
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - py-opencv
+    - libopencv
+    win:
+    - py-opencv
+    - libopencv
+libopencv-imgcodecs:
+  conda:
+    linux:
+    - py-opencv
+    - libopencv
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - py-opencv
+    - libopencv
+    win:
+    - py-opencv
+    - libopencv
+libopencv-imgproc:
+  conda:
+    linux:
+    - py-opencv
+    - libopencv
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - py-opencv
+    - libopencv
+    win:
+    - py-opencv
+    - libopencv
+libopencv-imgproc-dev:
+  conda:
+    linux:
+    - py-opencv
+    - libopencv
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - py-opencv
+    - libopencv
+    win:
+    - py-opencv
+    - libopencv
+libopencv-videoio:
+  conda:
+    linux:
+    - py-opencv
+    - libopencv
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - py-opencv
+    - libopencv
+    win:
+    - py-opencv
+    - libopencv
+libopenexr-dev:
+  conda:
+  - openexr
+libopenni-dev:
+  conda: []
+libopenni2-dev:
+  conda: []
+libopenscenegraph:
+  conda:
+  - openscenegraph
+libopenvdb-dev:
+  conda:
+  - openvdb
+liborocos-kdl:
+  conda:
+  - orocos-kdl
+liborocos-kdl-dev:
+  conda:
+  - orocos-kdl
+libpaho-mqtt-dev:
+  conda: []
+libpaho-mqttpp-dev:
+  conda: []
+libpcap:
+  conda:
+  - libpcap
+libpcl-all:
+  conda:
+  - pcl
+libpcl-all-dev:
+  conda:
+    linux:
+    - pcl
+    - libboost-devel
+    - vtk-base
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - pcl
+    - libboost-devel
+    - vtk-base
+    win:
+    - pcl
+    - libboost-devel
+    - vtk-base
+libpcl-common:
+  conda:
+  - pcl
+libpcl-features:
+  conda:
+  - pcl
+libpcl-filters:
+  conda:
+  - pcl
+libpcl-io:
+  conda:
+  - pcl
+libpcl-segmentation:
+  conda:
+  - pcl
+libpcl-surface:
+  conda:
+  - pcl
+libpng++-dev:
+  conda: []
+libpng-dev:
+  conda:
+  - libpng
+libpoco-dev:
+  conda:
+  - poco
+libpqxx:
+  conda:
+  - libpqxx
+libpqxx-dev:
+  conda:
+  - libpqxx
+libqglviewer-dev-qt5:
+  conda:
+  - libqglviewer
+libqglviewer2-qt5:
+  conda:
+  - libqglviewer
+libqhull:
+  conda:
+  - qhull
+libqt5-concurrent:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+libqt5-core:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+libqt5-gui:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+libqt5-multimedia:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+libqt5-opengl:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+libqt5-opengl-dev:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+libqt5-qml:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+libqt5-quick:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+libqt5-svg:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+libqt5-svg-dev:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+libqt5-websockets-dev:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+libqt5-widgets:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+libqt5x11extras5-dev:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+libqt6-core:
+  conda:
+    linux:
+    - qt6-main
+    osx:
+    - qt6-main
+    win:
+    - qt6-main
+libqt6-multimedia:
+  conda:
+    linux:
+    - qt6-main
+    osx:
+    - qt6-main
+    win:
+    - qt6-main
+libqt6-qml:
+  conda:
+    linux:
+    - qt6-main
+    osx:
+    - qt6-main
+    win:
+    - qt6-main
+libqt6-quick:
+  conda:
+    linux:
+    - qt6-main
+    osx:
+    - qt6-main
+    win:
+    - qt6-main
+libqwt-qt5-dev:
+  conda:
+  - qwt
+libreadline:
+  conda:
+  - readline
+libreadline-dev:
+  conda:
+  - readline
+libserial-dev:
+  conda: []
+libshaderc-dev:
+  conda:
+  - shaderc
+libsick_ldmrs:
+  conda: []
+libsndfile1-dev:
+  conda:
+  - libsndfile
+libspnav-dev:
+  conda:
+  - libspnav
+  - xorg-xorgproto
+libsqlite3-dev:
+  conda:
+  - sqlite 3.*
+libssl-dev:
+  conda:
+  - openssl
+libsystemd-dev:
+  conda:
+  - libsystemd
+libtheora:
+  conda:
+  - libtheora
+libtiff-dev:
+  conda:
+  - libtiff
+libtins-dev:
+  conda:
+  - libtins
+libtool:
+  conda:
+  - libtool
+libturbojpeg:
+  conda:
+  - libjpeg-turbo
+libudev-dev:
+  conda:
+    linux:
+    - libusb
+    - libudev
+    osx:
+    - libusb
+    win:
+    - libusb
+liburdfdom-dev:
+  conda:
+  - urdfdom
+liburdfdom-headers-dev:
+  conda:
+  - urdfdom_headers
+liburdfdom-tools:
+  conda:
+  - urdfdom
+libusb:
+  conda:
+    linux:
+    - libusb
+    - libudev
+    osx:
+    - libusb
+    win:
+    - libusb
+libusb-1.0:
+  conda:
+    linux:
+    - libusb
+    - libudev
+    osx:
+    - libusb
+    win:
+    - libusb
+libusb-1.0-dev:
+  conda:
+    linux:
+    - libusb
+    - libudev
+    osx:
+    - libusb
+    win:
+    - libusb
+libusb-dev:
+  conda:
+    linux:
+    - libusb
+    - libudev
+    osx:
+    - libusb
+    win:
+    - libusb
+libuvc-dev:
+  conda:
+    linux:
+    - libusb
+    - libudev
+    - libuvc
+    osx:
+    - libusb
+    - libuvc
+    win:
+    - libusb
+    - libuvc
+libv4l-dev:
+  conda: []
+libvtk:
+  conda:
+  - vtk
+libvtk-qt:
+  conda:
+  - vtk
+libvulkan-dev:
+  conda:
+    linux:
+    - libvulkan-headers
+    - libvulkan-loader
+    osx: []
+    win:
+    - libvulkan-headers
+    - libvulkan-loader
+libwebsocketpp-dev:
+  conda:
+  - websocketpp
+libwebsockets-dev:
+  conda:
+  - libwebsockets
+libx11:
+  conda:
+    linux:
+    - xorg-libx11
+    - xorg-xorgproto
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - xorg-libx11
+    - xorg-xorgproto
+    win:
+    - xorg-libx11
+    - xorg-xorgproto
+libx11-dev:
+  conda:
+    linux:
+    - xorg-libx11
+    - xorg-xorgproto
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - xorg-libx11
+    - xorg-xorgproto
+    win:
+    - xorg-libx11
+    - xorg-xorgproto
+libx11-xcb-dev:
+  conda:
+    linux:
+    - xorg-libxcb
+    - xorg-libx11
+    osx: []
+    win: []
+libxaw:
+  conda:
+    linux:
+    - xorg-libxaw
+    osx:
+    - xorg-libxaw
+    win: []
+libxcb-randr0-dev:
+  conda:
+    linux:
+    - xorg-libxcb
+    - xorg-libxrandr
+    osx: []
+    win: []
+libxext:
+  conda:
+  - xorg-libxext
+libxi-dev:
+  conda:
+  - xorg-libxi
+libxkbcommon-dev:
+  conda:
+    linux:
+    - libxkbcommon
+    - xkeyboard-config
+    osx: []
+    win: []
+libxml2:
+  conda:
+  - libxml2
+libxml2-utils:
+  conda:
+  - libxml2
+libxmlrpc-c++:
+  conda:
+  - xmlrpc-c
+libxmu-dev:
+  conda:
+  - xorg-libxmu
+libxrandr:
+  conda:
+    linux:
+    - xorg-libxrandr
+    osx:
+    - xorg-libxrandr
+    win: []
+libxt-dev:
+  conda:
+  - xorg-libxt
+libxxf86vm:
+  conda:
+    linux:
+    - libopengl-devel
+    - libgl-devel
+    osx: []
+    win: []
+libyaml:
+  conda:
+  - yaml
+libyaml-dev:
+  conda:
+  - yaml
+libyuv-dev:
+  conda: []
+libzip-dev:
+  conda:
+  - libzip
+libzmq3-dev:
+  conda:
+  - zeromq
+  - cppzmq
+libzstd-dev:
+  conda:
+  - zstd
+linux-kernel-headers:
+  conda: []
+lm-sensors:
+  conda:
+    linux:
+    - lm-sensors
+    osx: []
+    win: []
+log4cxx:
+  conda:
+  - log4cxx
+lttng-tools: *id001
+lua-dev:
+  conda:
+  - lua
+lua5.2-dev:
+  conda:
+  - lua
+lz4:
+  conda:
+  - lz4
+matio:
+  conda:
+  - libmatio
+maven:
+  conda:
+  - maven
+meson:
+  conda:
+  - meson
+message_generation: *id001
+message_runtime: *id001
+micro_ros_agent: *id001
+mongodb:
+  conda:
+  - mongodb
+mosquitto:
+  conda:
+  - paho-mqtt
+msgpack:
+  conda:
+  - msgpack-python
+muparser:
+  conda:
+  - muparser
+nanobind-dev:
+  conda:
+  - nanobind
+netpbm:
+  conda:
+    linux:
+    - netpbm
+    linux-aarch64: []
+    osx:
+    - netpbm
+    osx-arm64: []
+    win: []
+network-manager: *id001
+nlohmann-json-dev:
+  conda:
+  - nlohmann_json
+nlopt:
+  conda:
+  - nlopt
+nodelet: *id001
+ocl-icd-opencl-dev:
+  conda:
+  - ocl-icd
+opencl-headers:
+  conda:
+  - opencl-headers
+opende: *id001
+opengl:
+  conda:
+    linux:
+    - libopengl-devel
+    - libgl-devel
+    osx: []
+    win: []
+openssl:
+  conda:
+  - openssl
+patchelf:
+  conda:
+    linux:
+    - patchelf
+    osx: []
+    win: []
+pcre:
+  conda:
+  - pcre
+pkg-config:
+  conda:
+  - pkg-config
+portaudio19-dev:
+  conda:
+  - portaudio
+postgresql:
+  conda:
+  - postgresql
+procps:
+  conda:
+    linux:
+    - procps-ng
+    osx: []
+    win: []
+proj:
+  conda:
+  - proj
+protobuf:
+  conda:
+  - libprotobuf
+  - protobuf
+protobuf-dev:
+  conda:
+  - libprotobuf
+  - protobuf
+pugixml-dev:
+  conda:
+  - pugixml
+pybind11-dev:
+  conda:
+  - pybind11
+pybind11_catkin: *id001
+pycodestyle:
+  conda:
+  - pycodestyle
+pydocstyle:
+  conda:
+  - pydocstyle
+pydrive-pip:
+  conda:
+  - pydrive
+pyflakes3:
+  conda:
+  - pyflakes
+pyqt5-dev-tools:
+  conda:
+  - pyqt
+  - pyqt-builder
+python:
+  conda:
+  - python
+python-argparse:
+  conda: []
+python-autobahn:
+  conda:
+  - autobahn
+python-bson:
+  conda:
+  - pymongo
+python-cairo:
+  conda:
+  - pycairo
+python-catkin-lint: *id001
+python-catkin-pkg:
+  conda:
+  - catkin_pkg
+python-catkin-pkg-modules:
+  conda:
+  - catkin_pkg
+python-chainer-pip:
+  conda:
+  - chainer
+python-coverage:
+  conda:
+  - coverage
+python-crypto:
+  conda:
+  - pycrypto
+python-defusedxml:
+  conda:
+  - defusedxml
+python-dev:
+  conda:
+  - python
+python-dlib:
+  conda:
+  - dlib
+python-empy:
+  conda:
+  - empy
+python-enum34:
+  conda:
+  - enum34
+python-freezegun-pip:
+  conda:
+  - freezegun
+python-future:
+  conda:
+  - future
+python-gdown-pip:
+  conda:
+  - gdown
+python-gnupg:
+  conda:
+  - python-gnupg
+python-imaging:
+  conda:
+  - pillow
+python-inject-pip:
+  conda:
+  - inject
+python-lxml:
+  conda:
+  - lxml
+python-matplotlib:
+  conda:
+  - matplotlib-base
+python-mock:
+  conda:
+  - mock
+python-netifaces:
+  conda:
+  - netifaces
+python-nose:
+  conda:
+  - nose
+python-numpy:
+  conda:
+  - numpy
+python-opencv:
+  conda:
+  - py-opencv
+  - libopencv
+python-opengl:
+  conda:
+    linux:
+    - pyopengl
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - pyopengl
+    win:
+    - pyopengl
+python-paramiko:
+  conda:
+  - paramiko
+python-psutil:
+  conda:
+  - psutil
+python-pyassimp:
+  conda:
+  - pyassimp
+python-pycryptodome:
+  conda:
+  - pycryptodome
+  - pycryptodomex
+python-pydot:
+  conda:
+  - pydot
+python-pygithub3:
+  conda:
+  - pygithub
+python-pygraphviz:
+  conda:
+  - graphviz
+  - pygraphviz
+python-pyusb-pip:
+  conda:
+  - pyusb
+python-qt5-bindings:
+  conda:
+  - pyqt
+  - pyqt-builder
+python-rosdep:
+  conda:
+  - rosdep
+python-rosdep-modules:
+  conda:
+  - rosdep
+python-rospkg:
+  conda:
+  - rospkg
+python-rospkg-modules:
+  conda:
+  - rospkg
+python-scipy:
+  conda:
+  - scipy
+python-setuptools:
+  conda:
+  - setuptools
+python-sip:
+  conda:
+  - sip
+python-six:
+  conda:
+  - six
+python-slacker-cli:
+  conda:
+  - slacker
+python-speechrecognition-pip:
+  conda:
+  - speechrecognition
+python-tabulate-pip:
+  conda:
+  - tabulate
+python-tk:
+  conda:
+  - tk
+python-tornado:
+  conda:
+  - tornado
+python-twisted-core:
+  conda:
+  - twisted
+python-wxtools:
+  conda:
+  - wxpython
+python-yaml:
+  conda:
+  - pyyaml
+python3:
+  conda:
+  - python
+python3-antlr4:
+  conda:
+  - antlr4-python3-runtime
+python3-apt: *id001
+python3-argcomplete:
+  conda:
+  - argcomplete
+python3-attrs:
+  conda:
+  - attrs
+python3-autobahn:
+  conda:
+  - autobahn
+python3-babeltrace:
+  conda:
+    linux:
+    - babeltrace
+    osx: []
+    win: []
+python3-boto3:
+  conda:
+  - boto3
+python3-bson:
+  conda:
+  - pymongo
+python3-cairo:
+  conda:
+  - pycairo
+python3-cantools-pip:
+  conda:
+  - cantools
+python3-catkin-lint: *id001
+python3-catkin-pkg:
+  conda:
+  - catkin_pkg
+python3-catkin-pkg-modules:
+  conda:
+  - catkin_pkg
+python3-catkin-tools:
+  conda:
+  - catkin_tools
+python3-cbor2:
+  conda:
+  - cbor2
+python3-cherrypy3:
+  conda:
+  - cherrypy
+python3-click:
+  conda:
+  - click
+python3-collada:
+  conda:
+  - pycollada
+python3-colorama:
+  conda:
+  - colorama
+python3-construct:
+  conda:
+  - construct
+python3-coverage:
+  conda:
+  - coverage
+python3-cryptography:
+  conda:
+  - cryptography
+python3-dbus:
+  conda:
+  - dbus-python
+python3-defusedxml:
+  conda:
+  - defusedxml
+python3-deprecated:
+  conda:
+  - deprecated
+python3-dev:
+  conda:
+  - python
+python3-distro:
+  conda:
+  - distro
+python3-docopt:
+  conda:
+  - docopt
+python3-docutils:
+  conda:
+  - docutils
+python3-empy:
+  conda:
+  - empy
+python3-expiringdict:
+  conda:
+  - expiringdict
+python3-fastapi:
+  conda:
+  - fastapi
+python3-filelock:
+  conda:
+  - filelock
+python3-fiona:
+  conda:
+  - fiona
+python3-flake8:
+  conda:
+  - flake8
+python3-flake8-builtins:
+  conda:
+  - flake8-builtins
+python3-flake8-comprehensions:
+  conda:
+  - flake8-comprehensions
+python3-flake8-docstrings:
+  conda:
+  - flake8-docstrings
+python3-flake8-import-order:
+  conda:
+  - flake8-import-order
+python3-flake8-quotes:
+  conda:
+  - flake8-quotes
+python3-flask:
+  conda:
+  - flask
+python3-flask-cors:
+  conda:
+  - flask-cors
+python3-flask-socketio:
+  conda:
+  - flask-socketio
+python3-ftdi:
+  conda:
+  - pyftdi
+python3-future:
+  conda:
+  - future
+python3-gi:
+  conda:
+  - pygobject
+python3-gi-cairo:
+  conda:
+  - pygobject
+  - pycairo
+python3-git:
+  conda:
+  - gitpython
+python3-github:
+  conda:
+  - pygithub
+python3-github3:
+  conda:
+  - pygithub
+python3-gnupg:
+  conda:
+  - python-gnupg
+python3-grpc-tools:
+  conda:
+  - grpcio-tools
+python3-grpcio:
+  conda:
+  - grpcio
+python3-h5py:
+  conda:
+  - h5py
+python3-httpx:
+  conda:
+  - httpx
+python3-ifcfg:
+  conda:
+  - ifcfg
+python3-imageio:
+  conda:
+  - imageio
+python3-img2pdf:
+  conda:
+  - img2pdf
+python3-importlib-metadata:
+  conda:
+  - importlib-metadata
+python3-importlib-resources:
+  conda:
+  - importlib_resources
+python3-inflection:
+  conda:
+  - inflection
+python3-jinja2:
+  conda:
+  - jinja2
+python3-jsonschema:
+  conda:
+  - jsonschema
+python3-junitparser:
+  conda:
+  - junitparser
+python3-kitchen:
+  conda:
+  - kitchen
+python3-lark-parser:
+  conda:
+  - lark-parser
+python3-libgpiod:
+  conda:
+    linux:
+    - libgpiod
+    osx: []
+    win: []
+python3-lxml:
+  conda:
+  - lxml
+python3-marisa:
+  conda:
+  - marisa-trie
+python3-matplotlib:
+  conda:
+  - matplotlib-base
+python3-mechanize:
+  conda:
+  - mechanize
+python3-mock:
+  conda:
+  - mock
+python3-msgpack:
+  conda:
+  - msgpack-python
+python3-msgpack-numpy:
+  conda:
+  - msgpack-numpy
+python3-multipledispatch:
+  conda:
+  - multipledispatch
+python3-mypy:
+  conda:
+  - mypy
+python3-natsort:
+  conda:
+  - natsort
+python3-netifaces:
+  conda:
+  - netifaces
+python3-networkx:
+  conda:
+  - networkx
+python3-nose:
+  conda:
+  - nose
+python3-ntplib:
+  conda:
+  - ntplib
+python3-numpy:
+  conda:
+  - numpy
+python3-openai-pip:
+  conda:
+  - openai
+python3-opencv:
+  conda:
+  - py-opencv
+  - libopencv
+python3-opengl:
+  conda:
+    linux:
+    - pyopengl
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - pyopengl
+    win:
+    - pyopengl
+python3-packaging:
+  conda:
+  - packaging
+python3-paho-mqtt:
+  conda:
+  - paho-mqtt
+python3-pandas:
+  conda:
+  - pandas
+python3-paramiko:
+  conda:
+  - paramiko
+python3-pep8:
+  conda:
+  - pep8
+python3-pexpect:
+  conda:
+  - pexpect
+python3-pil:
+  conda:
+  - pillow
+python3-pip:
+  conda:
+  - pip
+python3-pkg-resources:
+  conda: []
+python3-platformdirs:
+  conda:
+  - platformdirs
+python3-ply:
+  conda:
+  - ply
+python3-pre-commit:
+  conda:
+  - pre-commit
+python3-protobuf:
+  conda:
+  - protobuf
+python3-psutil:
+  conda:
+  - psutil
+python3-pyassimp:
+  conda:
+  - pyassimp
+python3-pycodestyle:
+  conda:
+  - pycodestyle
+python3-pycryptodome:
+  conda:
+  - pycryptodome
+  - pycryptodomex
+python3-pydantic:
+  conda:
+  - pydantic
+python3-pydot:
+  conda:
+  - pydot
+python3-pygraphviz:
+  conda:
+  - graphviz
+  - pygraphviz
+python3-pykdl:
+  conda:
+  - python-orocos-kdl
+python3-pymongo:
+  conda:
+  - pymongo
+python3-pyproj:
+  conda:
+  - pyproj
+python3-pyqt5:
+  conda:
+  - pyqt
+  - pyqt-builder
+python3-pyqt5.qtwebengine:
+  conda:
+  - pyqtwebengine
+python3-pysnmp:
+  conda:
+  - pysnmp
+python3-pytest:
+  conda:
+  - pytest
+python3-pytest-cov:
+  conda:
+  - pytest-cov
+python3-pytest-mock:
+  conda:
+  - pytest-mock
+python3-pytest-timeout:
+  conda:
+  - pytest-timeout
+python3-pyudev:
+  conda:
+    linux:
+    - pyudev
+    osx: []
+    win: []
+python3-qt5-bindings:
+  conda:
+  - pyqt
+  - pyqt-builder
+python3-qt5-bindings-gl:
+  conda:
+  - pyqt
+  - pyqt-builder
+python3-qt5-bindings-webkit:
+  conda:
+  - pyqtwebengine
+python3-requests:
+  conda:
+  - requests
+python3-requests-oauthlib:
+  conda:
+  - requests-oauthlib
+python3-rich:
+  conda:
+  - rich
+python3-rosdep:
+  conda:
+  - rosdep
+python3-rosdep-modules:
+  conda:
+  - rosdep
+python3-rosdistro-modules:
+  conda:
+  - rosdistro
+python3-rospkg:
+  conda:
+  - rospkg
+python3-rospkg-modules:
+  conda:
+  - rospkg
+python3-rtree:
+  conda:
+  - rtree
+python3-ruamel.yaml:
+  conda:
+  - ruamel.yaml
+python3-ruff:
+  conda:
+  - ruff
+python3-scipy:
+  conda:
+  - scipy
+python3-semver:
+  conda:
+  - semver
+python3-serial:
+  conda:
+  - pyserial
+python3-setproctitle:
+  conda:
+  - setproctitle
+python3-setuptools:
+  conda:
+  - setuptools
+python3-sh:
+  conda:
+  - sh
+python3-shapely:
+  conda:
+  - shapely
+python3-simplejson:
+  conda:
+  - simplejson
+python3-six:
+  conda:
+  - six
+python3-skimage:
+  conda:
+  - scikit-image
+python3-sklearn:
+  conda:
+  - scikit-learn
+python3-smbus: *id001
+python3-smbus2:
+  conda:
+  - smbus2
+python3-sphinx:
+  conda:
+  - sphinx
+python3-tabulate:
+  conda:
+  - tabulate
+python3-termcolor:
+  conda:
+  - termcolor
+python3-texttable:
+  conda:
+  - texttable
+python3-tk:
+  conda:
+  - tk
+python3-toml:
+  conda:
+  - toml
+python3-tornado:
+  conda:
+  - tornado
+python3-tqdm:
+  conda:
+  - tqdm
+python3-transforms3d:
+  conda:
+  - transforms3d
+python3-twisted:
+  conda:
+  - twisted
+python3-typeguard:
+  conda:
+  - typeguard
+python3-typing-extensions:
+  conda:
+  - typing_extensions
+python3-ujson:
+  conda:
+  - ujson
+python3-unidiff:
+  conda:
+  - unidiff
+python3-usb:
+  conda:
+  - pyusb
+python3-utm:
+  conda:
+  - utm
+python3-uvicorn:
+  conda:
+  - uvicorn
+python3-uvloop:
+  conda:
+    linux: &id002
+    - uvloop
+    osx: *id002
+    win: []
+python3-validators:
+  conda:
+  - validators
+python3-vcstool:
+  conda:
+  - vcstool
+python3-venv:
+  conda:
+  - virtualenv
+  - pip
+  - pip-tools
+  - setuptools
+python3-waitress:
+  conda:
+  - waitress
+python3-watchdog:
+  conda:
+  - watchdog
+python3-websocket:
+  conda:
+  - websocket-client
+python3-websockets:
+  conda:
+  - websockets
+python3-wheel:
+  conda:
+  - wheel
+python3-whichcraft:
+  conda:
+  - whichcraft
+python3-yaml:
+  conda:
+  - pyyaml
+python3-zeroconf:
+  conda:
+  - zeroconf
+python3-zmq:
+  conda:
+  - pyzmq
+qml-module-qt-labs-folderlistmodel:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qml-module-qt-labs-platform:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qml-module-qt-labs-settings:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qml-module-qtcharts:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qml-module-qtgraphicaleffects:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qml-module-qtlocation:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qml-module-qtpositioning:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qml-module-qtquick-controls:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qml-module-qtquick-controls2:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qml-module-qtquick-dialogs:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qml-module-qtquick-extras:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qml-module-qtquick-layouts:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qml-module-qtquick-templates2:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qml-module-qtquick-window2:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qml-module-qtquick2:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qml6-module-qtqml-workerscript:
+  conda:
+    linux:
+    - qt6-main
+    osx:
+    - qt6-main
+    win:
+    - qt6-main
+qml6-module-qtquick:
+  conda:
+    linux:
+    - qt6-main
+    osx:
+    - qt6-main
+    win:
+    - qt6-main
+qt5-image-formats-plugins:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qt5-qmake:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qt6-base-dev:
+  conda:
+    linux:
+    - qt6-main
+    osx:
+    - qt6-main
+    win:
+    - qt6-main
+qt6-declarative-dev:
+  conda:
+    linux:
+    - qt6-main
+    osx:
+    - qt6-main
+    win:
+    - qt6-main
+qt6-multimedia-dev:
+  conda:
+    linux:
+    - qt6-main
+    osx:
+    - qt6-main
+    win:
+    - qt6-main
+qtbase5-dev:
+  conda:
+    linux:
+    - qt-main
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qtdeclarative5-dev:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qtmultimedia5-dev:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qtquickcontrols2-5-dev:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+qttools5-dev-tools:
+  conda:
+    linux:
+    - qt-main
+    osx:
+    - qt-main
+    win:
+    - qt-main
+range-v3:
+  conda:
+  - range-v3
+rapidjson-dev:
+  conda:
+  - rapidjson
+roboticstoolbox-python:
+  conda:
+  - roboticstoolbox-python
+ros_ign_bridge:
+  conda: null
+ros_ign_gazebo:
+  conda: null
+rosbag:
+  conda: null
+rosbag_migration_rule:
+  conda: null
+rosbag_storage:
+  conda: null
+rosbash:
+  conda: null
+roscpp:
+  conda: null
+roscpp_serialization:
+  conda: null
+roslib:
+  conda: null
+roslint:
+  conda: null
+rospy:
+  conda: null
+rosunit:
+  conda: null
+rsync:
+  conda:
+  - rsync
+rti-connext-dds-5.3.1:
+  conda: []
+rti-connext-dds-6.0.1: *id001
+ruby:
+  conda:
+  - ruby
+rviz:
+  conda: null
+rviz_plugin_tutorials:
+  conda: null
+sbcl:
+  conda:
+    linux:
+    - sbcl
+    osx:
+    - sbcl
+    win: []
+screen:
+  conda:
+  - screen
+sdformat:
+  conda:
+  - libsdformat11
+sdformat12:
+  conda:
+  - libsdformat12
+sdformat14:
+  conda:
+  - libsdformat14
+sdl:
+  conda:
+  - sdl
+sdl-image:
+  conda:
+  - sdl_image
+sdl2:
+  conda:
+  - sdl2
+simde:
+  conda:
+  - simde
+smartmontools:
+  conda:
+  - smartmontools
+socat:
+  conda:
+    linux:
+    - socat
+    osx:
+    - socat
+    win: []
+sophus:
+  conda:
+  - sophus
+spacenavd:
+  conda:
+  - libspnav
+spdlog:
+  conda:
+  - spdlog
+  - fmt
+spirv-headers:
+  conda:
+  - spirv-headers
+spirv-tools:
+  conda:
+  - spirv-tools
+sqlite3:
+  conda:
+  - sqlite 3.*
+sshpass:
+  conda:
+  - sshpass
+stm32flash: *id001
+stress: *id001
+stubborn_buddies: *id001
+stubborn_buddies_msgs: *id001
+subversion:
+  conda:
+  - subversion
+suitesparse:
+  conda:
+  - suitesparse
+  - blas-devel
+swig:
+  conda:
+  - swig
+sysstat:
+  conda:
+  - sysstat
+tango-icon-theme:
+  conda: []
+tar:
+  conda:
+  - tar
+tbb:
+  conda:
+  - tbb
+  - tbb-devel
+tf: *id001
+time:
+  conda:
+  - time
+tinyxml:
+  conda:
+  - tinyxml
+tinyxml2:
+  conda:
+  - tinyxml2
+udev:
+  conda:
+    linux:
+    - libusb
+    - libudev
+    osx:
+    - libusb
+    win:
+    - libusb
+uncrustify:
+  conda:
+  - uncrustify
+unzip:
+  conda:
+  - unzip
+usbutils: *id001
+uuid:
+  conda:
+    linux:
+    - libuuid
+    osx: []
+    win: []
+v4l-utils: *id001
+virtualenv:
+  conda:
+  - virtualenv
+wayland:
+  conda:
+    linux:
+    - wayland
+    osx: []
+    win: []
+wayland-dev:
+  conda:
+    linux:
+    - wayland
+    osx: []
+    win: []
+wget:
+  conda:
+  - wget
+wireless-tools: *id001
+wx-common:
+  conda:
+  - wxpython
+wxpython:
+  conda:
+  - wxpython
+wxwidgets:
+  conda:
+  - wxpython
+x11-dev:
+  conda:
+    linux:
+    - xorg-libx11
+    - libopengl-devel
+    - libgl-devel
+    osx:
+    - xorg-libx11
+    win:
+    - xorg-libx11
+xclip:
+  conda:
+    linux:
+    - xclip
+    osx: []
+    win: []
+xsimd:
+  conda:
+  - xsimd
+xtensor:
+  conda:
+  - xtensor ==0.24.7
+xvfb: *id001
+yaml:
+  conda:
+  - yaml
+  - yaml-cpp
+yaml-cpp:
+  conda:
+  - yaml-cpp
+zbar:
+  conda:
+  - zbar
+zip:
+  conda:
+  - zip
+zlib:
+  conda:
+  - zlib
+zziplib:
+  conda:
+  - zziplib
