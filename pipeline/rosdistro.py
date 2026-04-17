@@ -21,9 +21,14 @@ class PackageRelease:
 
     name: str  # ROS package name (e.g. "rclcpp")
     version: str  # upstream version without debian revision (e.g. "28.1.5")
+    version_raw: str  # version with debian revision (e.g. "28.1.5-1"), used for tag formatting
     release_url: str  # git URL of the release repo
     release_tag: str  # tag template (e.g. "release/jazzy/{package}/{version}")
     repo_name: str  # repository name in rosdistro
+
+    def formatted_tag(self) -> str:
+        """Return the release tag with {package} and {version} substituted."""
+        return self.release_tag.format(package=self.name, version=self.version_raw)
 
 
 @dataclass
@@ -85,6 +90,7 @@ def parse_distribution(
             snapshot.packages[pkg_name] = PackageRelease(
                 name=pkg_name,
                 version=version,
+                version_raw=version_str,
                 release_url=url,
                 release_tag=tag_format,
                 repo_name=repo_name,

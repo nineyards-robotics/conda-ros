@@ -9,3 +9,4 @@ pyyaml = "*"
 rattler-build = "*"
 
 [tasks]
+generate-recipes = "python -m pipeline.generate_recipes"
