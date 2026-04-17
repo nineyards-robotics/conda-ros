@@ -62,7 +62,7 @@ Fetch rosdistro at the release tag and parse `distribution.yaml` to get every pa
 
 #### Step 2: Generate snapshot build config
 
-Start with the root `conda_build_config.yaml` (system pins), add every ROS package version from `distribution.yaml`, and write the merged result to `distros/{distro}/snapshots/{date}/conda_build_config.yaml`. This is the build config used for all packages in this snapshot — dependency versions in this file feed into the build hash via rattler-build's variant system.
+Start with the root `conda_build_config.yaml` (system pins) and merge in every ROS package version from `distribution.yaml`, writing the result to `distros/{distro}/snapshots/{date}/conda_build_config.yaml`. This file is a **version lookup table**, not a dependency list — it doesn't add dependencies to any package. Dependencies come from `package.xml` via recipe generation (step 3). At build time, rattler-build looks up only the entries that a recipe actually references to resolve version pins and compute the build hash. The remaining entries are ignored.
 
 #### Step 3: Generate recipes
 
