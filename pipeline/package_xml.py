@@ -21,6 +21,7 @@ class PackageManifest:
     version: str
     build_type: str
     buildtool_deps: list[str] = field(default_factory=list)
+    buildtool_export_deps: list[str] = field(default_factory=list)
     build_deps: list[str] = field(default_factory=list)
     run_deps: list[str] = field(default_factory=list)
     test_deps: list[str] = field(default_factory=list)
@@ -59,12 +60,19 @@ def parse_package_xml(xml_bytes: bytes) -> PackageManifest:
     """Parse a package.xml document into a PackageManifest.
 
     Dependency tags map to conda requirement sections as follows:
-        buildtool_depend, buildtool_export_depend -> buildtool
+        buildtool_depend                          -> build
+        buildtool_export_depend                   -> run_exports
         build_depend                              -> build (host)
         build_export_depend                       -> build + run
         depend                                    -> build + run
         exec_depend, run_depend (legacy)          -> run
         test_depend                               -> test
+
+    ``buildtool_export_depend`` is kept separate because its semantics
+    match conda ``run_exports`` — "my reverse-deps need this at *their*
+    build time" — not ``build``.  Collapsing it into ``build`` would
+    mean the current package gets these deps but its consumers do not,
+    which is the opposite of what the ROS tag declares.
     """
     root = ET.fromstring(xml_bytes)
 
@@ -81,9 +89,8 @@ def parse_package_xml(xml_bytes: bytes) -> PackageManifest:
             build_type = bt
 
     # Combine dep categories per the mapping above.
-    buildtool = _collect(root, "buildtool_depend") + _collect(
-        root, "buildtool_export_depend"
-    )
+    buildtool = _collect(root, "buildtool_depend")
+    buildtool_export = _collect(root, "buildtool_export_depend")
 
     depend = _collect(root, "depend")
     build_export = _collect(root, "build_export_depend")
@@ -111,6 +118,7 @@ def parse_package_xml(xml_bytes: bytes) -> PackageManifest:
         version=version,
         build_type=build_type,
         buildtool_deps=_dedupe(buildtool),
+        buildtool_export_deps=_dedupe(buildtool_export),
         build_deps=_dedupe(build),
         run_deps=_dedupe(run),
         test_deps=_dedupe(test),

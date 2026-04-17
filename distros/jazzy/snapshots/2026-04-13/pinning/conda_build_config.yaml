@@ -6,8 +6,13 @@
 # element lists to satisfy rattler-build's shape check —
 # see _wrap_top_level_scalars for details.
 #
-# This is layered under conda_build_config.yaml in the same
-# directory — duplicate keys in the other file win.
+# Named conda_build_config.yaml (in a subdir to avoid a
+# name clash with the parent dir's file) because rattler-
+# build only honours legacy `# [selector]` comments in
+# variant configs with that exact basename.
+#
+# This is layered under ../conda_build_config.yaml —
+# duplicate keys in the parent file win.
 
 c_compiler:
   - gcc                        # [linux]

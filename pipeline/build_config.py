@@ -3,12 +3,13 @@
 Step 3 of the build pipeline emits two files under
 ``distros/{distro}/snapshots/{date}/``:
 
-    conda_forge_pinning.yaml
+    pinning/conda_build_config.yaml
         Raw passthrough of upstream conda-forge-pinning at a specific
         commit.  Platform selector comments (``# [linux64]``,
         ``# [armv7l]``, etc.) are preserved verbatim so rattler-build
-        can subset per target platform at build time.  Never written to
-        by hand — regenerate the snapshot to bump the pinning commit.
+        can subset per target platform at build time.  Never written
+        to by hand — regenerate the snapshot to bump the pinning
+        commit.
 
     conda_build_config.yaml
         Our additions on top of conda-forge-pinning:
@@ -18,6 +19,11 @@ Step 3 of the build pipeline emits two files under
             - ROS package versions from distribution.yaml
         All values are flat lists — no selectors — so this file is
         inherently single-platform-agnostic for the keys it touches.
+
+Both files are named ``conda_build_config.yaml`` because
+rattler-build only parses legacy ``# [selector]`` comments in files
+with that exact basename — the upstream passthrough relies on those
+selectors, so it has to sit in a subdir to avoid colliding with ours.
 
 Step 5 passes both files via repeated ``-m`` / ``--variant-config``
 flags, in that order.  rattler-build treats later ``-m`` as overriding
@@ -136,8 +142,8 @@ def _as_variant_list(value: Any) -> list:
     return [value]
 
 
-PINNING_FILENAME = "conda_forge_pinning.yaml"
-OUR_CONFIG_FILENAME = "conda_build_config.yaml"
+PINNING_SUBDIR = "pinning"
+CBC_FILENAME = "conda_build_config.yaml"
 
 
 # Top-level key-with-scalar-value lines in conda-forge-pinning.  The
@@ -236,14 +242,16 @@ def _wrap_top_level_scalars(raw: str) -> str:
 def snapshot_config_paths(output_dir: Path) -> list[Path]:
     """Return the variant-config paths for a snapshot in rattler-build order.
 
-    The first entry is the upstream passthrough; the second is our
-    layered additions.  Step 5 passes these to rattler-build as
+    The first entry is the upstream passthrough (in ``pinning/`` so it
+    can share the ``conda_build_config.yaml`` basename that
+    rattler-build needs for legacy selector parsing); the second is
+    our layered additions.  Step 5 passes these to rattler-build as
     repeated ``-m`` flags in this order so later-wins semantics put
     our values on top of upstream.
     """
     return [
-        output_dir / PINNING_FILENAME,
-        output_dir / OUR_CONFIG_FILENAME,
+        output_dir / PINNING_SUBDIR / CBC_FILENAME,
+        output_dir / CBC_FILENAME,
     ]
 
 
@@ -270,6 +278,7 @@ def generate_snapshot_build_config(
     """
     output_dir.mkdir(parents=True, exist_ok=True)
     pinning_path, our_path = snapshot_config_paths(output_dir)
+    pinning_path.parent.mkdir(parents=True, exist_ok=True)
 
     pinning_header = (
         "# Auto-generated — DO NOT EDIT.  Upstream conda-forge-pinning\n"
@@ -280,8 +289,13 @@ def generate_snapshot_build_config(
         "# element lists to satisfy rattler-build's shape check —\n"
         "# see _wrap_top_level_scalars for details.\n"
         "#\n"
-        "# This is layered under conda_build_config.yaml in the same\n"
-        "# directory — duplicate keys in the other file win.\n\n"
+        "# Named conda_build_config.yaml (in a subdir to avoid a\n"
+        "# name clash with the parent dir's file) because rattler-\n"
+        "# build only honours legacy `# [selector]` comments in\n"
+        "# variant configs with that exact basename.\n"
+        "#\n"
+        "# This is layered under ../conda_build_config.yaml —\n"
+        "# duplicate keys in the parent file win.\n\n"
     )
     pinning_body = _wrap_top_level_scalars(
         _strip_top_level_blocks(conda_forge_pinning_raw, _DROP_TOP_LEVEL_KEYS)

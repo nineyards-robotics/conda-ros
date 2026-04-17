@@ -19,10 +19,13 @@ from .package_xml import PackageManifest
 from .rosdep_mapping import ResolvedDep, resolve
 from .rosdistro import DistroSnapshot, PackageRelease
 
-# Implicit deps added per build type. These are things package.xml does
-# not typically declare but the build still needs. Values here are a
-# best-effort starting point — cross-check against a known-good
-# reference recipe once we have one building and correct as needed.
+# Implicit deps added per build type.  `build` holds only build-machine
+# tools (compilers, cmake, ninja); everything ROS-adjacent goes in
+# `host`.  This matters because ament_cmake's CMake macros shell out
+# to Python at configure time — with Python forced to host-prefix
+# (see _CMAKE_SCRIPT below), every Python module they import
+# (ament_package, catkin_pkg, …) needs to live in host.  Putting ROS
+# deps in build would just duplicate them.
 _COMMON_CMAKE_BUILD = [
     "${{ compiler('c') }}",
     "${{ compiler('cxx') }}",
@@ -51,6 +54,14 @@ _IMPLICIT: dict[str, dict[str, list[str]]] = {
 
 # Build scripts per build type. TODO: emit Windows variants via
 # rattler-build's if/then selectors once we start building win-64.
+#
+# The `-DPython*_EXECUTABLE=$PREFIX/bin/python3` overrides force CMake
+# to use host-prefix Python.  Without them CMake finds
+# `$BUILD_PREFIX/bin/python3` first (CMAKE_PROGRAM_PATH puts
+# $BUILD_PREFIX before $PREFIX) — but ROS Python modules live in host,
+# so build-prefix Python can't import them.  This is required for
+# both ament_cmake macros and rosidl generators, which spawn Python
+# via CMake's execute_process during configure.
 _CMAKE_SCRIPT = [
     "mkdir -p build && cd build",
     (
@@ -58,6 +69,10 @@ _CMAKE_SCRIPT = [
         " -DCMAKE_INSTALL_PREFIX=$PREFIX"
         " -DCMAKE_BUILD_TYPE=Release"
         " -DBUILD_TESTING=OFF"
+        " -DPYTHON_EXECUTABLE=$PREFIX/bin/python3"
+        " -DPython_EXECUTABLE=$PREFIX/bin/python3"
+        " -DPython3_EXECUTABLE=$PREFIX/bin/python3"
+        " -DPython3_FIND_STRATEGY=LOCATION"
     ),
     "cmake --build . --config Release --parallel ${CPU_COUNT:-2}",
     "cmake --install .",
@@ -305,17 +320,36 @@ def build_recipe(
 
     implicit = _IMPLICIT.get(manifest.build_type, _IMPLICIT["cmake"])
 
-    build_deps = _resolve_keys(manifest.buildtool_deps, snapshot, rosdep_map, unknown)
-    host_deps = _resolve_keys(manifest.build_deps, snapshot, rosdep_map, unknown)
-    run_deps = _resolve_keys(manifest.run_deps, snapshot, rosdep_map, unknown)
+    # All ROS deps go to host.  `build` stays reserved for
+    # build-machine tools (compilers, cmake, ninja).  This sidesteps
+    # rattler-build's run_exports edge cases: instead of relying on
+    # the solver to expand exports from the exporter into the
+    # consumer's host, we put everything the consumer directly
+    # depends on into host explicitly, and let the exporter's own
+    # run deps handle transitive propagation.
+    #
+    # `buildtool_export_depend` lands in both host (for this package's
+    # build) and run (so downstream consumers installing us pull it
+    # too — that's how `ament_cmake_core` drags `ament_package` and
+    # `catkin_pkg` into every ament_cmake package's host env).
+    host_from_manifest = (
+        manifest.buildtool_deps
+        + manifest.buildtool_export_deps
+        + manifest.build_deps
+    )
+    run_from_manifest = manifest.run_deps + manifest.buildtool_export_deps
+
+    host_deps = _resolve_keys(host_from_manifest, snapshot, rosdep_map, unknown)
+    run_deps = _resolve_keys(run_from_manifest, snapshot, rosdep_map, unknown)
     # Test deps are parsed but not currently emitted — rattler-build v1
     # requires tests to declare a type (python/script/package_contents
     # etc.), and we don't have a generic test definition to emit yet.
     # Resolve them anyway so unknown-key reporting stays complete.
     _resolve_keys(manifest.test_deps, snapshot, rosdep_map, unknown)
 
+    build_deps: list[Any] = []
     if not is_vendor:
-        build_deps = build_deps + list(implicit["build"])
+        build_deps = list(implicit["build"])
         host_deps = host_deps + list(implicit["host"])
         run_deps = run_deps + list(implicit["run"])
 
