@@ -1,2 +1,3 @@
-# Global system dependency pins for builds.
-# Tracks conda-forge-pinning at snapshot time.
+# Local overrides for conda-forge-pinning.
+# Entries here take precedence over conda-forge's ecosystem pins.
+# Only add entries when we need to diverge from conda-forge.

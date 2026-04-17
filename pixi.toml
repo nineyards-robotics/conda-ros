@@ -1,4 +1,4 @@
-[project]
+[workspace]
 name = "conda-ros"
 channels = ["conda-forge"]
 platforms = ["linux-64"]
