@@ -1,0 +1,5574 @@
+# Auto-generated snapshot build config.
+# rosdistro: jazzy  ref: jazzy/2026-04-13
+# conda-forge-pinning: 6974716f7874695969c69b5d38c377a9e77f3c39
+
+BUILD: armv7-conda_cos7-linux-gnueabihf
+VERBOSE_AT:
+- V=1
+VERBOSE_CM:
+- VERBOSE=1
+_libgcc_mutex:
+- 0.1 conda_forge
+ace:
+- 8.0.5
+adwaita-icon-theme:
+- '49.0'
+alsa_lib:
+- '1.2'
+antic:
+- 0.2
+antlr4-python3-runtime:
+- 4.13.2
+aom:
+- '3.9'
+arb:
+- '2.23'
+argcomplete:
+- 3.6.3
+arm_variant_type:
+- sbsa
+arpack:
+- '3.9'
+asio:
+- 1.36.0
+assimp:
+- 6.0.3
+attr:
+- 2.5
+attrs:
+- 26.1.0
+autobahn:
+- 25.12.2
+autoconf:
+- '2.72'
+automake:
+- '1.17'
+avahi:
+- '0.8'
+aws_c_auth:
+- 0.10.1
+aws_c_cal:
+- 0.9.13
+aws_c_common:
+- 0.12.6
+aws_c_compression:
+- 0.3.2
+aws_c_event_stream:
+- 0.6.0
+aws_c_http:
+- 0.10.12
+aws_c_io:
+- 0.26.3
+aws_c_mqtt:
+- 0.15.2
+aws_c_s3:
+- 0.11.5
+aws_c_sdkutils:
+- 0.2.4
+aws_checksums:
+- 0.2.10
+aws_crt_cpp:
+- 0.37.4
+aws_sdk_cpp:
+- 1.11.747
+azure_core_cpp:
+- 1.16.2
+azure_identity_cpp:
+- 1.13.3
+azure_storage_blobs_cpp:
+- 12.16.0
+azure_storage_common_cpp:
+- 12.12.0
+azure_storage_files_datalake_cpp:
+- 12.14.0
+azure_storage_files_shares_cpp:
+- 12.16.0
+azure_storage_queues_cpp:
+- 12.6.0
+babeltrace:
+- 1.5.8
+benchmark:
+- 1.9.5
+binutils:
+- 2.45.1
+bison:
+- 3.8.2
+black:
+- 26.3.1
+blas-devel:
+- 3.11.0
+blas_impl:
+- openblas
+- mkl
+- blis
+blosc:
+- 1.21.6
+boto3:
+- 1.42.89
+brotli:
+- '1.2'
+bullet:
+- '3.25'
+bullet_cpp:
+- 3.25
+bzip2:
+- 1
+c_ares:
+- 1
+c_blosc2:
+- '2.23'
+c_compiler:
+- gcc
+- clang
+- vs2022
+c_compiler_version:
+- 14
+- 19
+- 14
+c_stdlib:
+- sysroot
+- macosx_deployment_target
+- vs
+c_stdlib_version:
+- 2.17
+- 2.17
+- 11.0
+cairo:
+- 1
+capnproto:
+- 1.4.0
+casadi:
+- 3.7
+catch2:
+- 3.14.0
+catkin_pkg:
+- 1.1.0
+cbor2:
+- 5.9.0
+ccr:
+- 1.3
+cdt_arch: armv7l
+cdt_name:
+- conda
+ceres-solver:
+- 2.2.0
+cfitsio:
+- 4.6.3
+cgo_compiler:
+- go-cgo
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+chrony:
+- '4.8'
+clang:
+- 22.1.3
+clang-format:
+- 22.1.3
+clang-tools:
+- 22.1.3
+clang_compiler:
+- clang
+- clang-cl
+clang_compiler_version:
+- 19
+clangxx_compiler:
+- clangxx
+- clang-cl
+clangxx_compiler_version:
+- 19
+cli11:
+- 2.6.2
+click:
+- 8.3.2
+cmake:
+- 4.3.1
+cmocka:
+- 2.0.1
+coin-or-cbc:
+- 2.10.13
+coin-or-cgl:
+- 0.60.10
+coin-or-clp:
+- 1.17.11
+coin-or-utils:
+- 2.11.13
+coin_or_cbc:
+- 2.1
+coin_or_cgl:
+- 0.6
+coin_or_clp:
+- 1.17
+coin_or_osi:
+- 0.108
+coin_or_utils:
+- 2.11
+coincbc:
+- 2.1
+console_bridge:
+- 1.0
+construct:
+- 2.10.70
+coverage:
+- 7.13.5
+cpp-expected:
+- 1.3.1
+cppcheck:
+- 2.20.1
+cppzmq:
+- 4.11.0
+cryptography:
+- 46.0.7
+cuda_compiler:
+- cuda-nvcc
+cuda_compiler_version:
+- None
+- 12.9
+cuda_compiler_version_min:
+- None
+- 12.9
+cudnn:
+- '9'
+curl:
+- 8
+cutensor:
+- 2
+cxx_compiler:
+- gxx
+- clangxx
+- vs2022
+cxx_compiler_version:
+- 14
+- 19
+- 14
+cxxopts:
+- 3.2.1
+dartsim_cpp:
+- '6.16'
+dav1d:
+- 1.2.1
+davix:
+- '0.8'
+dbus:
+- 1
+dbus-python:
+- 1.3.2
+dcap:
+- 2.47
+defusedxml:
+- 0.7.1
+deprecated:
+- 1.3.1
+distro:
+- 1.9.0
+docker_image:
+- quay.io/condaforge/linux-anvil-x86_64:cos7
+- quay.io/condaforge/linux-anvil-aarch64:cos7
+- quay.io/condaforge/linux-anvil-ppc64le:cos7
+- quay.io/condaforge/linux-anvil-x86_64:alma8
+- quay.io/condaforge/linux-anvil-aarch64:alma8
+- quay.io/condaforge/linux-anvil-ppc64le:alma8
+- quay.io/condaforge/linux-anvil-x86_64:alma9
+- quay.io/condaforge/linux-anvil-aarch64:alma9
+- quay.io/condaforge/linux-anvil-ppc64le:alma9
+- quay.io/condaforge/linux-anvil-x86_64:alma10
+- quay.io/condaforge/linux-anvil-aarch64:alma10
+- quay.io/condaforge/linux-anvil-ppc64le:alma10
+doxygen:
+- 1.13.2
+draco:
+- 1.5.7
+eclib:
+- '20250627'
+eigen:
+- 5.0.1
+eigen-abi-devel:
+- 5.0.1.100
+eigen_abi_devel:
+- 3.4.0
+elfutils:
+- '0.194'
+embree:
+- 4.4.1
+empy:
+- 3.3.4
+epoxy:
+- 1.5.10
+exiv2:
+- '0.28'
+expat:
+- 2
+expiringdict:
+- 1.2.2
+fastapi:
+- 0.136.0
+fcl:
+- 0.7.0
+ffmpeg:
+- '8'
+fftw:
+- 3
+file:
+- '5.47'
+filelock:
+- 3.28.0
+fiona:
+- 1.10.1
+flake8:
+- 7.3.0
+flake8-builtins:
+- 3.1.0
+flake8-comprehensions:
+- 3.17.0
+flake8-docstrings:
+- 1.7.0
+flake8-import-order:
+- 0.19.2
+flake8-quotes:
+- 3.4.0
+flann:
+- 1.9.2
+flask:
+- 3.1.3
+flask-socketio:
+- 5.6.1
+flatbuffers:
+- 25.9.23
+flex:
+- 2.6.4
+fmt:
+- '12.0'
+fontconfig:
+- 2
+fortran-compiler:
+- 1.11.0
+fortran_compiler:
+- gfortran
+- gfortran
+- flang
+fortran_compiler_version:
+- 14
+- 14
+- 5
+- 14
+freeglut:
+- 3.2.2
+freeimage:
+- 3.18.0
+freetype:
+- 2
+future:
+- 1.0.0
+gcc_compiler:
+- gcc
+gcc_compiler_version:
+- 14
+- 15
+gct:
+- 6.2.1705709074
+gdal:
+- '3.12'
+gdk_pixbuf:
+- 2
+geographiclib-cpp:
+- '2.7'
+geos:
+- 3.14.1
+geotiff:
+- '1.7'
+gf2x:
+- '1.3'
+gfal2:
+- '2.23'
+gflags:
+- 2.2
+giflib:
+- 5.2
+git:
+- 2.54.0.dev0
+gitpython:
+- 3.1.46
+givaro:
+- 4.2.1
+glew:
+- '2.3'
+glfw:
+- 3.5.0
+glib:
+- '2'
+glog:
+- '0.7'
+glpk:
+- '5.0'
+glslang:
+- 16.2.0
+gmock:
+- 1.17.0
+gmp:
+- 6
+gnuradio_core:
+- 3.10.12
+gnutls:
+- '3.8'
+go_compiler:
+- go-nocgo
+gobject-introspection:
+- 1.86.0
+google_cloud_cpp:
+- '3.3'
+google_cloud_cpp_common:
+- 0.25.0
+googleapis_cpp:
+- '0.10'
+gpsd:
+- '3.26'
+graphicsmagick:
+- 1.3.46
+graphviz:
+- '14'
+gsl:
+- 2.7
+gsoap:
+- 2.8.123
+gst-plugins-base:
+- 1.28.2
+gst_plugins_base:
+- '1.26'
+gstreamer:
+- '1.26'
+gtest:
+- 1.17.0
+gtk4:
+- 4.22.2
+gts:
+- 0.7.6
+gxx_compiler:
+- gxx
+gxx_compiler_version:
+- 14
+- 15
+hdf4:
+- 4.2.15
+hdf5:
+- 1.14.6
+hdrhistogram_c:
+- 0.11.9
+hepmc2:
+- '2.06'
+hepmc3:
+- '3.3'
+httpx:
+- 0.28.1
+icu:
+- '75'
+idyntree:
+- '15'
+imath:
+- 3.2.2
+img2pdf:
+- 0.6.1
+impi_devel:
+- 2021.16.0
+importlib-metadata:
+- 8.8.0
+importlib_resources:
+- 7.1.0
+include-what-you-use:
+- '0.26'
+inflection:
+- 0.5.1
+ipopt:
+- 3.14.19
+is_abi3:
+- true
+is_freethreading:
+- false
+is_python_min:
+- true
+- false
+- false
+- false
+isl:
+- '0.26'
+jasper:
+- 4
+jinja2:
+- 3.1.6
+jpeg:
+- 9
+json-c:
+- '0.18'
+json_c:
+- '0.18'
+jsoncpp:
+- 1.9.6
+jsonschema:
+- 4.26.0
+junitparser:
+- 5.0.0
+kealib:
+- '1.6'
+krb5:
+- '1.22'
+lark-parser:
+- 0.12.0
+lcms2:
+- 2
+lcov:
+- '1.16'
+ldas_tools_framecpp:
+- '2.9'
+lerc:
+- '4'
+libabseil:
+- 20250512
+libacl:
+- 2.3.2
+libadwaita:
+- 1.9.0
+libaec:
+- '1'
+libamd:
+- '3'
+libarchive:
+- '3.8'
+libarrow:
+- '23.0'
+- '22.0'
+- '21.0'
+- '20.0'
+libarrow_all:
+- '23.0'
+- '22.0'
+- '21.0'
+- '20.0'
+libattr:
+- 2.5
+libavif:
+- 1
+libblas:
+- 3.9.* *netlib
+libblitz:
+- 1.0.2
+libblst:
+- '0.3'
+libboost:
+- 1.90.0
+libboost-devel:
+- 1.90.0
+libboost-python:
+- 1.90.0
+libboost-python-devel:
+- 1.90.0
+libboost_devel:
+- '1.86'
+libboost_headers:
+- '1.86'
+libboost_python_devel:
+- '1.86'
+libbrotlicommon:
+- '1.2'
+libbrotlidec:
+- '1.2'
+libbrotlienc:
+- '1.2'
+libbtf:
+- '2'
+libcamd:
+- '3'
+libcap:
+- '2.77'
+libcblas:
+- 3.9.* *netlib
+libccd-double:
+- '2.1'
+libccolamd:
+- '3'
+libcholmod:
+- '5'
+libcint:
+- '6.1'
+libclang:
+- 22.1.3
+libcolamd:
+- '3'
+libcrc32c:
+- 1.1
+libcudnn_dev:
+- '9'
+libcurl:
+- 8
+libcxsparse:
+- '4'
+libdap4:
+- 3.20.6
+libdeflate:
+- '1.25'
+libduckdb_devel:
+- '1'
+libeantic:
+- '2'
+libev:
+- 4.33
+libevent:
+- 2.1.12
+libexactreal:
+- '4'
+libffi:
+- '3.5'
+libflac:
+- '1.5'
+libflatsurf:
+- 3
+libflint:
+- '3.3'
+libframel:
+- '8.41'
+libfuse:
+- '2'
+libfuse3:
+- '3'
+libgdal:
+- '3.12'
+libgdal_core:
+- '3.12'
+libgit2:
+- '1.9'
+libgl-devel:
+- 1.7.0
+libglib:
+- 2.86.4
+libgomp:
+- 15.2.0
+libgoogle_cloud:
+- '3.3'
+libgoogle_cloud_aiplatform_devel:
+- '3.3'
+libgoogle_cloud_all_devel:
+- '3.3'
+libgoogle_cloud_automl_devel:
+- '3.3'
+libgoogle_cloud_bigquery_devel:
+- '3.3'
+libgoogle_cloud_bigtable_devel:
+- '3.3'
+libgoogle_cloud_compute_devel:
+- '3.3'
+libgoogle_cloud_devel:
+- '3.3'
+libgoogle_cloud_dialogflow_cx_devel:
+- '3.3'
+libgoogle_cloud_dialogflow_es_devel:
+- '3.3'
+libgoogle_cloud_discoveryengine_devel:
+- '3.3'
+libgoogle_cloud_dlp_devel:
+- '3.3'
+libgoogle_cloud_iam_devel:
+- '3.3'
+libgoogle_cloud_oauth2_devel:
+- '3.3'
+libgoogle_cloud_policytroubleshooter_devel:
+- '3.3'
+libgoogle_cloud_pubsub_devel:
+- '3.3'
+libgoogle_cloud_spanner_devel:
+- '3.3'
+libgoogle_cloud_speech_devel:
+- '3.3'
+libgoogle_cloud_storage_devel:
+- '3.3'
+libgpiod:
+- 2.2.1
+libgrpc:
+- '1.73'
+libgsasl:
+- '2'
+libgz-cmake3:
+- 3.5.5
+libgz-common5:
+- 5.7.1
+libgz-fuel-tools9:
+- 9.1.1
+libgz-gui8:
+- 8.4.0
+libgz-launch7:
+- 7.1.1
+libgz-math7:
+- 7.5.2
+libgz-msgs10:
+- 10.3.2
+libgz-physics7:
+- 7.5.0
+libgz-plugin2:
+- 2.0.4
+libgz-rendering8:
+- 8.2.2
+libgz-sensors8:
+- 8.2.2
+libgz-sim8:
+- 8.10.0
+libgz-tools2:
+- 2.0.3
+libgz-transport13:
+- 13.5.0
+libgz-utils2:
+- 2.2.1
+libheif:
+- 1.19
+libhugetlbfs:
+- 2
+libhwloc:
+- 2.12.2
+libhwy:
+- '1.3'
+libiconv:
+- 1
+libidn2:
+- 2
+libiio:
+- 0
+libintervalxt:
+- 3
+libitk_devel:
+- 5.4
+libjpeg-turbo:
+- 3.1.4.1
+libjpeg_turbo:
+- '3'
+libklu:
+- '2'
+libkml:
+- 1.3
+libkml_devel:
+- 1.3
+liblapack:
+- 3.9.* *netlib
+liblapacke:
+- 3.9.* *netlib
+libldl:
+- '3'
+liblzma_devel:
+- 5
+libmagma:
+- '2.9'
+libmagma_devel:
+- '2.9'
+libmagma_sparse:
+- '2.9'
+libmatio:
+- 1.5.30
+libmatio_cpp:
+- 0.3.0
+libmed:
+- '4.2'
+libmicrohttpd:
+- '1.0'
+libnetcdf:
+- 4.9.3
+libntlm:
+- 1
+libode:
+- 0.16.6
+libogg:
+- 1.3
+libopencv:
+- 4.13.0
+libopengl-devel:
+- 1.7.0
+libopentelemetry_cpp:
+- '1.26'
+libopenvino_dev:
+- 2026.0.0
+libosqp:
+- 1.0.0
+libparu:
+- '1'
+libpcap:
+- '1.10'
+libpdal:
+- '2.10'
+libpdal_core:
+- '2.10'
+libpnetcdf:
+- 1.14.1
+libpng:
+- 1.6
+libpq:
+- '18'
+libprotobuf:
+- 6.31.1
+libptscotch:
+- 7.0.11
+libpulsar:
+- 4.0.1
+libqglviewer:
+- 2.9.1
+libraw:
+- '0.21'
+librbio:
+- '4'
+librdkafka:
+- '2.12'
+librealsense:
+- '2.56'
+librerun_sdk:
+- 0.31.2
+librsvg:
+- 2
+libscotch:
+- 7.0.11
+libsdformat14:
+- 14.8.0
+libsecret:
+- '0.21'
+libsentencepiece:
+- 0.2.1
+libsndfile:
+- '1.2'
+libsodium:
+- 1.0.21
+libsoup:
+- 3
+libspatialindex:
+- 2.1.0
+libspex:
+- '3'
+libspnav:
+- '1.1'
+libspqr:
+- '4'
+libsqlite:
+- 3
+libssh:
+- '0.12'
+libssh2:
+- 1
+libsuitesparseconfig:
+- '7'
+libsvm:
+- '335'
+libsystemd:
+- '257'
+libtensorflow:
+- '2.16'
+libtensorflow_cc:
+- '2.16'
+libtheora:
+- 1.1.1
+libthrift:
+- 0.22.0
+libtiff:
+- '4.7'
+libtins:
+- '4.5'
+libtool:
+- 2.5.4
+libtorch:
+- '2.9'
+libudev:
+- '257'
+libumfpack:
+- '6'
+libunwind:
+- '1.8'
+liburing:
+- 2.14
+libusb:
+- 1.0.29
+libutf8proc:
+- '2.11'
+libuuid:
+- 2
+libv8:
+- 8.9.83
+libvigra:
+- '1.12'
+libvips:
+- 8
+libvpl:
+- '2.16'
+libvulkan-headers:
+- 1.4.341.0
+libvulkan-loader:
+- 1.4.341.0
+libwebp:
+- 1
+libwebp_base:
+- 1
+libwebsockets:
+- 4.3.5
+libx86emu:
+- 3.7
+libxcb:
+- '1'
+libxkbcommon:
+- 1.13.1
+libxml2:
+- '2.14'
+libxml2_devel:
+- '2.14'
+libxsmm:
+- 1
+libyarp:
+- 3.12.2
+libzip:
+- 1
+llvm-openmp:
+- 22.1.3
+llvm_openmp:
+- 19
+lm-sensors:
+- 3.6.0
+lmdb:
+- 0.9.29
+log4cxx:
+- 1.2.0
+lol_html:
+- 2.7.2
+ls_hpack:
+- 2.3.4
+lua:
+- 5.5.0
+lxml:
+- 6.0.4
+lz4:
+- 4.4.5
+lz4_c:
+- '1.10'
+lzo:
+- 2
+m2w64_c_compiler:
+- gcc
+m2w64_c_compiler_version:
+- 14
+m2w64_c_stdlib:
+- m2w64-sysroot
+m2w64_c_stdlib_version:
+- 12
+m2w64_cxx_compiler:
+- gxx
+m2w64_cxx_compiler_version:
+- 14
+m2w64_fortran_compiler:
+- gfortran
+m2w64_fortran_compiler_version:
+- 14
+macos_machine:
+- x86_64-apple-darwin13.4.0
+- arm64-apple-darwin20.0.0
+magma:
+- '2.9'
+marisa-trie:
+- 1.2.1
+matplotlib-base:
+- 3.10.8
+meson:
+- 1.11.0
+metis:
+- 5.1.0
+mimalloc:
+- 3.3.0
+mkl:
+- '2025'
+- '2023'
+mkl_devel:
+- '2025'
+- '2023'
+mock:
+- 5.2.0
+mpfr:
+- 4
+mpg123:
+- '1.32'
+mpich:
+- 4
+mppp:
+- '2.0'
+msgpack-numpy:
+- 0.4.8
+msgpack-python:
+- 1.1.2
+msgpack_c:
+- 6
+msgpack_cxx:
+- '7'
+multipledispatch:
+- 0.6.0
+mumps_mpi:
+- 5.8.2
+mumps_seq:
+- 5.8.2
+muparser:
+- 2.3.5
+mypy:
+- 1.20.1
+mysql_devel:
+- '9.6'
+nanobind:
+- 2.12.0
+nanoflann:
+- 1.6.1
+natsort:
+- 8.4.0
+nccl:
+- 2
+ncurses:
+- 6
+netcdf_cxx4:
+- 4.3
+netcdf_fortran:
+- '4.6'
+nettle:
+- '3.10'
+networkx:
+- 3.6.1
+ninja:
+- 1.13.2
+nlohmann_json:
+- 3.12.0
+nlopt:
+- '2.10'
+nodejs:
+- '24'
+- '22'
+notebook:
+- 7.5.5
+nspr:
+- 4
+nss:
+- 3
+ntl:
+- 11.6.0
+ntplib:
+- 0.4.0
+numpy:
+- 2
+obake_devel:
+- '0.9'
+occt:
+- 7.9.3
+ocl-icd:
+- 2.3.3
+octomap:
+- 1.10.0
+ogre:
+- 14.5.2
+openai:
+- 2.32.0
+openblas:
+- 0.3.*
+opencl-headers:
+- 2025.06.13
+openexr:
+- '3.4'
+openh264:
+- 2.6.0
+openjdk:
+- 25.0.2
+openjpeg:
+- '2'
+openjph:
+- '0.27'
+openmpi:
+- 4
+openscenegraph:
+- 3.6.5
+openslide:
+- 4
+openssl:
+- '3.5'
+openvdb:
+- 13.0.0
+orc:
+- 2.3.0
+orocos-kdl:
+- 1.5.3
+osqp_eigen:
+- '0.11'
+p11_kit:
+- '0.26'
+packaging:
+- '26.1'
+paho-mqtt:
+- 2.1.0
+pandas:
+- 3.0.2
+pango:
+- '1'
+pari:
+- 2.17.* *_pthread
+patchelf:
+- 0.18.0
+pcl:
+- 1.15.1
+pcre:
+- '8'
+pcre2:
+- '10.47'
+pdal:
+- '2.10'
+perl:
+- 5.32.1
+petsc:
+- '3.25'
+petsc4py:
+- '3.25'
+pexpect:
+- 4.9.0
+pillow:
+- 12.2.0
+pin_run_as_build:
+  libblst:
+    max_pin: x.x
+  netcdf-cxx4:
+    max_pin: x.x
+  vlfeat:
+    max_pin: x.x.x
+pip:
+- 26.0.1
+pip-tools:
+- 7.5.3
+pixman:
+- 0
+pkg-config:
+- 0.29.2
+platformdirs:
+- 4.9.6
+plutosvg:
+- 0.0.7
+plutovg:
+- 1.3.2
+ply:
+- '3.11'
+poco:
+- 1.15.1
+poppler:
+- '26.02'
+portaudio:
+- '19.7'
+postgresql:
+- '18'
+postgresql_plpython:
+- '18'
+pre-commit:
+- 4.5.1
+procps-ng:
+- 4.0.6
+proj:
+- '9.7'
+protobuf:
+- 6.33.5
+psutil:
+- 7.2.2
+ptscotch:
+- 7.0.11
+pugixml:
+- '1.15'
+pulseaudio:
+- '17.0'
+pulseaudio_client:
+- '17.0'
+pulseaudio_daemon:
+- '17.0'
+py-opencv:
+- 4.13.0
+pybind11:
+- 3.0.3
+pybind11_abi:
+- 4
+pycairo:
+- 1.29.0
+pycodestyle:
+- 2.14.0
+pycollada:
+- 0.9.3
+pydantic:
+- 2.13.1
+pydocstyle:
+- 6.3.0
+pydot:
+- 4.0.1
+pyflakes:
+- 3.4.0
+pyftdi:
+- 0.55.4
+pygobject:
+- 3.56.2
+pygraphviz:
+- '1.14'
+pymongo:
+- 4.16.0
+pyproj:
+- 3.7.2
+pyqt:
+- 5.15
+pyqt-builder:
+- 1.18.2
+pyqtchart:
+- 5.15
+pyqtwebengine:
+- 5.15
+pyserial:
+- '3.5'
+pytest:
+- 9.0.3
+pytest-cov:
+- 7.1.0
+pytest-mock:
+- 3.15.1
+pytest-timeout:
+- 2.4.0
+python:
+- 3.12.* *_cpython
+python-orocos-kdl:
+- 1.5.3
+python_impl:
+- cpython
+python_min:
+- '3.10'
+- '3.14'
+pytorch:
+- '2.9'
+pyudev:
+- 0.24.3
+pyyaml:
+- 6.0.3
+pyzmq:
+- 27.1.0
+qhull:
+- 2020.2
+qpdf:
+- '12'
+qt:
+- 5.15
+qt-main:
+- 5.15.15
+qt6-main:
+- 6.11.0
+qt6_main:
+- '6.10'
+qt_main:
+- 5.15
+qtkeychain:
+- '0.15'
+qwt:
+- 6.3.0
+r_base:
+- 4.4
+- 4.5
+range-v3:
+- 0.12.0
+rapidjson:
+- 1.1.0.post20240409
+rav1e:
+- '0.8'
+rdma_core:
+- '61'
+re2:
+- 2025.11.05
+readline:
+- '8'
+requests:
+- 2.33.1
+rich:
+- 15.0.0
+rocksdb:
+- '10.9'
+root_base:
+- 6.36.8
+- 6.38.0
+- 6.38.0
+root_cxx_standard:
+- 20
+- 20
+- 23
+ros-jazzy-acado-vendor:
+- 1.0.0
+ros-jazzy-ackermann-msgs:
+- 2.0.2
+ros-jazzy-ackermann-nlmpc:
+- 1.0.3
+ros-jazzy-ackermann-nlmpc-msgs:
+- 1.0.3
+ros-jazzy-ackermann-steering-controller:
+- 4.39.0
+ros-jazzy-action-msgs:
+- 2.0.3
+ros-jazzy-action-tutorials-cpp:
+- 0.33.10
+ros-jazzy-action-tutorials-interfaces:
+- 0.33.10
+ros-jazzy-action-tutorials-py:
+- 0.33.10
+ros-jazzy-actionlib-msgs:
+- 5.3.7
+ros-jazzy-actuator-msgs:
+- 0.0.1
+ros-jazzy-adaptive-component:
+- 0.2.1
+ros-jazzy-admittance-controller:
+- 4.39.0
+ros-jazzy-ads-vendor:
+- 1.0.2
+ros-jazzy-agnocast:
+- 2.3.3
+ros-jazzy-agnocast-cie-config-msgs:
+- 2.3.3
+ros-jazzy-agnocast-cie-thread-configurator:
+- 2.3.3
+ros-jazzy-agnocast-components:
+- 2.3.3
+ros-jazzy-agnocast-e2e-test:
+- 2.3.3
+ros-jazzy-agnocast-ioctl-wrapper:
+- 2.3.3
+ros-jazzy-agnocast-sample-application:
+- 2.3.3
+ros-jazzy-agnocast-sample-interfaces:
+- 2.3.3
+ros-jazzy-agnocastlib:
+- 2.3.3
+ros-jazzy-ament-acceleration:
+- 0.2.0
+ros-jazzy-ament-black:
+- 0.2.6
+ros-jazzy-ament-clang-format:
+- 0.17.5
+ros-jazzy-ament-clang-tidy:
+- 0.17.5
+ros-jazzy-ament-cmake:
+- 2.5.6
+ros-jazzy-ament-cmake-auto:
+- 2.5.6
+ros-jazzy-ament-cmake-black:
+- 0.2.6
+ros-jazzy-ament-cmake-catch2:
+- 1.4.1
+ros-jazzy-ament-cmake-clang-format:
+- 0.17.5
+ros-jazzy-ament-cmake-clang-tidy:
+- 0.17.5
+ros-jazzy-ament-cmake-copyright:
+- 0.17.5
+ros-jazzy-ament-cmake-core:
+- 2.5.6
+ros-jazzy-ament-cmake-cppcheck:
+- 0.17.5
+ros-jazzy-ament-cmake-cpplint:
+- 0.17.5
+ros-jazzy-ament-cmake-export-definitions:
+- 2.5.6
+ros-jazzy-ament-cmake-export-dependencies:
+- 2.5.6
+ros-jazzy-ament-cmake-export-include-directories:
+- 2.5.6
+ros-jazzy-ament-cmake-export-interfaces:
+- 2.5.6
+ros-jazzy-ament-cmake-export-libraries:
+- 2.5.6
+ros-jazzy-ament-cmake-export-link-flags:
+- 2.5.6
+ros-jazzy-ament-cmake-export-targets:
+- 2.5.6
+ros-jazzy-ament-cmake-flake8:
+- 0.17.5
+ros-jazzy-ament-cmake-gen-version-h:
+- 2.5.6
+ros-jazzy-ament-cmake-gmock:
+- 2.5.6
+ros-jazzy-ament-cmake-google-benchmark:
+- 2.5.6
+ros-jazzy-ament-cmake-gtest:
+- 2.5.6
+ros-jazzy-ament-cmake-include-directories:
+- 2.5.6
+ros-jazzy-ament-cmake-libraries:
+- 2.5.6
+ros-jazzy-ament-cmake-lint-cmake:
+- 0.17.5
+ros-jazzy-ament-cmake-mypy:
+- 0.17.5
+ros-jazzy-ament-cmake-pclint:
+- 0.17.5
+ros-jazzy-ament-cmake-pep257:
+- 0.17.5
+ros-jazzy-ament-cmake-pycodestyle:
+- 0.17.5
+ros-jazzy-ament-cmake-pyflakes:
+- 0.17.5
+ros-jazzy-ament-cmake-pytest:
+- 2.5.6
+ros-jazzy-ament-cmake-python:
+- 2.5.6
+ros-jazzy-ament-cmake-ros:
+- 0.12.0
+ros-jazzy-ament-cmake-target-dependencies:
+- 2.5.6
+ros-jazzy-ament-cmake-test:
+- 2.5.6
+ros-jazzy-ament-cmake-uncrustify:
+- 0.17.5
+ros-jazzy-ament-cmake-vendor-package:
+- 2.5.6
+ros-jazzy-ament-cmake-version:
+- 2.5.6
+ros-jazzy-ament-cmake-xmllint:
+- 0.17.5
+ros-jazzy-ament-copyright:
+- 0.17.5
+ros-jazzy-ament-cppcheck:
+- 0.17.5
+ros-jazzy-ament-cpplint:
+- 0.17.5
+ros-jazzy-ament-download:
+- 0.0.5
+ros-jazzy-ament-flake8:
+- 0.17.5
+ros-jazzy-ament-index-cpp:
+- 1.8.2
+ros-jazzy-ament-index-python:
+- 1.8.2
+ros-jazzy-ament-lint:
+- 0.17.5
+ros-jazzy-ament-lint-auto:
+- 0.17.5
+ros-jazzy-ament-lint-cmake:
+- 0.17.5
+ros-jazzy-ament-lint-common:
+- 0.17.5
+ros-jazzy-ament-mypy:
+- 0.17.5
+ros-jazzy-ament-nodl:
+- 0.1.0
+ros-jazzy-ament-package:
+- 0.16.5
+ros-jazzy-ament-pclint:
+- 0.17.5
+ros-jazzy-ament-pep257:
+- 0.17.5
+ros-jazzy-ament-pycodestyle:
+- 0.17.5
+ros-jazzy-ament-pyflakes:
+- 0.17.5
+ros-jazzy-ament-uncrustify:
+- 0.17.5
+ros-jazzy-ament-vitis:
+- 0.10.1
+ros-jazzy-ament-xmllint:
+- 0.17.5
+ros-jazzy-angles:
+- 1.16.1
+ros-jazzy-apex-test-tools:
+- 0.0.2
+ros-jazzy-apriltag:
+- 3.4.5
+ros-jazzy-apriltag-detector:
+- 3.1.0
+ros-jazzy-apriltag-detector-mit:
+- 3.1.0
+ros-jazzy-apriltag-detector-umich:
+- 3.1.0
+ros-jazzy-apriltag-draw:
+- 3.1.0
+ros-jazzy-apriltag-mit:
+- 1.0.3
+ros-jazzy-apriltag-msgs:
+- 2.0.1
+ros-jazzy-apriltag-ros:
+- 3.3.0
+ros-jazzy-apriltag-tools:
+- 3.1.0
+ros-jazzy-ardrone-sdk:
+- 2.0.3
+ros-jazzy-ardrone-sumo:
+- 2.0.3
+ros-jazzy-aruco:
+- 5.0.5
+ros-jazzy-aruco-markers:
+- 0.0.2
+ros-jazzy-aruco-markers-msgs:
+- 0.0.2
+ros-jazzy-aruco-msgs:
+- 5.0.5
+ros-jazzy-aruco-opencv:
+- 6.1.1
+ros-jazzy-aruco-opencv-msgs:
+- 6.1.1
+ros-jazzy-aruco-ros:
+- 5.0.5
+ros-jazzy-asio-cmake-module:
+- 1.2.0
+ros-jazzy-async-web-server-cpp:
+- 2.0.1
+ros-jazzy-at-sonde-ros-driver:
+- 1.0.0
+ros-jazzy-auto-apms-behavior-tree:
+- 1.5.1
+ros-jazzy-auto-apms-behavior-tree-core:
+- 1.5.1
+ros-jazzy-auto-apms-examples:
+- 1.5.1
+ros-jazzy-auto-apms-interfaces:
+- 1.5.1
+ros-jazzy-auto-apms-mission:
+- 1.5.1
+ros-jazzy-auto-apms-ros2behavior:
+- 1.5.1
+ros-jazzy-auto-apms-util:
+- 1.5.1
+ros-jazzy-automatika-embodied-agents:
+- 0.6.0
+ros-jazzy-automatika-ros-sugar:
+- 0.6.0
+ros-jazzy-automotive-autonomy-msgs:
+- 3.0.4
+ros-jazzy-automotive-navigation-msgs:
+- 3.0.4
+ros-jazzy-automotive-platform-msgs:
+- 3.0.4
+ros-jazzy-autoware-adapi-v1-msgs:
+- 1.9.0
+ros-jazzy-autoware-adapi-version-msgs:
+- 1.9.0
+ros-jazzy-autoware-auto-msgs:
+- 1.0.0
+ros-jazzy-autoware-cmake:
+- 1.1.0
+ros-jazzy-autoware-common-msgs:
+- 1.11.0
+ros-jazzy-autoware-control-msgs:
+- 1.11.0
+ros-jazzy-autoware-internal-debug-msgs:
+- 1.12.1
+ros-jazzy-autoware-internal-localization-msgs:
+- 1.12.1
+ros-jazzy-autoware-internal-metric-msgs:
+- 1.12.1
+ros-jazzy-autoware-internal-msgs:
+- 1.12.1
+ros-jazzy-autoware-internal-perception-msgs:
+- 1.12.1
+ros-jazzy-autoware-internal-planning-msgs:
+- 1.12.1
+ros-jazzy-autoware-lanelet2-extension:
+- 0.7.2
+ros-jazzy-autoware-lanelet2-extension-python:
+- 0.7.2
+ros-jazzy-autoware-lint-common:
+- 1.1.0
+ros-jazzy-autoware-localization-msgs:
+- 1.11.0
+ros-jazzy-autoware-map-msgs:
+- 1.11.0
+ros-jazzy-autoware-msgs:
+- 1.11.0
+ros-jazzy-autoware-perception-msgs:
+- 1.11.0
+ros-jazzy-autoware-planning-msgs:
+- 1.11.0
+ros-jazzy-autoware-sensing-msgs:
+- 1.11.0
+ros-jazzy-autoware-system-msgs:
+- 1.11.0
+ros-jazzy-autoware-utils:
+- 1.4.2
+ros-jazzy-autoware-utils-debug:
+- 1.4.2
+ros-jazzy-autoware-utils-diagnostics:
+- 1.4.2
+ros-jazzy-autoware-utils-geometry:
+- 1.4.2
+ros-jazzy-autoware-utils-logging:
+- 1.4.2
+ros-jazzy-autoware-utils-math:
+- 1.4.2
+ros-jazzy-autoware-utils-pcl:
+- 1.4.2
+ros-jazzy-autoware-utils-rclcpp:
+- 1.4.2
+ros-jazzy-autoware-utils-system:
+- 1.4.2
+ros-jazzy-autoware-utils-tf:
+- 1.4.2
+ros-jazzy-autoware-utils-uuid:
+- 1.4.2
+ros-jazzy-autoware-utils-visualization:
+- 1.4.2
+ros-jazzy-autoware-v2x-msgs:
+- 1.11.0
+ros-jazzy-autoware-vehicle-msgs:
+- 1.11.0
+ros-jazzy-avt-vimba-camera:
+- 2001.1.0
+ros-jazzy-aws-sdk-cpp-vendor:
+- 0.2.1
+ros-jazzy-axis-camera:
+- 3.0.2
+ros-jazzy-axis-description:
+- 3.0.2
+ros-jazzy-axis-msgs:
+- 3.0.2
+ros-jazzy-azure-iot-sdk-c:
+- 1.14.0
+ros-jazzy-backward-ros:
+- 1.0.8
+ros-jazzy-bag2-to-image:
+- 0.1.1
+ros-jazzy-battery-state-broadcaster:
+- 1.0.2
+ros-jazzy-battery-state-rviz-overlay:
+- 1.0.2
+ros-jazzy-bcr-arm:
+- 0.1.3
+ros-jazzy-bcr-arm-description:
+- 0.1.3
+ros-jazzy-bcr-arm-gazebo:
+- 0.1.3
+ros-jazzy-bcr-arm-moveit-config:
+- 0.1.3
+ros-jazzy-bcr-arm-ros2:
+- 0.1.3
+ros-jazzy-bcr-bot:
+- 2.0.0
+ros-jazzy-beckhoff-ads-bringup:
+- 1.0.0
+ros-jazzy-beckhoff-ads-hardware-interface:
+- 1.0.0
+ros-jazzy-behaviortree-cpp:
+- 4.9.0
+ros-jazzy-behaviortree-cpp-v3:
+- 3.8.6
+ros-jazzy-beluga:
+- 2.1.0
+ros-jazzy-beluga-amcl:
+- 2.1.0
+ros-jazzy-beluga-ros:
+- 2.1.0
+ros-jazzy-bicycle-steering-controller:
+- 4.39.0
+ros-jazzy-bno055:
+- 0.5.0
+ros-jazzy-bond:
+- 4.2.0
+ros-jazzy-bond-core:
+- 4.2.0
+ros-jazzy-bondcpp:
+- 4.2.0
+ros-jazzy-bondpy:
+- 4.2.0
+ros-jazzy-boost-geometry-util:
+- 0.0.1
+ros-jazzy-boost-sml-vendor:
+- 1.1.13
+ros-jazzy-broll:
+- 0.1.0
+ros-jazzy-builtin-interfaces:
+- 2.0.3
+ros-jazzy-camera-aravis2:
+- 1.2.0
+ros-jazzy-camera-aravis2-msgs:
+- 1.2.0
+ros-jazzy-camera-calibration:
+- 5.0.11
+ros-jazzy-camera-calibration-parsers:
+- 5.1.7
+ros-jazzy-camera-info-manager:
+- 5.1.7
+ros-jazzy-camera-info-manager-py:
+- 5.1.7
+ros-jazzy-camera-ros:
+- 0.6.0
+ros-jazzy-can-msgs:
+- 2.0.0
+ros-jazzy-canboat-vendor:
+- 0.0.6
+ros-jazzy-canopen:
+- 0.3.2
+ros-jazzy-canopen-402-driver:
+- 0.3.2
+ros-jazzy-canopen-base-driver:
+- 0.3.2
+ros-jazzy-canopen-core:
+- 0.3.2
+ros-jazzy-canopen-fake-slaves:
+- 0.3.2
+ros-jazzy-canopen-interfaces:
+- 0.3.2
+ros-jazzy-canopen-inventus-driver:
+- 0.1.3
+ros-jazzy-canopen-inventus-interfaces:
+- 0.1.3
+ros-jazzy-canopen-master-driver:
+- 0.3.2
+ros-jazzy-canopen-proxy-driver:
+- 0.3.2
+ros-jazzy-canopen-ros2-control:
+- 0.3.2
+ros-jazzy-canopen-ros2-controllers:
+- 0.3.2
+ros-jazzy-canopen-tests:
+- 0.3.2
+ros-jazzy-canopen-utils:
+- 0.3.2
+ros-jazzy-cartographer:
+- 2.0.9004
+ros-jazzy-cartographer-ros:
+- 2.0.9003
+ros-jazzy-cartographer-ros-msgs:
+- 2.0.9003
+ros-jazzy-cartographer-rviz:
+- 2.0.9003
+ros-jazzy-cascade-lifecycle-msgs:
+- 2.0.0
+ros-jazzy-catch-ros2:
+- 0.2.2
+ros-jazzy-chained-filter-controller:
+- 4.39.0
+ros-jazzy-chomp-motion-planner:
+- 2.12.4
+ros-jazzy-class-loader:
+- 2.7.0
+ros-jazzy-classic-bags:
+- 0.4.0
+ros-jazzy-clearpath-bt-joy:
+- 2.9.5
+ros-jazzy-clearpath-common:
+- 2.9.5
+ros-jazzy-clearpath-config:
+- 2.9.1
+ros-jazzy-clearpath-config-live:
+- 2.7.0
+ros-jazzy-clearpath-control:
+- 2.9.5
+ros-jazzy-clearpath-customization:
+- 2.9.5
+ros-jazzy-clearpath-description:
+- 2.9.5
+ros-jazzy-clearpath-desktop:
+- 2.7.0
+ros-jazzy-clearpath-diagnostics:
+- 2.9.5
+ros-jazzy-clearpath-generator-common:
+- 2.9.5
+ros-jazzy-clearpath-generator-gz:
+- 2.9.0
+ros-jazzy-clearpath-gz:
+- 2.9.0
+ros-jazzy-clearpath-manipulators:
+- 2.9.5
+ros-jazzy-clearpath-manipulators-description:
+- 2.9.5
+ros-jazzy-clearpath-motor-msgs:
+- 2.7.0
+ros-jazzy-clearpath-mounts-description:
+- 2.9.5
+ros-jazzy-clearpath-msgs:
+- 2.7.0
+ros-jazzy-clearpath-nav2-demos:
+- 2.8.0
+ros-jazzy-clearpath-offboard-sensors:
+- 2.7.0
+ros-jazzy-clearpath-platform-description:
+- 2.9.5
+ros-jazzy-clearpath-platform-msgs:
+- 2.7.0
+ros-jazzy-clearpath-ros2-socketcan-interface:
+- 2.1.4
+ros-jazzy-clearpath-sensors-description:
+- 2.9.5
+ros-jazzy-clearpath-simulator:
+- 2.9.0
+ros-jazzy-clearpath-tests:
+- 2.3.1
+ros-jazzy-clearpath-viz:
+- 2.7.0
+ros-jazzy-clips-executive:
+- 0.1.3
+ros-jazzy-clips-vendor:
+- 6.4.3
+ros-jazzy-cloudini-lib:
+- 1.0.4
+ros-jazzy-cloudini-ros:
+- 1.0.4
+ros-jazzy-cm-executors:
+- 0.9.1
+ros-jazzy-cm-topic-hardware-component:
+- 1.0.0
+ros-jazzy-coal:
+- 3.0.2
+ros-jazzy-cob-actions:
+- 2.8.12
+ros-jazzy-cob-msgs:
+- 2.8.12
+ros-jazzy-cob-srvs:
+- 2.8.12
+ros-jazzy-coin-d4-driver:
+- 1.0.1
+ros-jazzy-color-names:
+- 0.0.3
+ros-jazzy-color-util:
+- 1.0.0
+ros-jazzy-common-interfaces:
+- 5.3.7
+ros-jazzy-compass-conversions:
+- 3.0.2
+ros-jazzy-compass-interfaces:
+- 3.0.2
+ros-jazzy-compass-msgs:
+- 0.1.1
+ros-jazzy-composition:
+- 0.33.10
+ros-jazzy-composition-interfaces:
+- 2.0.3
+ros-jazzy-compressed-depth-image-transport:
+- 4.0.6
+ros-jazzy-compressed-image-transport:
+- 4.0.6
+ros-jazzy-console-bridge-vendor:
+- 1.7.1
+ros-jazzy-continental-msgs:
+- 1.0.0
+ros-jazzy-continental-srvs:
+- 1.0.0
+ros-jazzy-control-box-rst:
+- 0.0.7
+ros-jazzy-control-msgs:
+- 5.9.0
+ros-jazzy-control-toolbox:
+- 4.10.0
+ros-jazzy-controller-interface:
+- 4.44.0
+ros-jazzy-controller-manager:
+- 4.44.0
+ros-jazzy-controller-manager-msgs:
+- 4.44.0
+ros-jazzy-costmap-queue:
+- 1.3.11
+ros-jazzy-crane-plus:
+- 3.0.0
+ros-jazzy-crane-plus-control:
+- 3.0.0
+ros-jazzy-crane-plus-description:
+- 3.0.0
+ros-jazzy-crane-plus-examples:
+- 3.0.0
+ros-jazzy-crane-plus-gazebo:
+- 3.0.0
+ros-jazzy-crane-plus-moveit-config:
+- 3.0.0
+ros-jazzy-cras-bag-tools:
+- 3.0.1
+ros-jazzy-cras-cpp-common:
+- 3.0.1
+ros-jazzy-cras-lint:
+- 3.0.1
+ros-jazzy-cras-msgs:
+- 2.0.1
+ros-jazzy-cras-topic-tools:
+- 3.0.1
+ros-jazzy-crazyflie:
+- 1.0.3
+ros-jazzy-crazyflie-examples:
+- 1.0.3
+ros-jazzy-crazyflie-interfaces:
+- 1.0.3
+ros-jazzy-crazyflie-py:
+- 1.0.3
+ros-jazzy-crazyflie-sim:
+- 1.0.3
+ros-jazzy-create3-coverage:
+- 1.0.0
+ros-jazzy-create3-examples-msgs:
+- 1.0.0
+ros-jazzy-create3-examples-py:
+- 1.0.0
+ros-jazzy-create3-lidar-slam:
+- 1.0.0
+ros-jazzy-create3-republisher:
+- 1.0.0
+ros-jazzy-create3-teleop:
+- 1.0.0
+ros-jazzy-crx-kinematics:
+- 1.0.0
+ros-jazzy-cudnn-cmake-module:
+- 0.0.1
+ros-jazzy-cv-bridge:
+- 4.1.0
+ros-jazzy-cx-ament-index-plugin:
+- 0.1.3
+ros-jazzy-cx-bringup:
+- 0.1.3
+ros-jazzy-cx-clips-env-manager:
+- 0.1.3
+ros-jazzy-cx-config-plugin:
+- 0.1.3
+ros-jazzy-cx-example-plugin:
+- 0.1.3
+ros-jazzy-cx-executive-plugin:
+- 0.1.3
+ros-jazzy-cx-file-load-plugin:
+- 0.1.3
+ros-jazzy-cx-msgs:
+- 0.1.3
+ros-jazzy-cx-plugin:
+- 0.1.3
+ros-jazzy-cx-protobuf-plugin:
+- 0.1.3
+ros-jazzy-cx-ros-comm-gen:
+- 0.1.3
+ros-jazzy-cx-ros-msgs-plugin:
+- 0.1.3
+ros-jazzy-cx-ros-param-plugin:
+- 0.1.3
+ros-jazzy-cx-tf2-pose-tracker-plugin:
+- 0.1.3
+ros-jazzy-cx-tutorial-agents:
+- 0.1.3
+ros-jazzy-cx-utils:
+- 0.1.3
+ros-jazzy-cyclonedds:
+- 0.10.5
+ros-jazzy-data-tamer-cpp:
+- 0.9.4
+ros-jazzy-data-tamer-msgs:
+- 0.9.4
+ros-jazzy-data-tamer-tools:
+- 0.4.0
+ros-jazzy-dataspeed-can:
+- 2.0.6
+ros-jazzy-dataspeed-can-msg-filters:
+- 2.0.6
+ros-jazzy-dataspeed-can-msgs:
+- 2.0.6
+ros-jazzy-dataspeed-can-tools:
+- 2.0.6
+ros-jazzy-dataspeed-can-usb:
+- 2.0.6
+ros-jazzy-delphi-esr-msgs:
+- 4.0.0
+ros-jazzy-delphi-mrr-msgs:
+- 4.0.0
+ros-jazzy-delphi-srr-msgs:
+- 4.0.0
+ros-jazzy-demo-nodes-cpp:
+- 0.33.10
+ros-jazzy-demo-nodes-cpp-native:
+- 0.33.10
+ros-jazzy-demo-nodes-py:
+- 0.33.10
+ros-jazzy-depth-image-proc:
+- 5.0.11
+ros-jazzy-depth-obstacle-detect-ros:
+- 2.0.0
+ros-jazzy-depth-obstacle-detect-ros-msgs:
+- 2.0.0
+ros-jazzy-depthai:
+- 2.31.1
+ros-jazzy-depthai-bridge:
+- 2.12.2
+ros-jazzy-depthai-bridge-v3:
+- 3.1.1
+ros-jazzy-depthai-descriptions:
+- 2.12.2
+ros-jazzy-depthai-descriptions-v3:
+- 3.1.1
+ros-jazzy-depthai-examples:
+- 2.12.2
+ros-jazzy-depthai-examples-v3:
+- 3.1.1
+ros-jazzy-depthai-filters:
+- 2.12.2
+ros-jazzy-depthai-filters-v3:
+- 3.1.1
+ros-jazzy-depthai-ros:
+- 2.12.2
+ros-jazzy-depthai-ros-driver:
+- 2.12.2
+ros-jazzy-depthai-ros-driver-v3:
+- 3.1.1
+ros-jazzy-depthai-ros-msgs:
+- 2.12.2
+ros-jazzy-depthai-ros-msgs-v3:
+- 3.1.1
+ros-jazzy-depthai-ros-v3:
+- 3.1.1
+ros-jazzy-depthai-v3:
+- 3.2.2
+ros-jazzy-depthimage-to-laserscan:
+- 2.5.1
+ros-jazzy-derived-object-msgs:
+- 4.0.0
+ros-jazzy-desktop:
+- 0.11.0
+ros-jazzy-desktop-full:
+- 0.11.0
+ros-jazzy-diagnostic-aggregator:
+- 4.2.6
+ros-jazzy-diagnostic-common-diagnostics:
+- 4.2.6
+ros-jazzy-diagnostic-msgs:
+- 5.3.7
+ros-jazzy-diagnostic-remote-logging:
+- 4.2.6
+ros-jazzy-diagnostic-updater:
+- 4.2.6
+ros-jazzy-diagnostics:
+- 4.2.6
+ros-jazzy-diff-drive-controller:
+- 4.39.0
+ros-jazzy-dolly:
+- 0.4.0
+ros-jazzy-dolly-follow:
+- 0.4.0
+ros-jazzy-dolly-gazebo:
+- 0.4.0
+ros-jazzy-dolly-ignition:
+- 0.4.0
+ros-jazzy-domain-bridge:
+- 0.5.0
+ros-jazzy-domain-coordinator:
+- 0.12.0
+ros-jazzy-draco-point-cloud-transport:
+- 4.0.4
+ros-jazzy-ds-dbw:
+- 2.3.11
+ros-jazzy-ds-dbw-can:
+- 2.3.11
+ros-jazzy-ds-dbw-joystick-demo:
+- 2.3.11
+ros-jazzy-ds-dbw-msgs:
+- 2.3.11
+ros-jazzy-dual-arm-panda-moveit-config:
+- 3.1.0
+ros-jazzy-dual-laser-merger:
+- 0.3.1
+ros-jazzy-dummy-map-server:
+- 0.33.10
+ros-jazzy-dummy-robot-bringup:
+- 0.33.10
+ros-jazzy-dummy-sensors:
+- 0.33.10
+ros-jazzy-dwb-core:
+- 1.3.11
+ros-jazzy-dwb-critics:
+- 1.3.11
+ros-jazzy-dwb-msgs:
+- 1.3.11
+ros-jazzy-dwb-plugins:
+- 1.3.11
+ros-jazzy-dynamic-edt-3d:
+- 1.10.0
+ros-jazzy-dynamixel-hardware:
+- 0.5.0
+ros-jazzy-dynamixel-hardware-interface:
+- 1.5.2
+ros-jazzy-dynamixel-interfaces:
+- 1.0.1
+ros-jazzy-dynamixel-sdk:
+- 4.0.3
+ros-jazzy-dynamixel-sdk-custom-interfaces:
+- 4.0.3
+ros-jazzy-dynamixel-sdk-examples:
+- 4.0.3
+ros-jazzy-dynamixel-workbench:
+- 2.2.5
+ros-jazzy-dynamixel-workbench-msgs:
+- 2.1.0
+ros-jazzy-dynamixel-workbench-toolbox:
+- 2.2.5
+ros-jazzy-easynav:
+- 0.2.2
+ros-jazzy-easynav-bonxai-maps-manager:
+- 0.2.1
+ros-jazzy-easynav-common:
+- 0.2.2
+ros-jazzy-easynav-controller:
+- 0.2.2
+ros-jazzy-easynav-core:
+- 0.2.2
+ros-jazzy-easynav-costmap-common:
+- 0.2.1
+ros-jazzy-easynav-costmap-localizer:
+- 0.2.1
+ros-jazzy-easynav-costmap-maps-manager:
+- 0.2.1
+ros-jazzy-easynav-costmap-planner:
+- 0.2.1
+ros-jazzy-easynav-fusion-localizer:
+- 0.2.1
+ros-jazzy-easynav-gps-localizer:
+- 0.2.1
+ros-jazzy-easynav-interfaces:
+- 0.2.2
+ros-jazzy-easynav-localizer:
+- 0.2.2
+ros-jazzy-easynav-maps-manager:
+- 0.2.2
+ros-jazzy-easynav-mpc-controller:
+- 0.2.1
+ros-jazzy-easynav-mppi-controller:
+- 0.2.1
+ros-jazzy-easynav-navmap-localizer:
+- 0.2.1
+ros-jazzy-easynav-navmap-maps-manager:
+- 0.2.1
+ros-jazzy-easynav-navmap-planner:
+- 0.2.1
+ros-jazzy-easynav-octomap-maps-manager:
+- 0.2.1
+ros-jazzy-easynav-planner:
+- 0.2.2
+ros-jazzy-easynav-routes-maps-manager:
+- 0.2.1
+ros-jazzy-easynav-sensors:
+- 0.2.2
+ros-jazzy-easynav-serest-controller:
+- 0.2.1
+ros-jazzy-easynav-simple-common:
+- 0.2.1
+ros-jazzy-easynav-simple-controller:
+- 0.2.1
+ros-jazzy-easynav-simple-localizer:
+- 0.2.1
+ros-jazzy-easynav-simple-maps-manager:
+- 0.2.1
+ros-jazzy-easynav-simple-planner:
+- 0.2.1
+ros-jazzy-easynav-support-py:
+- 0.2.2
+ros-jazzy-easynav-system:
+- 0.2.2
+ros-jazzy-easynav-tools:
+- 0.2.2
+ros-jazzy-easynav-vff-controller:
+- 0.2.1
+ros-jazzy-ecl-build:
+- 1.0.3
+ros-jazzy-ecl-command-line:
+- 1.2.1
+ros-jazzy-ecl-concepts:
+- 1.2.1
+ros-jazzy-ecl-config:
+- 1.2.0
+ros-jazzy-ecl-console:
+- 1.2.0
+ros-jazzy-ecl-containers:
+- 1.2.1
+ros-jazzy-ecl-converters:
+- 1.2.1
+ros-jazzy-ecl-converters-lite:
+- 1.2.0
+ros-jazzy-ecl-core:
+- 1.2.1
+ros-jazzy-ecl-core-apps:
+- 1.2.1
+ros-jazzy-ecl-devices:
+- 1.2.1
+ros-jazzy-ecl-eigen:
+- 1.2.1
+ros-jazzy-ecl-errors:
+- 1.2.0
+ros-jazzy-ecl-exceptions:
+- 1.2.1
+ros-jazzy-ecl-filesystem:
+- 1.2.1
+ros-jazzy-ecl-formatters:
+- 1.2.1
+ros-jazzy-ecl-geometry:
+- 1.2.1
+ros-jazzy-ecl-io:
+- 1.2.0
+ros-jazzy-ecl-ipc:
+- 1.2.1
+ros-jazzy-ecl-license:
+- 1.0.3
+ros-jazzy-ecl-linear-algebra:
+- 1.2.1
+ros-jazzy-ecl-lite:
+- 1.2.0
+ros-jazzy-ecl-manipulators:
+- 1.2.1
+ros-jazzy-ecl-math:
+- 1.2.1
+ros-jazzy-ecl-mobile-robot:
+- 1.2.1
+ros-jazzy-ecl-mpl:
+- 1.2.1
+ros-jazzy-ecl-sigslots:
+- 1.2.1
+ros-jazzy-ecl-sigslots-lite:
+- 1.2.0
+ros-jazzy-ecl-statistics:
+- 1.2.1
+ros-jazzy-ecl-streams:
+- 1.2.1
+ros-jazzy-ecl-threads:
+- 1.2.1
+ros-jazzy-ecl-time:
+- 1.2.1
+ros-jazzy-ecl-time-lite:
+- 1.2.0
+ros-jazzy-ecl-tools:
+- 1.0.3
+ros-jazzy-ecl-type-traits:
+- 1.2.1
+ros-jazzy-ecl-utilities:
+- 1.2.1
+ros-jazzy-effort-controllers:
+- 4.39.0
+ros-jazzy-eigen-stl-containers:
+- 1.1.0
+ros-jazzy-eigen3-cmake-module:
+- 0.3.0
+ros-jazzy-eigenpy:
+- 3.12.0
+ros-jazzy-eiquadprog:
+- 1.3.1
+ros-jazzy-ess-imu-driver2:
+- 2.0.3
+ros-jazzy-etsi-its-cam-coding:
+- 3.4.0
+ros-jazzy-etsi-its-cam-conversion:
+- 3.4.0
+ros-jazzy-etsi-its-cam-msgs:
+- 3.4.0
+ros-jazzy-etsi-its-cam-ts-coding:
+- 3.4.0
+ros-jazzy-etsi-its-cam-ts-conversion:
+- 3.4.0
+ros-jazzy-etsi-its-cam-ts-msgs:
+- 3.4.0
+ros-jazzy-etsi-its-coding:
+- 3.4.0
+ros-jazzy-etsi-its-conversion:
+- 3.4.0
+ros-jazzy-etsi-its-conversion-srvs:
+- 3.4.0
+ros-jazzy-etsi-its-cpm-ts-coding:
+- 3.4.0
+ros-jazzy-etsi-its-cpm-ts-conversion:
+- 3.4.0
+ros-jazzy-etsi-its-cpm-ts-msgs:
+- 3.4.0
+ros-jazzy-etsi-its-denm-coding:
+- 3.4.0
+ros-jazzy-etsi-its-denm-conversion:
+- 3.4.0
+ros-jazzy-etsi-its-denm-msgs:
+- 3.4.0
+ros-jazzy-etsi-its-denm-ts-coding:
+- 3.4.0
+ros-jazzy-etsi-its-denm-ts-conversion:
+- 3.4.0
+ros-jazzy-etsi-its-denm-ts-msgs:
+- 3.4.0
+ros-jazzy-etsi-its-mapem-ts-coding:
+- 3.4.0
+ros-jazzy-etsi-its-mapem-ts-conversion:
+- 3.4.0
+ros-jazzy-etsi-its-mapem-ts-msgs:
+- 3.4.0
+ros-jazzy-etsi-its-mcm-uulm-coding:
+- 3.4.0
+ros-jazzy-etsi-its-mcm-uulm-conversion:
+- 3.4.0
+ros-jazzy-etsi-its-mcm-uulm-msgs:
+- 3.4.0
+ros-jazzy-etsi-its-messages:
+- 3.4.0
+ros-jazzy-etsi-its-msgs:
+- 3.4.0
+ros-jazzy-etsi-its-msgs-utils:
+- 3.4.0
+ros-jazzy-etsi-its-primitives-conversion:
+- 3.4.0
+ros-jazzy-etsi-its-rviz-plugins:
+- 3.4.0
+ros-jazzy-etsi-its-spatem-ts-coding:
+- 3.4.0
+ros-jazzy-etsi-its-spatem-ts-conversion:
+- 3.4.0
+ros-jazzy-etsi-its-spatem-ts-msgs:
+- 3.4.0
+ros-jazzy-etsi-its-vam-ts-coding:
+- 3.4.0
+ros-jazzy-etsi-its-vam-ts-conversion:
+- 3.4.0
+ros-jazzy-etsi-its-vam-ts-msgs:
+- 3.4.0
+ros-jazzy-event-camera-codecs:
+- 3.0.0
+ros-jazzy-event-camera-msgs:
+- 2.0.1
+ros-jazzy-event-camera-py:
+- 3.0.0
+ros-jazzy-event-camera-renderer:
+- 3.0.0
+ros-jazzy-event-camera-tools:
+- 3.1.2
+ros-jazzy-event-image-reconstruction-fibar:
+- 3.0.3
+ros-jazzy-eventdispatch-python:
+- 0.2.29
+ros-jazzy-eventdispatch-ros2:
+- 0.2.29
+ros-jazzy-eventdispatch-ros2-interfaces:
+- 0.2.29
+ros-jazzy-ewellix-description:
+- 0.2.1
+ros-jazzy-ewellix-interfaces:
+- 0.2.1
+ros-jazzy-ewellix-lift-common:
+- 0.2.1
+ros-jazzy-ewellix-moveit-config:
+- 0.2.1
+ros-jazzy-ewellix-sim:
+- 0.2.1
+ros-jazzy-ewellix-viz:
+- 0.2.1
+ros-jazzy-example-interfaces:
+- 0.12.0
+ros-jazzy-examples-rclcpp-async-client:
+- 0.19.7
+ros-jazzy-examples-rclcpp-cbg-executor:
+- 0.19.7
+ros-jazzy-examples-rclcpp-minimal-action-client:
+- 0.19.7
+ros-jazzy-examples-rclcpp-minimal-action-server:
+- 0.19.7
+ros-jazzy-examples-rclcpp-minimal-client:
+- 0.19.7
+ros-jazzy-examples-rclcpp-minimal-composition:
+- 0.19.7
+ros-jazzy-examples-rclcpp-minimal-publisher:
+- 0.19.7
+ros-jazzy-examples-rclcpp-minimal-service:
+- 0.19.7
+ros-jazzy-examples-rclcpp-minimal-subscriber:
+- 0.19.7
+ros-jazzy-examples-rclcpp-minimal-timer:
+- 0.19.7
+ros-jazzy-examples-rclcpp-multithreaded-executor:
+- 0.19.7
+ros-jazzy-examples-rclcpp-wait-set:
+- 0.19.7
+ros-jazzy-examples-rclpy-executors:
+- 0.19.7
+ros-jazzy-examples-rclpy-guard-conditions:
+- 0.19.7
+ros-jazzy-examples-rclpy-minimal-action-client:
+- 0.19.7
+ros-jazzy-examples-rclpy-minimal-action-server:
+- 0.19.7
+ros-jazzy-examples-rclpy-minimal-client:
+- 0.19.7
+ros-jazzy-examples-rclpy-minimal-publisher:
+- 0.19.7
+ros-jazzy-examples-rclpy-minimal-service:
+- 0.19.7
+ros-jazzy-examples-rclpy-minimal-subscriber:
+- 0.19.7
+ros-jazzy-examples-rclpy-pointcloud-publisher:
+- 0.19.7
+ros-jazzy-examples-tf2-py:
+- 0.36.20
+ros-jazzy-executive-smach:
+- 3.0.3
+ros-jazzy-fadecandy-driver:
+- 1.0.2
+ros-jazzy-fadecandy-msgs:
+- 1.0.2
+ros-jazzy-fastcdr:
+- 2.2.7
+ros-jazzy-fastrtps:
+- 2.14.6
+ros-jazzy-fastrtps-cmake-module:
+- 3.6.3
+ros-jazzy-feetech-ros2-driver:
+- 0.2.2
+ros-jazzy-ffmpeg-encoder-decoder:
+- 3.0.1
+ros-jazzy-ffmpeg-image-transport:
+- 3.0.2
+ros-jazzy-ffmpeg-image-transport-msgs:
+- 1.0.2
+ros-jazzy-ffmpeg-image-transport-tools:
+- 3.0.1
+ros-jazzy-ffw:
+- 1.1.21
+ros-jazzy-ffw-bringup:
+- 1.1.21
+ros-jazzy-ffw-description:
+- 1.1.21
+ros-jazzy-ffw-joint-trajectory-command-broadcaster:
+- 1.1.21
+ros-jazzy-ffw-joystick-controller:
+- 1.1.21
+ros-jazzy-ffw-moveit-config:
+- 1.1.21
+ros-jazzy-ffw-navigation:
+- 1.1.21
+ros-jazzy-ffw-robot-manager:
+- 1.1.21
+ros-jazzy-ffw-spring-actuator-controller:
+- 1.1.21
+ros-jazzy-ffw-swerve-drive-controller:
+- 1.1.21
+ros-jazzy-ffw-teleop:
+- 1.1.21
+ros-jazzy-fibar-lib:
+- 1.0.2
+ros-jazzy-fields2cover:
+- 2.0.0
+ros-jazzy-filters:
+- 2.2.2
+ros-jazzy-find-object-2d:
+- 0.7.1
+ros-jazzy-fkie-message-filters:
+- 3.3.0
+ros-jazzy-flex-sync:
+- 2.0.1
+ros-jazzy-flexbe-behavior-engine:
+- 3.0.7
+ros-jazzy-flexbe-core:
+- 3.0.7
+ros-jazzy-flexbe-input:
+- 3.0.7
+ros-jazzy-flexbe-mirror:
+- 3.0.7
+ros-jazzy-flexbe-msgs:
+- 3.0.7
+ros-jazzy-flexbe-onboard:
+- 3.0.7
+ros-jazzy-flexbe-states:
+- 3.0.7
+ros-jazzy-flexbe-testing:
+- 3.0.7
+ros-jazzy-flexbe-widget:
+- 3.0.7
+ros-jazzy-flir-camera-description:
+- 3.0.4
+ros-jazzy-flir-camera-msgs:
+- 3.0.4
+ros-jazzy-fluent-rviz:
+- 0.0.3
+ros-jazzy-fmi-adapter:
+- 2.1.2
+ros-jazzy-fmi-adapter-examples:
+- 2.1.2
+ros-jazzy-fmilibrary-vendor:
+- 1.0.1
+ros-jazzy-foonathan-memory-vendor:
+- 1.3.1
+ros-jazzy-force-torque-sensor-broadcaster:
+- 4.39.0
+ros-jazzy-forward-command-controller:
+- 4.39.0
+ros-jazzy-four-wheel-steering-msgs:
+- 2.0.1
+ros-jazzy-foxglove-bridge:
+- 3.2.6
+ros-jazzy-foxglove-compressed-video-transport:
+- 3.0.1
+ros-jazzy-foxglove-msgs:
+- 3.2.6
+ros-jazzy-foxglove-sdk-vendor:
+- 0.2.0
+ros-jazzy-frame-editor:
+- 2.0.2
+ros-jazzy-franka-inria-inverse-dynamics-solver:
+- 2.0.3
+ros-jazzy-frequency-cam:
+- 3.1.0
+ros-jazzy-fuse:
+- 1.1.4
+ros-jazzy-fuse-constraints:
+- 1.1.4
+ros-jazzy-fuse-core:
+- 1.1.4
+ros-jazzy-fuse-doc:
+- 1.1.4
+ros-jazzy-fuse-graphs:
+- 1.1.4
+ros-jazzy-fuse-loss:
+- 1.1.4
+ros-jazzy-fuse-models:
+- 1.1.4
+ros-jazzy-fuse-msgs:
+- 1.1.4
+ros-jazzy-fuse-optimizers:
+- 1.1.4
+ros-jazzy-fuse-publishers:
+- 1.1.4
+ros-jazzy-fuse-tutorials:
+- 1.1.4
+ros-jazzy-fuse-variables:
+- 1.1.4
+ros-jazzy-fuse-viz:
+- 1.1.4
+ros-jazzy-fusioncore-core:
+- 0.1.1
+ros-jazzy-fusioncore-gazebo:
+- 0.1.1
+ros-jazzy-fusioncore-ros:
+- 0.1.1
+ros-jazzy-game-controller-spl:
+- 4.1.0
+ros-jazzy-game-controller-spl-interfaces:
+- 4.1.0
+ros-jazzy-gazebo-msgs:
+- 3.8.0
+ros-jazzy-gc-spl:
+- 4.1.0
+ros-jazzy-gc-spl-2022:
+- 4.1.0
+ros-jazzy-gc-spl-interfaces:
+- 4.1.0
+ros-jazzy-generate-parameter-library:
+- 0.7.1
+ros-jazzy-generate-parameter-library-py:
+- 0.7.1
+ros-jazzy-geodesy:
+- 1.0.6
+ros-jazzy-geographic-info:
+- 1.0.6
+ros-jazzy-geographic-msgs:
+- 1.0.6
+ros-jazzy-geometric-shapes:
+- 2.3.2
+ros-jazzy-geometry-msgs:
+- 5.3.7
+ros-jazzy-geometry-tutorials:
+- 0.5.0
+ros-jazzy-geometry2:
+- 0.36.20
+ros-jazzy-gmock-vendor:
+- 1.14.9000
+ros-jazzy-google-benchmark-vendor:
+- 0.5.1
+ros-jazzy-gpio-controllers:
+- 4.39.0
+ros-jazzy-gps-msgs:
+- 2.1.2
+ros-jazzy-gps-sensor-broadcaster:
+- 4.39.0
+ros-jazzy-gps-tools:
+- 2.1.2
+ros-jazzy-gps-umd:
+- 2.1.2
+ros-jazzy-gpsd-client:
+- 2.1.2
+ros-jazzy-graph-msgs:
+- 0.2.0
+ros-jazzy-grasping-msgs:
+- 0.5.0
+ros-jazzy-grbl-msgs:
+- 0.0.2
+ros-jazzy-grbl-ros:
+- 0.0.16
+ros-jazzy-greenwave-monitor:
+- 1.0.0
+ros-jazzy-greenwave-monitor-interfaces:
+- 1.0.0
+ros-jazzy-grid-map:
+- 2.2.2
+ros-jazzy-grid-map-cmake-helpers:
+- 2.2.2
+ros-jazzy-grid-map-core:
+- 2.2.2
+ros-jazzy-grid-map-costmap-2d:
+- 2.2.2
+ros-jazzy-grid-map-cv:
+- 2.2.2
+ros-jazzy-grid-map-demos:
+- 2.2.2
+ros-jazzy-grid-map-filters:
+- 2.2.2
+ros-jazzy-grid-map-loader:
+- 2.2.2
+ros-jazzy-grid-map-msgs:
+- 2.2.2
+ros-jazzy-grid-map-octomap:
+- 2.2.2
+ros-jazzy-grid-map-pcl:
+- 2.2.2
+ros-jazzy-grid-map-ros:
+- 2.2.2
+ros-jazzy-grid-map-rviz-plugin:
+- 2.2.2
+ros-jazzy-grid-map-sdf:
+- 2.2.2
+ros-jazzy-grid-map-visualization:
+- 2.2.2
+ros-jazzy-gripper-controllers:
+- 4.39.0
+ros-jazzy-gscam:
+- 2.0.2
+ros-jazzy-gtest-vendor:
+- 1.14.9000
+ros-jazzy-gtsam:
+- 4.2.0
+ros-jazzy-gtsam2mrpt-serial:
+- 0.2.0
+ros-jazzy-gurumdds-cmake-module:
+- 5.0.0
+ros-jazzy-gz-cmake-vendor:
+- 0.0.11
+ros-jazzy-gz-common-vendor:
+- 0.0.9
+ros-jazzy-gz-dartsim-vendor:
+- 0.0.3
+ros-jazzy-gz-fuel-tools-vendor:
+- 0.0.6
+ros-jazzy-gz-gui-vendor:
+- 0.0.5
+ros-jazzy-gz-launch-vendor:
+- 0.0.5
+ros-jazzy-gz-math-vendor:
+- 0.0.8
+ros-jazzy-gz-msgs-vendor:
+- 0.0.6
+ros-jazzy-gz-ogre-next-vendor:
+- 0.0.5
+ros-jazzy-gz-physics-vendor:
+- 0.0.7
+ros-jazzy-gz-plugin-vendor:
+- 0.0.5
+ros-jazzy-gz-rendering-vendor:
+- 0.0.7
+ros-jazzy-gz-ros2-control:
+- 1.2.17
+ros-jazzy-gz-ros2-control-demos:
+- 1.2.17
+ros-jazzy-gz-sensors-vendor:
+- 0.0.6
+ros-jazzy-gz-sim-vendor:
+- 0.0.10
+ros-jazzy-gz-tools-vendor:
+- 0.0.7
+ros-jazzy-gz-transport-vendor:
+- 0.0.7
+ros-jazzy-gz-utils-vendor:
+- 0.0.5
+ros-jazzy-hardware-interface:
+- 4.44.0
+ros-jazzy-hardware-interface-testing:
+- 4.44.0
+ros-jazzy-hash-library-vendor:
+- 0.1.1
+ros-jazzy-hatchbed-common:
+- 0.1.2
+ros-jazzy-heaphook:
+- 0.1.1
+ros-jazzy-hebi-cpp-api:
+- 3.16.0
+ros-jazzy-hitch-estimation-apriltag-array:
+- 0.0.2
+ros-jazzy-hls-lfcd-lds-driver:
+- 2.1.1
+ros-jazzy-hpp-fcl:
+- 2.4.5
+ros-jazzy-hri:
+- 2.9.0
+ros-jazzy-hri-actions-msgs:
+- 2.5.0
+ros-jazzy-hri-msgs:
+- 2.3.2
+ros-jazzy-hri-rviz:
+- 2.3.0
+ros-jazzy-human-description:
+- 2.0.2
+ros-jazzy-husarion-components-description:
+- 0.1.0
+ros-jazzy-husarion-ugv-description:
+- 2.3.1
+ros-jazzy-husarion-ugv-msgs:
+- 2.3.1
+ros-jazzy-ibeo-msgs:
+- 4.0.0
+ros-jazzy-iceoryx-binding-c:
+- 2.0.6
+ros-jazzy-iceoryx-hoofs:
+- 2.0.6
+ros-jazzy-iceoryx-introspection:
+- 2.0.6
+ros-jazzy-iceoryx-posh:
+- 2.0.6
+ros-jazzy-ifm3d-core:
+- 0.18.0
+ros-jazzy-image-common:
+- 5.1.7
+ros-jazzy-image-geometry:
+- 4.1.0
+ros-jazzy-image-pipeline:
+- 5.0.11
+ros-jazzy-image-proc:
+- 5.0.11
+ros-jazzy-image-publisher:
+- 5.0.11
+ros-jazzy-image-rotate:
+- 5.0.11
+ros-jazzy-image-tools:
+- 0.33.10
+ros-jazzy-image-transport:
+- 5.1.7
+ros-jazzy-image-transport-plugins:
+- 4.0.6
+ros-jazzy-image-view:
+- 5.0.11
+ros-jazzy-imu-complementary-filter:
+- 2.1.5
+ros-jazzy-imu-filter-madgwick:
+- 2.1.5
+ros-jazzy-imu-pipeline:
+- 0.5.2
+ros-jazzy-imu-processors:
+- 0.5.2
+ros-jazzy-imu-sensor-broadcaster:
+- 4.39.0
+ros-jazzy-imu-tools:
+- 2.1.5
+ros-jazzy-imu-transformer:
+- 0.5.2
+ros-jazzy-insight-gui:
+- 0.1.3
+ros-jazzy-interactive-marker-twist-server:
+- 2.1.1
+ros-jazzy-interactive-markers:
+- 2.5.5
+ros-jazzy-intra-process-demo:
+- 0.33.10
+ros-jazzy-inverse-dynamics-solver:
+- 2.0.3
+ros-jazzy-io-context:
+- 1.2.0
+ros-jazzy-irobot-create-common-bringup:
+- 3.0.4
+ros-jazzy-irobot-create-control:
+- 3.0.4
+ros-jazzy-irobot-create-description:
+- 3.0.4
+ros-jazzy-irobot-create-gz-bringup:
+- 3.0.4
+ros-jazzy-irobot-create-gz-plugins:
+- 3.0.4
+ros-jazzy-irobot-create-gz-sim:
+- 3.0.4
+ros-jazzy-irobot-create-gz-toolbox:
+- 3.0.4
+ros-jazzy-irobot-create-msgs:
+- 3.0.0
+ros-jazzy-irobot-create-nodes:
+- 3.0.4
+ros-jazzy-irobot-create-toolbox:
+- 3.0.4
+ros-jazzy-jacro:
+- 0.2.0
+ros-jazzy-joint-limits:
+- 4.44.0
+ros-jazzy-joint-state-broadcaster:
+- 4.39.0
+ros-jazzy-joint-state-publisher:
+- 2.4.1
+ros-jazzy-joint-state-publisher-gui:
+- 2.4.1
+ros-jazzy-joint-state-topic-hardware-interface:
+- 1.0.0
+ros-jazzy-joint-trajectory-controller:
+- 4.39.0
+ros-jazzy-joy:
+- 3.3.0
+ros-jazzy-joy-linux:
+- 3.3.0
+ros-jazzy-joy-teleop:
+- 2.0.0
+ros-jazzy-joy-tester:
+- 0.0.2
+ros-jazzy-jrl-cmakemodules:
+- 1.1.2
+ros-jazzy-kartech-linear-actuator-msgs:
+- 4.0.0
+ros-jazzy-kdl-inverse-dynamics-solver:
+- 2.0.3
+ros-jazzy-kdl-parser:
+- 2.11.0
+ros-jazzy-key-teleop:
+- 2.0.0
+ros-jazzy-keyboard-handler:
+- 0.3.2
+ros-jazzy-kinematic-pose-msgs:
+- 1.0.0
+ros-jazzy-kinematics-interface:
+- 1.7.0
+ros-jazzy-kinematics-interface-kdl:
+- 1.7.0
+ros-jazzy-kinematics-interface-pinocchio:
+- 1.7.0
+ros-jazzy-kinova-gen3-6dof-robotiq-2f-85-moveit-config:
+- 0.2.6
+ros-jazzy-kinova-gen3-7dof-robotiq-2f-85-moveit-config:
+- 0.2.6
+ros-jazzy-kinova-gen3-lite-moveit-config:
+- 0.2.6
+ros-jazzy-kitti-metrics-eval:
+- 2.6.1
+ros-jazzy-kobuki-core:
+- 1.4.0
+ros-jazzy-kobuki-ros-interfaces:
+- 1.0.0
+ros-jazzy-kobuki-velocity-smoother:
+- 0.15.1
+ros-jazzy-kompass:
+- 0.4.1
+ros-jazzy-kompass-interfaces:
+- 0.4.1
+ros-jazzy-kortex-api:
+- 0.2.6
+ros-jazzy-kortex-bringup:
+- 0.2.6
+ros-jazzy-kortex-description:
+- 0.2.6
+ros-jazzy-kortex-driver:
+- 0.2.6
+ros-jazzy-lanelet2:
+- 1.2.1
+ros-jazzy-lanelet2-core:
+- 1.2.1
+ros-jazzy-lanelet2-examples:
+- 1.2.1
+ros-jazzy-lanelet2-io:
+- 1.2.1
+ros-jazzy-lanelet2-maps:
+- 1.2.1
+ros-jazzy-lanelet2-matching:
+- 1.2.1
+ros-jazzy-lanelet2-projection:
+- 1.2.1
+ros-jazzy-lanelet2-python:
+- 1.2.1
+ros-jazzy-lanelet2-routing:
+- 1.2.1
+ros-jazzy-lanelet2-traffic-rules:
+- 1.2.1
+ros-jazzy-lanelet2-validation:
+- 1.2.1
+ros-jazzy-laser-filters:
+- 2.0.9
+ros-jazzy-laser-geometry:
+- 2.7.2
+ros-jazzy-laser-proc:
+- 1.0.2
+ros-jazzy-laser-segmentation:
+- 3.0.4
+ros-jazzy-launch:
+- 3.4.10
+ros-jazzy-launch-frontend-py:
+- 0.1.0
+ros-jazzy-launch-pal:
+- 0.20.2
+ros-jazzy-launch-param-builder:
+- 0.1.1
+ros-jazzy-launch-pytest:
+- 3.4.10
+ros-jazzy-launch-ros:
+- 0.26.11
+ros-jazzy-launch-system-modes:
+- 0.9.0
+ros-jazzy-launch-testing:
+- 3.4.10
+ros-jazzy-launch-testing-ament-cmake:
+- 3.4.10
+ros-jazzy-launch-testing-examples:
+- 0.19.7
+ros-jazzy-launch-testing-ros:
+- 0.26.11
+ros-jazzy-launch-xml:
+- 3.4.10
+ros-jazzy-launch-yaml:
+- 3.4.10
+ros-jazzy-ld08-driver:
+- 1.1.4
+ros-jazzy-lely-core-libraries:
+- 0.3.2
+ros-jazzy-leo:
+- 3.2.0
+ros-jazzy-leo-bringup:
+- 2.5.1
+ros-jazzy-leo-description:
+- 3.2.0
+ros-jazzy-leo-desktop:
+- 3.0.0
+ros-jazzy-leo-example-follow-aruco-marker:
+- 1.0.0
+ros-jazzy-leo-example-line-follower:
+- 1.0.0
+ros-jazzy-leo-example-object-detection:
+- 1.0.0
+ros-jazzy-leo-examples:
+- 1.0.0
+ros-jazzy-leo-filters:
+- 2.5.1
+ros-jazzy-leo-fw:
+- 2.5.1
+ros-jazzy-leo-gz-bringup:
+- 2.0.2
+ros-jazzy-leo-gz-plugins:
+- 2.0.2
+ros-jazzy-leo-gz-worlds:
+- 2.0.2
+ros-jazzy-leo-msgs:
+- 3.2.0
+ros-jazzy-leo-robot:
+- 2.5.1
+ros-jazzy-leo-simulator:
+- 2.0.2
+ros-jazzy-leo-teleop:
+- 3.2.0
+ros-jazzy-leo-viz:
+- 3.0.0
+ros-jazzy-lgsvl-msgs:
+- 0.0.4
+ros-jazzy-libcaer-driver:
+- 1.5.2
+ros-jazzy-libcaer-vendor:
+- 2.0.0
+ros-jazzy-libcamera:
+- 0.7.0
+ros-jazzy-libcurl-vendor:
+- 3.4.4
+ros-jazzy-libg2o:
+- 2020.5.29
+ros-jazzy-liblz4-vendor:
+- 0.26.10
+ros-jazzy-libmavconn:
+- 2.14.0
+ros-jazzy-libnabo:
+- 1.1.1
+ros-jazzy-libphidget22:
+- 2.4.0
+ros-jazzy-libpointmatcher:
+- 1.4.2
+ros-jazzy-librealsense2:
+- 2.57.7
+ros-jazzy-libstatistics-collector:
+- 1.7.4
+ros-jazzy-libyaml-vendor:
+- 1.6.3
+ros-jazzy-lifecycle:
+- 0.33.10
+ros-jazzy-lifecycle-msgs:
+- 2.0.3
+ros-jazzy-lifecycle-py:
+- 0.33.10
+ros-jazzy-lightning-rrt:
+- 0.0.1
+ros-jazzy-lightning-rrt-interfaces:
+- 0.0.2
+ros-jazzy-linux-isolate-process:
+- 0.0.2
+ros-jazzy-live555-vendor:
+- 0.20250917.0
+ros-jazzy-lms1xx:
+- 1.0.1
+ros-jazzy-log-view:
+- 0.2.5
+ros-jazzy-logging-demo:
+- 0.33.10
+ros-jazzy-lttngpy:
+- 8.2.5
+ros-jazzy-lusb:
+- 2.0.2
+ros-jazzy-lvr2:
+- 25.2.2
+ros-jazzy-magic-enum:
+- 0.9.7
+ros-jazzy-magnetic-model:
+- 3.0.2
+ros-jazzy-magnetometer-compass:
+- 3.0.2
+ros-jazzy-magnetometer-pipeline:
+- 3.0.2
+ros-jazzy-map-msgs:
+- 2.4.1
+ros-jazzy-mapviz:
+- 2.6.2
+ros-jazzy-mapviz-interfaces:
+- 2.6.2
+ros-jazzy-mapviz-plugins:
+- 2.6.2
+ros-jazzy-marine-acoustic-msgs:
+- 2.1.0
+ros-jazzy-marine-sensor-msgs:
+- 2.1.0
+ros-jazzy-marker-msgs:
+- 0.0.8
+ros-jazzy-marti-can-msgs:
+- 1.6.1
+ros-jazzy-marti-common-msgs:
+- 1.6.1
+ros-jazzy-marti-dbw-msgs:
+- 1.6.1
+ros-jazzy-marti-introspection-msgs:
+- 1.6.1
+ros-jazzy-marti-nav-msgs:
+- 1.6.1
+ros-jazzy-marti-perception-msgs:
+- 1.6.1
+ros-jazzy-marti-sensor-msgs:
+- 1.6.1
+ros-jazzy-marti-status-msgs:
+- 1.6.1
+ros-jazzy-marti-visualization-msgs:
+- 1.6.1
+ros-jazzy-mavlink:
+- 2026.3.3
+ros-jazzy-mavros:
+- 2.14.0
+ros-jazzy-mavros-examples:
+- 2.14.0
+ros-jazzy-mavros-extras:
+- 2.14.0
+ros-jazzy-mavros-msgs:
+- 2.14.0
+ros-jazzy-mbf-abstract-core:
+- 1.0.5
+ros-jazzy-mbf-abstract-nav:
+- 1.0.5
+ros-jazzy-mbf-msgs:
+- 1.0.5
+ros-jazzy-mbf-simple-core:
+- 1.0.5
+ros-jazzy-mbf-simple-nav:
+- 1.0.5
+ros-jazzy-mbf-test-utility:
+- 1.0.5
+ros-jazzy-mbf-utility:
+- 1.0.5
+ros-jazzy-mcap-vendor:
+- 0.26.10
+ros-jazzy-mecanum-drive-controller:
+- 4.39.0
+ros-jazzy-menge-vendor:
+- 1.2.1
+ros-jazzy-message-filters:
+- 4.11.12
+ros-jazzy-message-tf-frame-transformer:
+- 1.1.3
+ros-jazzy-metavision-driver:
+- 3.0.0
+ros-jazzy-micro-ros-diagnostic-bridge:
+- 0.3.0
+ros-jazzy-micro-ros-diagnostic-msgs:
+- 0.3.0
+ros-jazzy-micro-ros-msgs:
+- 1.0.0
+ros-jazzy-microstrain-inertial-description:
+- 4.8.0
+ros-jazzy-microstrain-inertial-driver:
+- 4.8.0
+ros-jazzy-microstrain-inertial-examples:
+- 4.8.0
+ros-jazzy-microstrain-inertial-msgs:
+- 4.8.0
+ros-jazzy-microstrain-inertial-rqt:
+- 4.8.0
+ros-jazzy-mimick-vendor:
+- 0.6.2
+ros-jazzy-mobile-robot-simulator:
+- 2.0.0
+ros-jazzy-mobileye-560-660-msgs:
+- 4.0.0
+ros-jazzy-mocap-optitrack:
+- 1.0.1
+ros-jazzy-mocap4r2-msgs:
+- 0.1.0
+ros-jazzy-mola:
+- 2.6.1
+ros-jazzy-mola-bridge-ros2:
+- 2.6.1
+ros-jazzy-mola-common:
+- 0.5.2
+ros-jazzy-mola-demos:
+- 2.6.1
+ros-jazzy-mola-georeferencing:
+- 2.2.0
+ros-jazzy-mola-gnss-to-markers:
+- 0.1.2
+ros-jazzy-mola-gtsam-factors:
+- 2.2.0
+ros-jazzy-mola-imu-preintegration:
+- 1.15.0
+ros-jazzy-mola-input-euroc-dataset:
+- 2.6.1
+ros-jazzy-mola-input-kitti-dataset:
+- 2.6.1
+ros-jazzy-mola-input-kitti360-dataset:
+- 2.6.1
+ros-jazzy-mola-input-lidar-bin-dataset:
+- 2.6.1
+ros-jazzy-mola-input-mulran-dataset:
+- 2.6.1
+ros-jazzy-mola-input-paris-luco-dataset:
+- 2.6.1
+ros-jazzy-mola-input-rawlog:
+- 2.6.1
+ros-jazzy-mola-input-rosbag2:
+- 2.6.1
+ros-jazzy-mola-input-video:
+- 2.6.1
+ros-jazzy-mola-kernel:
+- 2.6.1
+ros-jazzy-mola-launcher:
+- 2.6.1
+ros-jazzy-mola-lidar-odometry:
+- 2.0.0
+ros-jazzy-mola-metric-maps:
+- 2.6.1
+ros-jazzy-mola-msgs:
+- 2.6.1
+ros-jazzy-mola-pose-list:
+- 2.6.1
+ros-jazzy-mola-relocalization:
+- 2.6.1
+ros-jazzy-mola-state-estimation:
+- 2.2.0
+ros-jazzy-mola-state-estimation-simple:
+- 2.2.0
+ros-jazzy-mola-state-estimation-smoother:
+- 2.2.0
+ros-jazzy-mola-test-datasets:
+- 0.4.2
+ros-jazzy-mola-traj-tools:
+- 2.6.1
+ros-jazzy-mola-viz:
+- 2.6.1
+ros-jazzy-mola-yaml:
+- 2.6.1
+ros-jazzy-motion-capture-tracking:
+- 1.0.6
+ros-jazzy-motion-capture-tracking-interfaces:
+- 1.0.6
+ros-jazzy-motion-primitives-controllers:
+- 4.39.0
+ros-jazzy-mouse-teleop:
+- 2.0.0
+ros-jazzy-move-base-flex:
+- 1.0.5
+ros-jazzy-moveit:
+- 2.12.4
+ros-jazzy-moveit-common:
+- 2.12.4
+ros-jazzy-moveit-configs-utils:
+- 2.12.4
+ros-jazzy-moveit-core:
+- 2.12.4
+ros-jazzy-moveit-hybrid-planning:
+- 2.12.4
+ros-jazzy-moveit-kinematics:
+- 2.12.4
+ros-jazzy-moveit-msgs:
+- 2.6.0
+ros-jazzy-moveit-planners:
+- 2.12.4
+ros-jazzy-moveit-planners-chomp:
+- 2.12.4
+ros-jazzy-moveit-planners-ompl:
+- 2.12.4
+ros-jazzy-moveit-planners-stomp:
+- 2.12.4
+ros-jazzy-moveit-plugins:
+- 2.12.4
+ros-jazzy-moveit-py:
+- 2.12.4
+ros-jazzy-moveit-resources:
+- 3.1.0
+ros-jazzy-moveit-resources-fanuc-description:
+- 3.1.0
+ros-jazzy-moveit-resources-fanuc-moveit-config:
+- 3.1.0
+ros-jazzy-moveit-resources-panda-description:
+- 3.1.0
+ros-jazzy-moveit-resources-panda-moveit-config:
+- 3.1.0
+ros-jazzy-moveit-resources-pr2-description:
+- 3.1.0
+ros-jazzy-moveit-resources-prbt-ikfast-manipulator-plugin:
+- 2.12.4
+ros-jazzy-moveit-resources-prbt-moveit-config:
+- 2.12.4
+ros-jazzy-moveit-resources-prbt-pg70-support:
+- 2.12.4
+ros-jazzy-moveit-resources-prbt-support:
+- 2.12.4
+ros-jazzy-moveit-ros:
+- 2.12.4
+ros-jazzy-moveit-ros-benchmarks:
+- 2.12.4
+ros-jazzy-moveit-ros-control-interface:
+- 2.12.4
+ros-jazzy-moveit-ros-move-group:
+- 2.12.4
+ros-jazzy-moveit-ros-occupancy-map-monitor:
+- 2.12.4
+ros-jazzy-moveit-ros-perception:
+- 2.12.4
+ros-jazzy-moveit-ros-planning:
+- 2.12.4
+ros-jazzy-moveit-ros-planning-interface:
+- 2.12.4
+ros-jazzy-moveit-ros-robot-interaction:
+- 2.12.4
+ros-jazzy-moveit-ros-tests:
+- 2.12.4
+ros-jazzy-moveit-ros-trajectory-cache:
+- 2.12.4
+ros-jazzy-moveit-ros-visualization:
+- 2.12.4
+ros-jazzy-moveit-ros-warehouse:
+- 2.12.4
+ros-jazzy-moveit-runtime:
+- 2.12.4
+ros-jazzy-moveit-servo:
+- 2.12.4
+ros-jazzy-moveit-setup-app-plugins:
+- 2.12.4
+ros-jazzy-moveit-setup-assistant:
+- 2.12.4
+ros-jazzy-moveit-setup-controllers:
+- 2.12.4
+ros-jazzy-moveit-setup-core-plugins:
+- 2.12.4
+ros-jazzy-moveit-setup-framework:
+- 2.12.4
+ros-jazzy-moveit-setup-srdf-plugins:
+- 2.12.4
+ros-jazzy-moveit-simple-controller-manager:
+- 2.12.4
+ros-jazzy-moveit-task-constructor-capabilities:
+- 0.1.4
+ros-jazzy-moveit-task-constructor-core:
+- 0.1.4
+ros-jazzy-moveit-task-constructor-demo:
+- 0.1.4
+ros-jazzy-moveit-task-constructor-msgs:
+- 0.1.4
+ros-jazzy-moveit-task-constructor-visualization:
+- 0.1.4
+ros-jazzy-moveit-visual-tools:
+- 4.1.2
+ros-jazzy-mp-units-vendor:
+- 2.5.0
+ros-jazzy-mp2p-icp:
+- 2.8.1
+ros-jazzy-mqtt-client:
+- 2.4.1
+ros-jazzy-mqtt-client-interfaces:
+- 2.4.1
+ros-jazzy-mrpt-apps:
+- 2.15.12
+ros-jazzy-mrpt-generic-sensor:
+- 0.2.4
+ros-jazzy-mrpt-libapps:
+- 2.15.12
+ros-jazzy-mrpt-libbase:
+- 2.15.12
+ros-jazzy-mrpt-libgui:
+- 2.15.12
+ros-jazzy-mrpt-libhwdrivers:
+- 2.15.12
+ros-jazzy-mrpt-libmaps:
+- 2.15.12
+ros-jazzy-mrpt-libmath:
+- 2.15.12
+ros-jazzy-mrpt-libnav:
+- 2.15.12
+ros-jazzy-mrpt-libobs:
+- 2.15.12
+ros-jazzy-mrpt-libopengl:
+- 2.15.12
+ros-jazzy-mrpt-libposes:
+- 2.15.12
+ros-jazzy-mrpt-libros-bridge:
+- 3.5.1
+ros-jazzy-mrpt-libslam:
+- 2.15.12
+ros-jazzy-mrpt-libtclap:
+- 2.15.12
+ros-jazzy-mrpt-map-server:
+- 2.3.1
+ros-jazzy-mrpt-msgs:
+- 0.6.0
+ros-jazzy-mrpt-msgs-bridge:
+- 2.3.1
+ros-jazzy-mrpt-nav-interfaces:
+- 2.3.1
+ros-jazzy-mrpt-navigation:
+- 2.3.1
+ros-jazzy-mrpt-path-planning:
+- 0.3.0
+ros-jazzy-mrpt-pf-localization:
+- 2.3.1
+ros-jazzy-mrpt-pointcloud-pipeline:
+- 2.3.1
+ros-jazzy-mrpt-reactivenav2d:
+- 2.3.1
+ros-jazzy-mrpt-sensor-bumblebee-stereo:
+- 0.2.4
+ros-jazzy-mrpt-sensor-gnss-nmea:
+- 0.2.4
+ros-jazzy-mrpt-sensor-gnss-novatel:
+- 0.2.4
+ros-jazzy-mrpt-sensor-imu-taobotics:
+- 0.2.4
+ros-jazzy-mrpt-sensorlib:
+- 0.2.4
+ros-jazzy-mrpt-sensors:
+- 0.2.4
+ros-jazzy-mrpt-tps-astar-planner:
+- 2.3.1
+ros-jazzy-mrpt-tutorials:
+- 2.3.1
+ros-jazzy-mrt-cmake-modules:
+- 1.0.11
+ros-jazzy-mujoco-ros2-control:
+- 0.0.2
+ros-jazzy-mujoco-ros2-control-demos:
+- 0.0.2
+ros-jazzy-mujoco-ros2-control-msgs:
+- 0.0.2
+ros-jazzy-mujoco-ros2-control-plugins:
+- 0.0.2
+ros-jazzy-mujoco-vendor:
+- 0.0.8
+ros-jazzy-multires-image:
+- 2.6.2
+ros-jazzy-multisensor-calibration:
+- 2.1.0
+ros-jazzy-multisensor-calibration-interface:
+- 2.1.0
+ros-jazzy-mvsim:
+- 1.3.0
+ros-jazzy-nanoeigenpy:
+- 0.5.0
+ros-jazzy-nao-button-sim:
+- 1.0.1
+ros-jazzy-nao-command-msgs:
+- 1.0.0
+ros-jazzy-nao-lola:
+- 1.3.0
+ros-jazzy-nao-lola-client:
+- 1.3.0
+ros-jazzy-nao-lola-command-msgs:
+- 1.3.0
+ros-jazzy-nao-lola-sensor-msgs:
+- 1.3.0
+ros-jazzy-nao-sensor-msgs:
+- 1.0.0
+ros-jazzy-naoqi-libqi:
+- 3.0.3
+ros-jazzy-nav-2d-msgs:
+- 1.3.11
+ros-jazzy-nav-2d-utils:
+- 1.3.11
+ros-jazzy-nav-msgs:
+- 5.3.7
+ros-jazzy-nav2-amcl:
+- 1.3.11
+ros-jazzy-nav2-behavior-tree:
+- 1.3.11
+ros-jazzy-nav2-behaviors:
+- 1.3.11
+ros-jazzy-nav2-bringup:
+- 1.3.11
+ros-jazzy-nav2-bt-navigator:
+- 1.3.11
+ros-jazzy-nav2-collision-monitor:
+- 1.3.11
+ros-jazzy-nav2-common:
+- 1.3.11
+ros-jazzy-nav2-constrained-smoother:
+- 1.3.11
+ros-jazzy-nav2-controller:
+- 1.3.11
+ros-jazzy-nav2-core:
+- 1.3.11
+ros-jazzy-nav2-costmap-2d:
+- 1.3.11
+ros-jazzy-nav2-dwb-controller:
+- 1.3.11
+ros-jazzy-nav2-graceful-controller:
+- 1.3.11
+ros-jazzy-nav2-lifecycle-manager:
+- 1.3.11
+ros-jazzy-nav2-loopback-sim:
+- 1.3.11
+ros-jazzy-nav2-map-server:
+- 1.3.11
+ros-jazzy-nav2-minimal-tb3-sim:
+- 1.0.1
+ros-jazzy-nav2-minimal-tb4-description:
+- 1.0.1
+ros-jazzy-nav2-minimal-tb4-sim:
+- 1.0.1
+ros-jazzy-nav2-mppi-controller:
+- 1.3.11
+ros-jazzy-nav2-msgs:
+- 1.3.11
+ros-jazzy-nav2-navfn-planner:
+- 1.3.11
+ros-jazzy-nav2-planner:
+- 1.3.11
+ros-jazzy-nav2-regulated-pure-pursuit-controller:
+- 1.3.11
+ros-jazzy-nav2-rotation-shim-controller:
+- 1.3.11
+ros-jazzy-nav2-route:
+- 1.3.11
+ros-jazzy-nav2-rviz-plugins:
+- 1.3.11
+ros-jazzy-nav2-simple-commander:
+- 1.3.11
+ros-jazzy-nav2-smac-planner:
+- 1.3.11
+ros-jazzy-nav2-smoother:
+- 1.3.11
+ros-jazzy-nav2-system-tests:
+- 1.3.11
+ros-jazzy-nav2-theta-star-planner:
+- 1.3.11
+ros-jazzy-nav2-util:
+- 1.3.11
+ros-jazzy-nav2-velocity-smoother:
+- 1.3.11
+ros-jazzy-nav2-voxel-grid:
+- 1.3.11
+ros-jazzy-nav2-waypoint-follower:
+- 1.3.11
+ros-jazzy-navigation2:
+- 1.3.11
+ros-jazzy-navmap-core:
+- 0.3.0
+ros-jazzy-navmap-examples:
+- 0.3.0
+ros-jazzy-navmap-ros:
+- 0.3.0
+ros-jazzy-navmap-ros-interfaces:
+- 0.3.0
+ros-jazzy-navmap-rviz-plugin:
+- 0.3.0
+ros-jazzy-nebula:
+- 1.0.0
+ros-jazzy-nebula-continental:
+- 1.0.0
+ros-jazzy-nebula-continental-common:
+- 1.0.0
+ros-jazzy-nebula-continental-decoders:
+- 1.0.0
+ros-jazzy-nebula-continental-hw-interfaces:
+- 1.0.0
+ros-jazzy-nebula-core-common:
+- 1.0.0
+ros-jazzy-nebula-core-decoders:
+- 1.0.0
+ros-jazzy-nebula-core-hw-interfaces:
+- 1.0.0
+ros-jazzy-nebula-core-ros:
+- 1.0.0
+ros-jazzy-nebula-hesai:
+- 1.0.0
+ros-jazzy-nebula-hesai-common:
+- 1.0.0
+ros-jazzy-nebula-hesai-decoders:
+- 1.0.0
+ros-jazzy-nebula-hesai-hw-interfaces:
+- 1.0.0
+ros-jazzy-nebula-msgs:
+- 1.0.0
+ros-jazzy-nebula-robosense:
+- 1.0.0
+ros-jazzy-nebula-robosense-common:
+- 1.0.0
+ros-jazzy-nebula-robosense-decoders:
+- 1.0.0
+ros-jazzy-nebula-robosense-hw-interfaces:
+- 1.0.0
+ros-jazzy-nebula-sample:
+- 1.0.0
+ros-jazzy-nebula-sample-common:
+- 1.0.0
+ros-jazzy-nebula-sample-decoders:
+- 1.0.0
+ros-jazzy-nebula-sample-hw-interfaces:
+- 1.0.0
+ros-jazzy-nebula-velodyne:
+- 1.0.0
+ros-jazzy-nebula-velodyne-common:
+- 1.0.0
+ros-jazzy-nebula-velodyne-decoders:
+- 1.0.0
+ros-jazzy-nebula-velodyne-hw-interfaces:
+- 1.0.0
+ros-jazzy-neo-nav2-bringup:
+- 1.3.2
+ros-jazzy-neobotix-usboard-msgs:
+- 4.0.0
+ros-jazzy-network-bridge:
+- 3.0.0
+ros-jazzy-nicla-vision-ros2:
+- 1.1.1
+ros-jazzy-nlohmann-json-schema-validator-vendor:
+- 0.4.1
+ros-jazzy-nmea-msgs:
+- 2.1.0
+ros-jazzy-nmea-navsat-driver:
+- 2.0.1
+ros-jazzy-nobleo-socketcan-bridge:
+- 1.0.4
+ros-jazzy-nodl-python:
+- 0.3.1
+ros-jazzy-nodl-to-policy:
+- 1.0.0
+ros-jazzy-nonpersistent-voxel-layer:
+- 2.5.0
+ros-jazzy-novatel-gps-driver:
+- 4.2.0
+ros-jazzy-novatel-gps-msgs:
+- 4.2.0
+ros-jazzy-novatel-oem7-driver:
+- 24.2.1
+ros-jazzy-novatel-oem7-msgs:
+- 24.2.1
+ros-jazzy-ntpd-driver:
+- 2.2.0
+ros-jazzy-ntrip-client:
+- 1.4.1
+ros-jazzy-ntrip-client-node:
+- 0.7.3
+ros-jazzy-object-recognition-msgs:
+- 2.0.0
+ros-jazzy-octomap:
+- 1.10.0
+ros-jazzy-octomap-mapping:
+- 2.3.1
+ros-jazzy-octomap-msgs:
+- 2.0.1
+ros-jazzy-octomap-ros:
+- 0.4.4
+ros-jazzy-octomap-rviz-plugins:
+- 2.1.0
+ros-jazzy-octomap-server:
+- 2.3.1
+ros-jazzy-octovis:
+- 1.10.0
+ros-jazzy-odom-to-tf-ros2:
+- 1.0.8
+ros-jazzy-odri-master-board-sdk:
+- 1.0.7
+ros-jazzy-off-highway-can:
+- 1.3.0
+ros-jazzy-off-highway-general-purpose-radar:
+- 1.3.0
+ros-jazzy-off-highway-general-purpose-radar-msgs:
+- 1.3.0
+ros-jazzy-off-highway-mm7p10:
+- 1.3.0
+ros-jazzy-off-highway-mm7p10-msgs:
+- 1.3.0
+ros-jazzy-off-highway-premium-radar:
+- 1.3.0
+ros-jazzy-off-highway-premium-radar-msgs:
+- 1.3.0
+ros-jazzy-off-highway-premium-radar-sample:
+- 1.3.0
+ros-jazzy-off-highway-premium-radar-sample-msgs:
+- 1.3.0
+ros-jazzy-off-highway-radar:
+- 1.3.0
+ros-jazzy-off-highway-radar-msgs:
+- 1.3.0
+ros-jazzy-off-highway-sensor-drivers:
+- 1.3.0
+ros-jazzy-off-highway-sensor-drivers-examples:
+- 1.3.0
+ros-jazzy-off-highway-uss:
+- 1.3.0
+ros-jazzy-off-highway-uss-msgs:
+- 1.3.0
+ros-jazzy-om-gravity-compensation-controller:
+- 4.1.3
+ros-jazzy-om-joint-trajectory-command-broadcaster:
+- 4.1.3
+ros-jazzy-om-spring-actuator-controller:
+- 4.1.3
+ros-jazzy-omni-wheel-drive-controller:
+- 4.39.0
+ros-jazzy-ompl:
+- 1.7.0
+ros-jazzy-open-manipulator:
+- 4.1.3
+ros-jazzy-open-manipulator-bringup:
+- 4.1.3
+ros-jazzy-open-manipulator-collision:
+- 4.1.3
+ros-jazzy-open-manipulator-description:
+- 4.1.3
+ros-jazzy-open-manipulator-gui:
+- 4.1.3
+ros-jazzy-open-manipulator-moveit-config:
+- 4.1.3
+ros-jazzy-open-manipulator-playground:
+- 4.1.3
+ros-jazzy-open-manipulator-teleop:
+- 4.1.3
+ros-jazzy-open-sound-control:
+- 0.0.2
+ros-jazzy-open-sound-control-bridge:
+- 0.0.2
+ros-jazzy-open-sound-control-msgs:
+- 0.0.2
+ros-jazzy-openeb-vendor:
+- 2.0.2
+ros-jazzy-opennav-docking:
+- 1.3.11
+ros-jazzy-opennav-docking-bt:
+- 1.3.11
+ros-jazzy-opennav-docking-core:
+- 1.3.11
+ros-jazzy-openni2-camera:
+- 2.2.2
+ros-jazzy-openvdb-vendor:
+- 2.5.5
+ros-jazzy-orbbec-camera:
+- 2.7.6
+ros-jazzy-orbbec-camera-msgs:
+- 2.7.6
+ros-jazzy-orbbec-description:
+- 2.7.6
+ros-jazzy-orocos-kdl-vendor:
+- 0.5.1
+ros-jazzy-ortools-vendor:
+- 9.9.0
+ros-jazzy-osqp-vendor:
+- 0.2.0
+ros-jazzy-osrf-pycommon:
+- 2.1.7
+ros-jazzy-osrf-testing-tools-cpp:
+- 2.0.0
+ros-jazzy-ouster-ros:
+- 0.14.1
+ros-jazzy-ouster-sensor-msgs:
+- 0.14.1
+ros-jazzy-ouxt-common:
+- 0.0.8
+ros-jazzy-ouxt-lint-common:
+- 0.0.8
+ros-jazzy-pal-statistics:
+- 2.7.0
+ros-jazzy-pal-statistics-msgs:
+- 2.7.0
+ros-jazzy-pandar-msgs:
+- 1.0.0
+ros-jazzy-pangolin:
+- 0.9.4
+ros-jazzy-parallel-gripper-controller:
+- 4.39.0
+ros-jazzy-parameter-expression:
+- 0.0.2
+ros-jazzy-parameter-traits:
+- 0.7.1
+ros-jazzy-pcl-conversions:
+- 2.6.4
+ros-jazzy-pcl-msgs:
+- 1.0.0
+ros-jazzy-pcl-ros:
+- 2.6.4
+ros-jazzy-pendulum-control:
+- 0.33.10
+ros-jazzy-pendulum-msgs:
+- 0.33.10
+ros-jazzy-perception:
+- 0.11.0
+ros-jazzy-perception-pcl:
+- 2.6.4
+ros-jazzy-performance-test:
+- 2.3.0
+ros-jazzy-performance-test-fixture:
+- 0.2.1
+ros-jazzy-persist-parameter-server:
+- 1.0.5
+ros-jazzy-pfs:
+- 0.13.1
+ros-jazzy-phidgets-accelerometer:
+- 2.4.0
+ros-jazzy-phidgets-analog-inputs:
+- 2.4.0
+ros-jazzy-phidgets-analog-outputs:
+- 2.4.0
+ros-jazzy-phidgets-api:
+- 2.4.0
+ros-jazzy-phidgets-digital-inputs:
+- 2.4.0
+ros-jazzy-phidgets-digital-outputs:
+- 2.4.0
+ros-jazzy-phidgets-drivers:
+- 2.4.0
+ros-jazzy-phidgets-gyroscope:
+- 2.4.0
+ros-jazzy-phidgets-high-speed-encoder:
+- 2.4.0
+ros-jazzy-phidgets-ik:
+- 2.4.0
+ros-jazzy-phidgets-magnetometer:
+- 2.4.0
+ros-jazzy-phidgets-motors:
+- 2.4.0
+ros-jazzy-phidgets-msgs:
+- 2.4.0
+ros-jazzy-phidgets-spatial:
+- 2.4.0
+ros-jazzy-phidgets-stepper:
+- 2.4.0
+ros-jazzy-phidgets-temperature:
+- 2.4.0
+ros-jazzy-pick-ik:
+- 1.1.1
+ros-jazzy-picknik-ament-copyright:
+- 0.0.2
+ros-jazzy-picknik-reset-fault-controller:
+- 0.0.4
+ros-jazzy-picknik-twist-controller:
+- 0.0.4
+ros-jazzy-pid-controller:
+- 4.39.0
+ros-jazzy-pilz-industrial-motion-planner:
+- 2.12.4
+ros-jazzy-pilz-industrial-motion-planner-testutils:
+- 2.12.4
+ros-jazzy-pinocchio:
+- 3.9.0
+ros-jazzy-plansys2-bringup:
+- 2.0.18
+ros-jazzy-plansys2-bt-actions:
+- 2.0.18
+ros-jazzy-plansys2-core:
+- 2.0.18
+ros-jazzy-plansys2-domain-expert:
+- 2.0.18
+ros-jazzy-plansys2-executor:
+- 2.0.18
+ros-jazzy-plansys2-lifecycle-manager:
+- 2.0.18
+ros-jazzy-plansys2-msgs:
+- 2.0.18
+ros-jazzy-plansys2-pddl-parser:
+- 2.0.18
+ros-jazzy-plansys2-planner:
+- 2.0.18
+ros-jazzy-plansys2-popf-plan-solver:
+- 2.0.18
+ros-jazzy-plansys2-problem-expert:
+- 2.0.18
+ros-jazzy-plansys2-support-py:
+- 2.0.18
+ros-jazzy-plansys2-terminal:
+- 2.0.18
+ros-jazzy-plansys2-tests:
+- 2.0.18
+ros-jazzy-plansys2-tools:
+- 2.0.18
+ros-jazzy-play-motion-builder:
+- 1.4.1
+ros-jazzy-play-motion-builder-msgs:
+- 1.4.1
+ros-jazzy-play-motion2:
+- 1.8.4
+ros-jazzy-play-motion2-cli:
+- 1.8.4
+ros-jazzy-play-motion2-msgs:
+- 1.8.4
+ros-jazzy-plotjuggler:
+- 3.15.0
+ros-jazzy-plotjuggler-msgs:
+- 0.2.3
+ros-jazzy-plotjuggler-ros:
+- 2.3.1
+ros-jazzy-pluginlib:
+- 5.4.5
+ros-jazzy-point-cloud-interfaces:
+- 4.0.4
+ros-jazzy-point-cloud-msg-wrapper:
+- 1.0.7
+ros-jazzy-point-cloud-transport:
+- 4.0.7
+ros-jazzy-point-cloud-transport-plugins:
+- 4.0.4
+ros-jazzy-point-cloud-transport-py:
+- 4.0.7
+ros-jazzy-point-cloud-transport-tutorial:
+- 0.0.2
+ros-jazzy-pointcloud-to-laserscan:
+- 2.0.2
+ros-jazzy-pointcloud-to-ply:
+- 0.0.7
+ros-jazzy-polygon-demos:
+- 1.2.0
+ros-jazzy-polygon-msgs:
+- 1.2.0
+ros-jazzy-polygon-rviz-plugins:
+- 1.2.0
+ros-jazzy-polygon-utils:
+- 1.2.0
+ros-jazzy-popf:
+- 0.1.0
+ros-jazzy-pose-broadcaster:
+- 4.39.0
+ros-jazzy-pose-cov-ops:
+- 0.4.0
+ros-jazzy-position-controllers:
+- 4.39.0
+ros-jazzy-proto2ros:
+- 1.0.1
+ros-jazzy-protobuf-comm:
+- 0.9.3
+ros-jazzy-proxsuite:
+- 0.6.5
+ros-jazzy-ptz-action-server-msgs:
+- 2.0.3
+ros-jazzy-py-binding-tools:
+- 2.0.1
+ros-jazzy-py-trees:
+- 2.4.0
+ros-jazzy-py-trees-js:
+- 0.6.6
+ros-jazzy-py-trees-ros:
+- 2.4.0
+ros-jazzy-py-trees-ros-interfaces:
+- 2.1.1
+ros-jazzy-py-trees-ros-tutorials:
+- 2.4.0
+ros-jazzy-py-trees-ros-viewer:
+- 0.2.5
+ros-jazzy-pybind11-json-vendor:
+- 0.4.2
+ros-jazzy-pybind11-vendor:
+- 3.1.3
+ros-jazzy-pyhri:
+- 2.9.0
+ros-jazzy-pymoveit2:
+- 4.2.0
+ros-jazzy-python-cmake-module:
+- 0.11.1
+ros-jazzy-python-mrpt:
+- 2.15.3
+ros-jazzy-python-orocos-kdl-vendor:
+- 0.5.1
+ros-jazzy-python-qt-binding:
+- 2.2.2
+ros-jazzy-qml-ros2-plugin:
+- 2.26.30
+ros-jazzy-qml6-ros2-plugin:
+- 1.26.31
+ros-jazzy-qpoases-vendor:
+- 3.2.3
+ros-jazzy-qt-dotgraph:
+- 2.7.6
+ros-jazzy-qt-gui:
+- 2.7.6
+ros-jazzy-qt-gui-app:
+- 2.7.6
+ros-jazzy-qt-gui-core:
+- 2.7.6
+ros-jazzy-qt-gui-cpp:
+- 2.7.6
+ros-jazzy-qt-gui-py-common:
+- 2.7.6
+ros-jazzy-quality-of-service-demo-cpp:
+- 0.33.10
+ros-jazzy-quality-of-service-demo-py:
+- 0.33.10
+ros-jazzy-quaternion-operation:
+- 0.0.7
+ros-jazzy-r2r-spl-7:
+- 3.0.1
+ros-jazzy-radar-msgs:
+- 0.2.2
+ros-jazzy-rai-interfaces:
+- 0.3.0
+ros-jazzy-random-numbers:
+- 2.0.1
+ros-jazzy-range-sensor-broadcaster:
+- 4.39.0
+ros-jazzy-raph:
+- 1.1.0
+ros-jazzy-raph-bringup:
+- 1.1.1
+ros-jazzy-raph-description:
+- 1.1.0
+ros-jazzy-raph-fw:
+- 1.1.1
+ros-jazzy-raph-interfaces:
+- 1.1.0
+ros-jazzy-raph-oak:
+- 1.1.1
+ros-jazzy-raph-robot:
+- 1.1.1
+ros-jazzy-raph-teleop:
+- 1.1.0
+ros-jazzy-raspimouse:
+- 2.0.0
+ros-jazzy-raspimouse-description:
+- 2.0.0
+ros-jazzy-raspimouse-fake:
+- 3.0.1
+ros-jazzy-raspimouse-gazebo:
+- 3.0.1
+ros-jazzy-raspimouse-msgs:
+- 2.0.0
+ros-jazzy-raspimouse-navigation:
+- 3.0.0
+ros-jazzy-raspimouse-ros2-examples:
+- 3.0.0
+ros-jazzy-raspimouse-sim:
+- 3.0.1
+ros-jazzy-raspimouse-slam:
+- 3.0.0
+ros-jazzy-raspimouse-slam-navigation:
+- 3.0.0
+ros-jazzy-rc-common-msgs:
+- 0.5.3
+ros-jazzy-rc-dynamics-api:
+- 0.10.5
+ros-jazzy-rc-genicam-api:
+- 2.8.1
+ros-jazzy-rc-genicam-driver:
+- 0.4.0
+ros-jazzy-rc-reason-clients:
+- 0.5.0
+ros-jazzy-rc-reason-msgs:
+- 0.5.0
+ros-jazzy-rcdiscover:
+- 1.1.7
+ros-jazzy-rcgcd-spl-14:
+- 4.1.0
+ros-jazzy-rcgcd-spl-14-conversion:
+- 4.1.0
+ros-jazzy-rcgcrd-spl-4:
+- 4.1.0
+ros-jazzy-rcgcrd-spl-4-conversion:
+- 4.1.0
+ros-jazzy-rcl:
+- 9.2.9
+ros-jazzy-rcl-action:
+- 9.2.9
+ros-jazzy-rcl-interfaces:
+- 2.0.3
+ros-jazzy-rcl-lifecycle:
+- 9.2.9
+ros-jazzy-rcl-logging-interface:
+- 3.1.1
+ros-jazzy-rcl-logging-noop:
+- 3.1.1
+ros-jazzy-rcl-logging-spdlog:
+- 3.1.1
+ros-jazzy-rcl-yaml-param-parser:
+- 9.2.9
+ros-jazzy-rclc:
+- 6.1.2
+ros-jazzy-rclc-examples:
+- 6.1.2
+ros-jazzy-rclc-lifecycle:
+- 6.1.2
+ros-jazzy-rclc-parameter:
+- 6.1.2
+ros-jazzy-rclcpp:
+- 28.1.18
+ros-jazzy-rclcpp-action:
+- 28.1.18
+ros-jazzy-rclcpp-cascade-lifecycle:
+- 2.0.0
+ros-jazzy-rclcpp-components:
+- 28.1.18
+ros-jazzy-rclcpp-lifecycle:
+- 28.1.18
+ros-jazzy-rclpy:
+- 7.1.11
+ros-jazzy-rclpy-message-converter:
+- 2.0.1
+ros-jazzy-rclpy-message-converter-msgs:
+- 2.0.1
+ros-jazzy-rcpputils:
+- 2.11.3
+ros-jazzy-rcss3d-agent:
+- 0.4.1
+ros-jazzy-rcss3d-agent-basic:
+- 0.4.1
+ros-jazzy-rcss3d-agent-msgs:
+- 0.4.1
+ros-jazzy-rcss3d-agent-msgs-to-soccer-interfaces:
+- 0.4.1
+ros-jazzy-rcss3d-nao:
+- 1.2.0
+ros-jazzy-rcutils:
+- 6.7.5
+ros-jazzy-rdl:
+- 6.0.0
+ros-jazzy-rdl-benchmark:
+- 6.0.0
+ros-jazzy-rdl-dynamics:
+- 6.0.0
+ros-jazzy-rdl-urdfreader:
+- 6.0.0
+ros-jazzy-realsense2-camera:
+- 4.57.7
+ros-jazzy-realsense2-camera-msgs:
+- 4.57.7
+ros-jazzy-realsense2-description:
+- 4.57.7
+ros-jazzy-realtime-tools:
+- 3.11.0
+ros-jazzy-reductstore-agent:
+- 0.2.0
+ros-jazzy-replay-testing:
+- 0.0.4
+ros-jazzy-resource-retriever:
+- 3.4.4
+ros-jazzy-rig-reconfigure:
+- 1.6.0
+ros-jazzy-rko-lio:
+- 0.2.0
+ros-jazzy-rmf-api-msgs:
+- 0.3.1
+ros-jazzy-rmf-battery:
+- 0.3.1
+ros-jazzy-rmf-building-map-msgs:
+- 1.4.1
+ros-jazzy-rmf-building-map-tools:
+- 1.9.2
+ros-jazzy-rmf-building-sim-gz-plugins:
+- 2.3.3
+ros-jazzy-rmf-charger-msgs:
+- 3.3.1
+ros-jazzy-rmf-charging-schedule:
+- 2.7.2
+ros-jazzy-rmf-demos-assets:
+- 2.3.0
+ros-jazzy-rmf-demos-bridges:
+- 2.3.0
+ros-jazzy-rmf-demos-fleet-adapter:
+- 2.3.0
+ros-jazzy-rmf-demos-tasks:
+- 2.3.0
+ros-jazzy-rmf-dev:
+- 0.1.0
+ros-jazzy-rmf-dispenser-msgs:
+- 3.3.1
+ros-jazzy-rmf-door-msgs:
+- 3.3.1
+ros-jazzy-rmf-fleet-adapter:
+- 2.7.2
+ros-jazzy-rmf-fleet-adapter-python:
+- 2.7.2
+ros-jazzy-rmf-fleet-msgs:
+- 3.3.1
+ros-jazzy-rmf-ingestor-msgs:
+- 3.3.1
+ros-jazzy-rmf-lift-msgs:
+- 3.3.1
+ros-jazzy-rmf-obstacle-msgs:
+- 3.3.1
+ros-jazzy-rmf-robot-sim-common:
+- 2.3.3
+ros-jazzy-rmf-robot-sim-gz-plugins:
+- 2.3.3
+ros-jazzy-rmf-scheduler-msgs:
+- 3.3.1
+ros-jazzy-rmf-site-map-msgs:
+- 3.3.1
+ros-jazzy-rmf-task:
+- 2.5.1
+ros-jazzy-rmf-task-msgs:
+- 3.3.1
+ros-jazzy-rmf-task-ros2:
+- 2.7.2
+ros-jazzy-rmf-task-sequence:
+- 2.5.1
+ros-jazzy-rmf-traffic:
+- 3.3.3
+ros-jazzy-rmf-traffic-editor:
+- 1.9.2
+ros-jazzy-rmf-traffic-editor-assets:
+- 1.9.2
+ros-jazzy-rmf-traffic-editor-test-maps:
+- 1.9.2
+ros-jazzy-rmf-traffic-examples:
+- 3.3.3
+ros-jazzy-rmf-traffic-msgs:
+- 3.3.1
+ros-jazzy-rmf-traffic-ros2:
+- 2.7.2
+ros-jazzy-rmf-utils:
+- 1.6.2
+ros-jazzy-rmf-visualization:
+- 2.3.2
+ros-jazzy-rmf-visualization-building-systems:
+- 2.3.2
+ros-jazzy-rmf-visualization-fleet-states:
+- 2.3.2
+ros-jazzy-rmf-visualization-floorplans:
+- 2.3.2
+ros-jazzy-rmf-visualization-msgs:
+- 1.4.1
+ros-jazzy-rmf-visualization-navgraphs:
+- 2.3.2
+ros-jazzy-rmf-visualization-obstacles:
+- 2.3.2
+ros-jazzy-rmf-visualization-rviz2-plugins:
+- 2.3.2
+ros-jazzy-rmf-visualization-schedule:
+- 2.3.2
+ros-jazzy-rmf-websocket:
+- 2.7.2
+ros-jazzy-rmf-workcell-msgs:
+- 3.3.1
+ros-jazzy-rmw:
+- 7.3.3
+ros-jazzy-rmw-connextdds:
+- 0.22.3
+ros-jazzy-rmw-connextdds-common:
+- 0.22.3
+ros-jazzy-rmw-cyclonedds-cpp:
+- 2.2.3
+ros-jazzy-rmw-dds-common:
+- 3.1.1
+ros-jazzy-rmw-desert:
+- 2.0.3
+ros-jazzy-rmw-fastrtps-cpp:
+- 8.4.3
+ros-jazzy-rmw-fastrtps-dynamic-cpp:
+- 8.4.3
+ros-jazzy-rmw-fastrtps-shared-cpp:
+- 8.4.3
+ros-jazzy-rmw-gurumdds-cpp:
+- 5.0.0
+ros-jazzy-rmw-implementation:
+- 2.15.6
+ros-jazzy-rmw-implementation-cmake:
+- 7.3.3
+ros-jazzy-rmw-stats-shim:
+- 0.2.3
+ros-jazzy-rmw-zenoh-cpp:
+- 0.2.9
+ros-jazzy-robosense-msgs:
+- 1.0.0
+ros-jazzy-robot-calibration:
+- 0.10.0
+ros-jazzy-robot-calibration-msgs:
+- 0.10.0
+ros-jazzy-robot-localization:
+- 3.8.3
+ros-jazzy-robot-state-publisher:
+- 3.3.3
+ros-jazzy-robot-upstart:
+- 1.0.4
+ros-jazzy-robotiq-controllers:
+- 0.0.1
+ros-jazzy-robotiq-description:
+- 0.0.1
+ros-jazzy-robotraconteur:
+- 1.2.7
+ros-jazzy-robotraconteur-companion:
+- 0.4.2
+ros-jazzy-ros-babel-fish:
+- 2.25.111
+ros-jazzy-ros-babel-fish-test-msgs:
+- 2.25.111
+ros-jazzy-ros-base:
+- 0.11.0
+ros-jazzy-ros-core:
+- 0.11.0
+ros-jazzy-ros-environment:
+- 4.2.1
+ros-jazzy-ros-gz:
+- 1.0.22
+ros-jazzy-ros-gz-bridge:
+- 1.0.22
+ros-jazzy-ros-gz-image:
+- 1.0.22
+ros-jazzy-ros-gz-interfaces:
+- 1.0.22
+ros-jazzy-ros-gz-sim:
+- 1.0.22
+ros-jazzy-ros-gz-sim-demos:
+- 1.0.22
+ros-jazzy-ros-image-to-qimage:
+- 0.4.1
+ros-jazzy-ros-industrial-cmake-boilerplate:
+- 0.5.4
+ros-jazzy-ros-testing:
+- 0.6.0
+ros-jazzy-ros-workspace:
+- 1.0.3
+ros-jazzy-ros2-control:
+- 4.44.0
+ros-jazzy-ros2-control-cmake:
+- 0.3.0
+ros-jazzy-ros2-control-test-assets:
+- 4.44.0
+ros-jazzy-ros2-controllers:
+- 4.39.0
+ros-jazzy-ros2-controllers-test-nodes:
+- 4.39.0
+ros-jazzy-ros2-fmt-logger:
+- 1.1.0
+ros-jazzy-ros2-medkit-beacon-common:
+- 0.4.0
+ros-jazzy-ros2-medkit-cmake:
+- 0.4.0
+ros-jazzy-ros2-medkit-diagnostic-bridge:
+- 0.4.0
+ros-jazzy-ros2-medkit-fault-manager:
+- 0.4.0
+ros-jazzy-ros2-medkit-fault-reporter:
+- 0.4.0
+ros-jazzy-ros2-medkit-gateway:
+- 0.4.0
+ros-jazzy-ros2-medkit-graph-provider:
+- 0.4.0
+ros-jazzy-ros2-medkit-integration-tests:
+- 0.4.0
+ros-jazzy-ros2-medkit-linux-introspection:
+- 0.4.0
+ros-jazzy-ros2-medkit-msgs:
+- 0.4.0
+ros-jazzy-ros2-medkit-param-beacon:
+- 0.4.0
+ros-jazzy-ros2-medkit-serialization:
+- 0.4.0
+ros-jazzy-ros2-medkit-topic-beacon:
+- 0.4.0
+ros-jazzy-ros2-snapshot:
+- 0.0.2
+ros-jazzy-ros2-socketcan:
+- 1.3.0
+ros-jazzy-ros2-socketcan-msgs:
+- 1.3.0
+ros-jazzy-ros2acceleration:
+- 0.5.1
+ros-jazzy-ros2action:
+- 0.32.9
+ros-jazzy-ros2agnocast:
+- 2.3.3
+ros-jazzy-ros2ai:
+- 0.1.3
+ros-jazzy-ros2bag:
+- 0.26.10
+ros-jazzy-ros2cli:
+- 0.32.9
+ros-jazzy-ros2cli-common-extensions:
+- 0.3.1
+ros-jazzy-ros2cli-test-interfaces:
+- 0.32.9
+ros-jazzy-ros2component:
+- 0.32.9
+ros-jazzy-ros2controlcli:
+- 4.44.0
+ros-jazzy-ros2doctor:
+- 0.32.9
+ros-jazzy-ros2interface:
+- 0.32.9
+ros-jazzy-ros2launch:
+- 0.26.11
+ros-jazzy-ros2launch-security:
+- 1.0.0
+ros-jazzy-ros2launch-security-examples:
+- 1.0.0
+ros-jazzy-ros2lifecycle:
+- 0.32.9
+ros-jazzy-ros2lifecycle-test-fixtures:
+- 0.32.9
+ros-jazzy-ros2multicast:
+- 0.32.9
+ros-jazzy-ros2node:
+- 0.32.9
+ros-jazzy-ros2nodl:
+- 0.3.1
+ros-jazzy-ros2param:
+- 0.32.9
+ros-jazzy-ros2pkg:
+- 0.32.9
+ros-jazzy-ros2plugin:
+- 5.4.5
+ros-jazzy-ros2run:
+- 0.32.9
+ros-jazzy-ros2service:
+- 0.32.9
+ros-jazzy-ros2test:
+- 0.6.0
+ros-jazzy-ros2topic:
+- 0.32.9
+ros-jazzy-ros2trace:
+- 8.2.5
+ros-jazzy-ros2trace-analysis:
+- 3.0.0
+ros-jazzy-rosapi:
+- 2.6.0
+ros-jazzy-rosapi-msgs:
+- 2.6.0
+ros-jazzy-rosbag2:
+- 0.26.10
+ros-jazzy-rosbag2-compression:
+- 0.26.10
+ros-jazzy-rosbag2-compression-zstd:
+- 0.26.10
+ros-jazzy-rosbag2-cpp:
+- 0.26.10
+ros-jazzy-rosbag2-examples-cpp:
+- 0.26.10
+ros-jazzy-rosbag2-examples-py:
+- 0.26.10
+ros-jazzy-rosbag2-interfaces:
+- 0.26.10
+ros-jazzy-rosbag2-performance-benchmarking:
+- 0.26.10
+ros-jazzy-rosbag2-performance-benchmarking-msgs:
+- 0.26.10
+ros-jazzy-rosbag2-py:
+- 0.26.10
+ros-jazzy-rosbag2-storage:
+- 0.26.10
+ros-jazzy-rosbag2-storage-broll:
+- 0.1.0
+ros-jazzy-rosbag2-storage-default-plugins:
+- 0.26.10
+ros-jazzy-rosbag2-storage-mcap:
+- 0.26.10
+ros-jazzy-rosbag2-storage-sqlite3:
+- 0.26.10
+ros-jazzy-rosbag2-test-common:
+- 0.26.10
+ros-jazzy-rosbag2-test-msgdefs:
+- 0.26.10
+ros-jazzy-rosbag2-tests:
+- 0.26.10
+ros-jazzy-rosbag2-to-video:
+- 1.0.1
+ros-jazzy-rosbag2-transport:
+- 0.26.10
+ros-jazzy-rosbag2rawlog:
+- 3.5.1
+ros-jazzy-rosbot:
+- 0.18.6
+ros-jazzy-rosbot-bringup:
+- 0.18.6
+ros-jazzy-rosbot-controller:
+- 0.18.6
+ros-jazzy-rosbot-description:
+- 0.18.6
+ros-jazzy-rosbot-gazebo:
+- 0.18.6
+ros-jazzy-rosbot-hardware-interfaces:
+- 0.18.6
+ros-jazzy-rosbot-joy:
+- 0.18.6
+ros-jazzy-rosbot-localization:
+- 0.18.6
+ros-jazzy-rosbot-moveit:
+- 0.18.6
+ros-jazzy-rosbot-utils:
+- 0.18.6
+ros-jazzy-rosbridge-library:
+- 2.6.0
+ros-jazzy-rosbridge-msgs:
+- 2.6.0
+ros-jazzy-rosbridge-server:
+- 2.6.0
+ros-jazzy-rosbridge-suite:
+- 2.6.0
+ros-jazzy-rosbridge-test-msgs:
+- 2.6.0
+ros-jazzy-rosgraph-monitor:
+- 0.2.3
+ros-jazzy-rosgraph-monitor-msgs:
+- 0.2.3
+ros-jazzy-rosgraph-msgs:
+- 2.0.3
+ros-jazzy-rosidl-adapter:
+- 4.6.7
+ros-jazzy-rosidl-cli:
+- 4.6.7
+ros-jazzy-rosidl-cmake:
+- 4.6.7
+ros-jazzy-rosidl-core-generators:
+- 0.2.1
+ros-jazzy-rosidl-core-runtime:
+- 0.2.1
+ros-jazzy-rosidl-default-generators:
+- 1.6.0
+ros-jazzy-rosidl-default-runtime:
+- 1.6.0
+ros-jazzy-rosidl-dynamic-typesupport:
+- 0.1.2
+ros-jazzy-rosidl-dynamic-typesupport-fastrtps:
+- 0.1.0
+ros-jazzy-rosidl-generator-c:
+- 4.6.7
+ros-jazzy-rosidl-generator-cpp:
+- 4.6.7
+ros-jazzy-rosidl-generator-dds-idl:
+- 0.11.1
+ros-jazzy-rosidl-generator-py:
+- 0.22.2
+ros-jazzy-rosidl-generator-rs:
+- 0.4.11
+ros-jazzy-rosidl-generator-type-description:
+- 4.6.7
+ros-jazzy-rosidl-parser:
+- 4.6.7
+ros-jazzy-rosidl-pycommon:
+- 4.6.7
+ros-jazzy-rosidl-runtime-c:
+- 4.6.7
+ros-jazzy-rosidl-runtime-cpp:
+- 4.6.7
+ros-jazzy-rosidl-runtime-py:
+- 0.13.1
+ros-jazzy-rosidl-typesupport-c:
+- 3.2.2
+ros-jazzy-rosidl-typesupport-cpp:
+- 3.2.2
+ros-jazzy-rosidl-typesupport-fastrtps-c:
+- 3.6.3
+ros-jazzy-rosidl-typesupport-fastrtps-cpp:
+- 3.6.3
+ros-jazzy-rosidl-typesupport-interface:
+- 4.6.7
+ros-jazzy-rosidl-typesupport-introspection-c:
+- 4.6.7
+ros-jazzy-rosidl-typesupport-introspection-cpp:
+- 4.6.7
+ros-jazzy-rosidlcpp:
+- 0.5.0
+ros-jazzy-rosidlcpp-generator-c:
+- 0.5.0
+ros-jazzy-rosidlcpp-generator-core:
+- 0.5.0
+ros-jazzy-rosidlcpp-generator-cpp:
+- 0.5.0
+ros-jazzy-rosidlcpp-generator-py:
+- 0.5.0
+ros-jazzy-rosidlcpp-generator-type-description:
+- 0.5.0
+ros-jazzy-rosidlcpp-parser:
+- 0.5.0
+ros-jazzy-rosidlcpp-typesupport-c:
+- 0.5.0
+ros-jazzy-rosidlcpp-typesupport-cpp:
+- 0.5.0
+ros-jazzy-rosidlcpp-typesupport-fastrtps-c:
+- 0.5.0
+ros-jazzy-rosidlcpp-typesupport-fastrtps-cpp:
+- 0.5.0
+ros-jazzy-rosidlcpp-typesupport-introspection-c:
+- 0.5.0
+ros-jazzy-rosidlcpp-typesupport-introspection-cpp:
+- 0.5.0
+ros-jazzy-rosx-introspection:
+- 2.3.0
+ros-jazzy-rot-conv:
+- 1.1.0
+ros-jazzy-rplidar-ros:
+- 2.1.0
+ros-jazzy-rpyutils:
+- 0.4.2
+ros-jazzy-rqt:
+- 1.6.3
+ros-jazzy-rqt-action:
+- 2.2.1
+ros-jazzy-rqt-bag:
+- 1.5.6
+ros-jazzy-rqt-bag-plugins:
+- 1.5.6
+ros-jazzy-rqt-common-plugins:
+- 1.2.0
+ros-jazzy-rqt-console:
+- 2.2.2
+ros-jazzy-rqt-controller-manager:
+- 4.44.0
+ros-jazzy-rqt-dotgraph:
+- 0.0.5
+ros-jazzy-rqt-gauges:
+- 0.0.3
+ros-jazzy-rqt-graph:
+- 1.5.6
+ros-jazzy-rqt-gui:
+- 1.6.3
+ros-jazzy-rqt-gui-cpp:
+- 1.6.3
+ros-jazzy-rqt-gui-py:
+- 1.6.3
+ros-jazzy-rqt-image-overlay:
+- 0.4.0
+ros-jazzy-rqt-image-overlay-layer:
+- 0.4.0
+ros-jazzy-rqt-image-view:
+- 1.3.0
+ros-jazzy-rqt-joint-trajectory-controller:
+- 4.39.0
+ros-jazzy-rqt-moveit:
+- 1.0.1
+ros-jazzy-rqt-msg:
+- 1.5.2
+ros-jazzy-rqt-play-motion-builder:
+- 1.4.1
+ros-jazzy-rqt-plot:
+- 1.4.5
+ros-jazzy-rqt-publisher:
+- 1.7.3
+ros-jazzy-rqt-py-common:
+- 1.6.3
+ros-jazzy-rqt-py-console:
+- 1.2.3
+ros-jazzy-rqt-reconfigure:
+- 1.6.4
+ros-jazzy-rqt-robot-dashboard:
+- 0.6.1
+ros-jazzy-rqt-robot-monitor:
+- 1.0.6
+ros-jazzy-rqt-robot-steering:
+- 2.0.0
+ros-jazzy-rqt-runtime-monitor:
+- 1.0.0
+ros-jazzy-rqt-service-caller:
+- 1.2.2
+ros-jazzy-rqt-shell:
+- 1.2.3
+ros-jazzy-rqt-srv:
+- 1.2.3
+ros-jazzy-rqt-tf-tree:
+- 1.0.6
+ros-jazzy-rqt-topic:
+- 1.7.5
+ros-jazzy-rsl:
+- 1.3.0
+ros-jazzy-rslidar-msg:
+- 0.0.0
+ros-jazzy-rslidar-sdk:
+- 1.5.16
+ros-jazzy-rt-manipulators-cpp:
+- 1.1.0
+ros-jazzy-rt-manipulators-examples:
+- 1.1.0
+ros-jazzy-rt-usb-9axisimu-driver:
+- 3.0.0
+ros-jazzy-rtabmap:
+- 0.22.1
+ros-jazzy-rtabmap-conversions:
+- 0.22.1
+ros-jazzy-rtabmap-demos:
+- 0.22.1
+ros-jazzy-rtabmap-examples:
+- 0.22.1
+ros-jazzy-rtabmap-launch:
+- 0.22.1
+ros-jazzy-rtabmap-msgs:
+- 0.22.1
+ros-jazzy-rtabmap-odom:
+- 0.22.1
+ros-jazzy-rtabmap-python:
+- 0.22.1
+ros-jazzy-rtabmap-ros:
+- 0.22.1
+ros-jazzy-rtabmap-rviz-plugins:
+- 0.22.1
+ros-jazzy-rtabmap-slam:
+- 0.22.1
+ros-jazzy-rtabmap-sync:
+- 0.22.1
+ros-jazzy-rtabmap-util:
+- 0.22.1
+ros-jazzy-rtabmap-viz:
+- 0.22.1
+ros-jazzy-rtcm-msgs:
+- 1.1.6
+ros-jazzy-rtest:
+- 0.2.1
+ros-jazzy-rti-connext-dds-cmake-module:
+- 0.22.3
+ros-jazzy-rtsp-image-transport:
+- 2.0.1
+ros-jazzy-rttest:
+- 0.17.1
+ros-jazzy-ruckig:
+- 0.9.2
+ros-jazzy-rviz-2d-overlay-msgs:
+- 1.4.1
+ros-jazzy-rviz-2d-overlay-plugins:
+- 1.4.1
+ros-jazzy-rviz-assimp-vendor:
+- 14.1.20
+ros-jazzy-rviz-common:
+- 14.1.20
+ros-jazzy-rviz-default-plugins:
+- 14.1.20
+ros-jazzy-rviz-imu-plugin:
+- 2.1.5
+ros-jazzy-rviz-marker-tools:
+- 0.1.4
+ros-jazzy-rviz-mbf-plugins:
+- 1.0.5
+ros-jazzy-rviz-ogre-vendor:
+- 14.1.20
+ros-jazzy-rviz-rendering:
+- 14.1.20
+ros-jazzy-rviz-rendering-tests:
+- 14.1.20
+ros-jazzy-rviz-satellite:
+- 4.3.0
+ros-jazzy-rviz-visual-testing-framework:
+- 14.1.20
+ros-jazzy-rviz-visual-tools:
+- 4.1.4
+ros-jazzy-rviz2:
+- 14.1.20
+ros-jazzy-sbg-driver:
+- 3.3.2
+ros-jazzy-scenario-execution:
+- 1.4.0
+ros-jazzy-scenario-execution-control:
+- 1.4.0
+ros-jazzy-scenario-execution-coverage:
+- 1.4.0
+ros-jazzy-scenario-execution-dataops:
+- 1.4.0
+ros-jazzy-scenario-execution-gazebo:
+- 1.4.0
+ros-jazzy-scenario-execution-interfaces:
+- 1.4.0
+ros-jazzy-scenario-execution-nav2:
+- 1.4.0
+ros-jazzy-scenario-execution-network:
+- 1.4.0
+ros-jazzy-scenario-execution-os:
+- 1.4.0
+ros-jazzy-scenario-execution-ros:
+- 1.4.0
+ros-jazzy-scenario-execution-rviz:
+- 1.4.0
+ros-jazzy-scenario-execution-sim:
+- 1.4.0
+ros-jazzy-scenario-execution-x11:
+- 1.4.0
+ros-jazzy-sdformat-test-files:
+- 1.0.2
+ros-jazzy-sdformat-urdf:
+- 1.0.2
+ros-jazzy-sdformat-vendor:
+- 0.0.11
+ros-jazzy-sdl2-vendor:
+- 3.3.0
+ros-jazzy-self-test:
+- 4.2.6
+ros-jazzy-sensor-msgs:
+- 5.3.7
+ros-jazzy-sensor-msgs-py:
+- 5.3.7
+ros-jazzy-septentrio-gnss-driver:
+- 1.4.6
+ros-jazzy-serial-driver:
+- 1.2.0
+ros-jazzy-service-msgs:
+- 2.0.3
+ros-jazzy-shape-msgs:
+- 5.3.7
+ros-jazzy-shared-queues-vendor:
+- 0.26.10
+ros-jazzy-sick-safetyscanners-base:
+- 1.0.3
+ros-jazzy-sick-safetyscanners2:
+- 1.0.4
+ros-jazzy-sick-safetyscanners2-interfaces:
+- 1.0.0
+ros-jazzy-sick-safevisionary-base:
+- 1.0.1
+ros-jazzy-sick-safevisionary-driver:
+- 1.0.3
+ros-jazzy-sick-safevisionary-interfaces:
+- 1.0.3
+ros-jazzy-sick-safevisionary-tests:
+- 1.0.3
+ros-jazzy-sick-scan-xd:
+- 3.9.0
+ros-jazzy-simple-actions:
+- 0.5.0
+ros-jazzy-simple-grasping:
+- 0.5.0
+ros-jazzy-simple-launch:
+- 1.11.4
+ros-jazzy-simple-term-menu-vendor:
+- 1.5.7
+ros-jazzy-simulation:
+- 0.11.0
+ros-jazzy-simulation-interfaces:
+- 1.5.0
+ros-jazzy-slam-toolbox:
+- 2.8.4
+ros-jazzy-slg-msgs:
+- 3.9.2
+ros-jazzy-slider-publisher:
+- 2.4.3
+ros-jazzy-smacc2:
+- 3.0.1
+ros-jazzy-smacc2-msgs:
+- 3.0.1
+ros-jazzy-smach:
+- 3.0.3
+ros-jazzy-smach-msgs:
+- 3.0.3
+ros-jazzy-smach-ros:
+- 3.0.3
+ros-jazzy-small-gicp-vendor:
+- 2.1.0
+ros-jazzy-smclib:
+- 4.2.0
+ros-jazzy-snowbot-operating-system:
+- 0.1.2
+ros-jazzy-so-arm-100-hardware:
+- 0.1.1
+ros-jazzy-soccer-geometry-msgs:
+- 1.0.0
+ros-jazzy-soccer-interfaces:
+- 1.0.0
+ros-jazzy-soccer-model-msgs:
+- 1.0.0
+ros-jazzy-soccer-vision-2d-msgs:
+- 1.0.0
+ros-jazzy-soccer-vision-3d-msgs:
+- 1.0.0
+ros-jazzy-soccer-vision-3d-rviz-markers:
+- 1.0.0
+ros-jazzy-soccer-vision-attribute-msgs:
+- 1.0.0
+ros-jazzy-sol-vendor:
+- 0.0.3
+ros-jazzy-sophus:
+- 1.22.9102
+ros-jazzy-spacenav:
+- 3.3.0
+ros-jazzy-spatio-temporal-voxel-layer:
+- 2.5.5
+ros-jazzy-spdlog-vendor:
+- 1.6.1
+ros-jazzy-spinnaker-camera-driver:
+- 3.0.4
+ros-jazzy-spinnaker-synchronized-camera-driver:
+- 3.0.4
+ros-jazzy-splsm-7:
+- 3.0.1
+ros-jazzy-splsm-7-conversion:
+- 3.0.1
+ros-jazzy-sqlite3-vendor:
+- 0.26.10
+ros-jazzy-srdfdom:
+- 2.0.7
+ros-jazzy-sros2:
+- 0.13.6
+ros-jazzy-sros2-cmake:
+- 0.13.6
+ros-jazzy-state-interfaces-broadcaster:
+- 4.39.0
+ros-jazzy-statistics-msgs:
+- 2.0.3
+ros-jazzy-std-msgs:
+- 5.3.7
+ros-jazzy-std-srvs:
+- 5.3.7
+ros-jazzy-steering-controllers-library:
+- 4.39.0
+ros-jazzy-steering-functions:
+- 0.3.0
+ros-jazzy-stereo-image-proc:
+- 5.0.11
+ros-jazzy-stereo-msgs:
+- 5.3.7
+ros-jazzy-stomp:
+- 0.1.2
+ros-jazzy-swri-cli-tools:
+- 3.8.7
+ros-jazzy-swri-console:
+- 2.1.2
+ros-jazzy-swri-console-util:
+- 3.8.7
+ros-jazzy-swri-dbw-interface:
+- 3.8.7
+ros-jazzy-swri-geometry-util:
+- 3.8.7
+ros-jazzy-swri-image-util:
+- 3.8.7
+ros-jazzy-swri-math-util:
+- 3.8.7
+ros-jazzy-swri-opencv-util:
+- 3.8.7
+ros-jazzy-swri-roscpp:
+- 3.8.7
+ros-jazzy-swri-route-util:
+- 3.8.7
+ros-jazzy-swri-serial-util:
+- 3.8.7
+ros-jazzy-swri-transform-util:
+- 3.8.7
+ros-jazzy-synapticon-ros2-control:
+- 0.2.0
+ros-jazzy-sync-tooling-msgs:
+- 0.2.7
+ros-jazzy-synchros2:
+- 1.0.4
+ros-jazzy-system-fingerprint:
+- 0.7.0
+ros-jazzy-system-modes:
+- 0.9.0
+ros-jazzy-system-modes-examples:
+- 0.9.0
+ros-jazzy-system-modes-msgs:
+- 0.9.0
+ros-jazzy-system-webview:
+- 0.0.3
+ros-jazzy-tango-icons-vendor:
+- 0.3.1
+ros-jazzy-tcb-span:
+- 1.2.0
+ros-jazzy-tecgihan-driver:
+- 0.1.2
+ros-jazzy-teleop-tools:
+- 2.0.0
+ros-jazzy-teleop-tools-msgs:
+- 2.0.0
+ros-jazzy-teleop-twist-joy:
+- 2.6.5
+ros-jazzy-teleop-twist-keyboard:
+- 2.4.1
+ros-jazzy-tensorrt-cmake-module:
+- 0.0.5
+ros-jazzy-test-apex-test-tools:
+- 0.0.2
+ros-jazzy-test-interface-files:
+- 0.11.0
+ros-jazzy-test-msgs:
+- 2.0.3
+ros-jazzy-tf-transformations:
+- 1.1.1
+ros-jazzy-tf-tree-terminal:
+- 2.0.0
+ros-jazzy-tf2:
+- 0.36.20
+ros-jazzy-tf2-2d:
+- 1.4.1
+ros-jazzy-tf2-bullet:
+- 0.36.20
+ros-jazzy-tf2-eigen:
+- 0.36.20
+ros-jazzy-tf2-eigen-kdl:
+- 0.36.20
+ros-jazzy-tf2-geometry-msgs:
+- 0.36.20
+ros-jazzy-tf2-kdl:
+- 0.36.20
+ros-jazzy-tf2-msgs:
+- 0.36.20
+ros-jazzy-tf2-py:
+- 0.36.20
+ros-jazzy-tf2-ros:
+- 0.36.20
+ros-jazzy-tf2-ros-py:
+- 0.36.20
+ros-jazzy-tf2-sensor-msgs:
+- 0.36.20
+ros-jazzy-tf2-tools:
+- 0.36.20
+ros-jazzy-tf2-web-republisher:
+- 1.0.0
+ros-jazzy-tf2-web-republisher-interfaces:
+- 1.0.0
+ros-jazzy-theora-image-transport:
+- 4.0.6
+ros-jazzy-tile-map:
+- 2.6.2
+ros-jazzy-tinyspline-vendor:
+- 0.6.1
+ros-jazzy-tinyxml-vendor:
+- 0.10.0
+ros-jazzy-tinyxml2-vendor:
+- 0.9.2
+ros-jazzy-tl-expected:
+- 1.2.0
+ros-jazzy-tlsf:
+- 0.9.0
+ros-jazzy-tlsf-cpp:
+- 0.17.1
+ros-jazzy-topic-monitor:
+- 0.33.10
+ros-jazzy-topic-statistics-demo:
+- 0.33.10
+ros-jazzy-topic-tools:
+- 1.3.3
+ros-jazzy-topic-tools-interfaces:
+- 1.3.3
+ros-jazzy-toppra:
+- 0.6.6
+ros-jazzy-trac-ik:
+- 2.0.2
+ros-jazzy-trac-ik-kinematics-plugin:
+- 2.0.2
+ros-jazzy-trac-ik-lib:
+- 2.0.2
+ros-jazzy-tracetools:
+- 8.2.5
+ros-jazzy-tracetools-acceleration:
+- 0.4.1
+ros-jazzy-tracetools-analysis:
+- 3.0.0
+ros-jazzy-tracetools-image-pipeline:
+- 5.0.11
+ros-jazzy-tracetools-launch:
+- 8.2.5
+ros-jazzy-tracetools-read:
+- 8.2.5
+ros-jazzy-tracetools-test:
+- 8.2.5
+ros-jazzy-tracetools-trace:
+- 8.2.5
+ros-jazzy-trajectory-msgs:
+- 5.3.7
+ros-jazzy-transmission-interface:
+- 4.44.0
+ros-jazzy-tricycle-controller:
+- 4.39.0
+ros-jazzy-tricycle-steering-controller:
+- 4.39.0
+ros-jazzy-tsid:
+- 1.9.0
+ros-jazzy-turbojpeg-compressed-image-transport:
+- 0.2.1
+ros-jazzy-turtle-nest:
+- 1.2.1
+ros-jazzy-turtle-tf2-cpp:
+- 0.5.0
+ros-jazzy-turtle-tf2-py:
+- 0.5.0
+ros-jazzy-turtlebot3:
+- 2.3.6
+ros-jazzy-turtlebot3-applications:
+- 1.3.3
+ros-jazzy-turtlebot3-applications-msgs:
+- 1.0.1
+ros-jazzy-turtlebot3-aruco-tracker:
+- 1.3.3
+ros-jazzy-turtlebot3-automatic-parking:
+- 1.3.3
+ros-jazzy-turtlebot3-automatic-parking-vision:
+- 1.3.3
+ros-jazzy-turtlebot3-autorace:
+- 1.2.2
+ros-jazzy-turtlebot3-autorace-camera:
+- 1.2.2
+ros-jazzy-turtlebot3-autorace-detect:
+- 1.2.2
+ros-jazzy-turtlebot3-autorace-mission:
+- 1.2.2
+ros-jazzy-turtlebot3-bringup:
+- 2.3.6
+ros-jazzy-turtlebot3-cartographer:
+- 2.3.6
+ros-jazzy-turtlebot3-description:
+- 2.3.6
+ros-jazzy-turtlebot3-example:
+- 2.3.6
+ros-jazzy-turtlebot3-fake-node:
+- 2.3.7
+ros-jazzy-turtlebot3-follower:
+- 1.3.3
+ros-jazzy-turtlebot3-gazebo:
+- 2.3.7
+ros-jazzy-turtlebot3-home-service-challenge:
+- 1.0.5
+ros-jazzy-turtlebot3-home-service-challenge-aruco:
+- 1.0.5
+ros-jazzy-turtlebot3-home-service-challenge-core:
+- 1.0.5
+ros-jazzy-turtlebot3-home-service-challenge-manipulator:
+- 1.0.5
+ros-jazzy-turtlebot3-home-service-challenge-tools:
+- 1.0.5
+ros-jazzy-turtlebot3-manipulation:
+- 2.2.1
+ros-jazzy-turtlebot3-manipulation-bringup:
+- 2.2.1
+ros-jazzy-turtlebot3-manipulation-cartographer:
+- 2.2.1
+ros-jazzy-turtlebot3-manipulation-description:
+- 2.2.1
+ros-jazzy-turtlebot3-manipulation-hardware:
+- 2.2.1
+ros-jazzy-turtlebot3-manipulation-moveit-config:
+- 2.2.1
+ros-jazzy-turtlebot3-manipulation-navigation2:
+- 2.2.1
+ros-jazzy-turtlebot3-manipulation-teleop:
+- 2.2.1
+ros-jazzy-turtlebot3-msgs:
+- 2.4.0
+ros-jazzy-turtlebot3-navigation2:
+- 2.3.6
+ros-jazzy-turtlebot3-node:
+- 2.3.6
+ros-jazzy-turtlebot3-panorama:
+- 1.3.3
+ros-jazzy-turtlebot3-simulations:
+- 2.3.7
+ros-jazzy-turtlebot3-teleop:
+- 2.3.6
+ros-jazzy-turtlebot3-yolo-object-detection:
+- 1.3.3
+ros-jazzy-turtlebot4-base:
+- 2.0.1
+ros-jazzy-turtlebot4-bringup:
+- 2.0.1
+ros-jazzy-turtlebot4-description:
+- 2.1.1
+ros-jazzy-turtlebot4-desktop:
+- 2.0.1
+ros-jazzy-turtlebot4-diagnostics:
+- 2.0.1
+ros-jazzy-turtlebot4-gz-bringup:
+- 2.0.2
+ros-jazzy-turtlebot4-gz-gui-plugins:
+- 2.0.2
+ros-jazzy-turtlebot4-gz-toolbox:
+- 2.0.2
+ros-jazzy-turtlebot4-msgs:
+- 2.1.1
+ros-jazzy-turtlebot4-navigation:
+- 2.1.1
+ros-jazzy-turtlebot4-node:
+- 2.1.1
+ros-jazzy-turtlebot4-robot:
+- 2.0.1
+ros-jazzy-turtlebot4-setup:
+- 2.0.3
+ros-jazzy-turtlebot4-simulator:
+- 2.0.2
+ros-jazzy-turtlebot4-tests:
+- 2.0.1
+ros-jazzy-turtlebot4-viz:
+- 2.0.1
+ros-jazzy-turtlesim:
+- 1.8.3
+ros-jazzy-tuw-airskin-msgs:
+- 0.2.6
+ros-jazzy-tuw-geo-msgs:
+- 0.2.6
+ros-jazzy-tuw-geometry:
+- 0.1.4
+ros-jazzy-tuw-geometry-msgs:
+- 0.2.6
+ros-jazzy-tuw-graph-msgs:
+- 0.2.6
+ros-jazzy-tuw-msgs:
+- 0.2.6
+ros-jazzy-tuw-multi-robot-msgs:
+- 0.2.6
+ros-jazzy-tuw-nav-msgs:
+- 0.2.6
+ros-jazzy-tuw-object-map-msgs:
+- 0.2.6
+ros-jazzy-tuw-object-msgs:
+- 0.2.6
+ros-jazzy-tuw-std-msgs:
+- 0.2.6
+ros-jazzy-tvm-vendor:
+- 0.9.1
+ros-jazzy-twist-mux:
+- 4.5.0
+ros-jazzy-twist-mux-msgs:
+- 3.0.1
+ros-jazzy-twist-stamper:
+- 0.0.5
+ros-jazzy-type-description-interfaces:
+- 2.0.3
+ros-jazzy-ublox:
+- 2.3.0
+ros-jazzy-ublox-dgnss:
+- 0.7.3
+ros-jazzy-ublox-dgnss-node:
+- 0.7.3
+ros-jazzy-ublox-gps:
+- 2.3.0
+ros-jazzy-ublox-msgs:
+- 2.3.0
+ros-jazzy-ublox-nav-sat-fix-hp-node:
+- 0.7.3
+ros-jazzy-ublox-serialization:
+- 2.3.0
+ros-jazzy-ublox-ubx-interfaces:
+- 0.7.3
+ros-jazzy-ublox-ubx-msgs:
+- 0.7.3
+ros-jazzy-udp-driver:
+- 1.2.0
+ros-jazzy-udp-msgs:
+- 0.0.5
+ros-jazzy-uncrustify-vendor:
+- 3.0.1
+ros-jazzy-unique-identifier-msgs:
+- 2.5.0
+ros-jazzy-ur:
+- 3.7.0
+ros-jazzy-ur-calibration:
+- 3.7.0
+ros-jazzy-ur-client-library:
+- 2.9.0
+ros-jazzy-ur-controllers:
+- 3.7.0
+ros-jazzy-ur-dashboard-msgs:
+- 3.7.0
+ros-jazzy-ur-description:
+- 3.5.0
+ros-jazzy-ur-moveit-config:
+- 3.7.0
+ros-jazzy-ur-msgs:
+- 2.5.0
+ros-jazzy-ur-robot-driver:
+- 3.7.0
+ros-jazzy-ur-simulation-gz:
+- 2.5.0
+ros-jazzy-ur10-inverse-dynamics-solver:
+- 2.0.3
+ros-jazzy-urdf:
+- 2.10.0
+ros-jazzy-urdf-launch:
+- 0.1.2
+ros-jazzy-urdf-parser-plugin:
+- 2.10.0
+ros-jazzy-urdf-test:
+- 2.1.1
+ros-jazzy-urdf-tutorial:
+- 1.1.0
+ros-jazzy-urdfdom:
+- 4.0.2
+ros-jazzy-urdfdom-headers:
+- 1.1.2
+ros-jazzy-urdfdom-py:
+- 1.2.1
+ros-jazzy-urg-c:
+- 1.0.4001
+ros-jazzy-urg-node:
+- 1.1.2
+ros-jazzy-urg-node-msgs:
+- 1.0.1
+ros-jazzy-usb-cam:
+- 0.8.1
+ros-jazzy-v4l2-camera:
+- 0.7.1
+ros-jazzy-vector-pursuit-controller:
+- 2.0.0
+ros-jazzy-velocity-controllers:
+- 4.39.0
+ros-jazzy-velodyne:
+- 2.5.1
+ros-jazzy-velodyne-description:
+- 2.0.4
+ros-jazzy-velodyne-driver:
+- 2.5.1
+ros-jazzy-velodyne-laserscan:
+- 2.5.1
+ros-jazzy-velodyne-msgs:
+- 2.5.1
+ros-jazzy-velodyne-pointcloud:
+- 2.5.1
+ros-jazzy-vision-msgs:
+- 4.1.1
+ros-jazzy-vision-msgs-layers:
+- 0.2.0
+ros-jazzy-vision-msgs-rviz-plugins:
+- 4.1.1
+ros-jazzy-vision-opencv:
+- 4.1.0
+ros-jazzy-visp:
+- 3.5.0
+ros-jazzy-visualization-msgs:
+- 5.3.7
+ros-jazzy-vitis-common:
+- 0.4.2
+ros-jazzy-vrpn:
+- 7.35.0
+ros-jazzy-vrpn-mocap:
+- 1.1.0
+ros-jazzy-warehouse-ros:
+- 2.0.5
+ros-jazzy-warehouse-ros-sqlite:
+- 1.0.5
+ros-jazzy-web-video-server:
+- 3.1.0
+ros-jazzy-webots-ros2:
+- 2025.0.0
+ros-jazzy-webots-ros2-control:
+- 2025.0.0
+ros-jazzy-webots-ros2-crazyflie:
+- 2025.0.0
+ros-jazzy-webots-ros2-driver:
+- 2025.0.0
+ros-jazzy-webots-ros2-epuck:
+- 2025.0.0
+ros-jazzy-webots-ros2-husarion:
+- 2025.0.0
+ros-jazzy-webots-ros2-importer:
+- 2025.0.0
+ros-jazzy-webots-ros2-mavic:
+- 2025.0.0
+ros-jazzy-webots-ros2-msgs:
+- 2025.0.0
+ros-jazzy-webots-ros2-tesla:
+- 2025.0.0
+ros-jazzy-webots-ros2-tests:
+- 2025.0.0
+ros-jazzy-webots-ros2-tiago:
+- 2025.0.0
+ros-jazzy-webots-ros2-turtlebot:
+- 2025.0.0
+ros-jazzy-webots-ros2-universal-robot:
+- 2025.0.0
+ros-jazzy-wiimote:
+- 3.3.0
+ros-jazzy-wiimote-msgs:
+- 3.3.0
+ros-jazzy-wireless-msgs:
+- 1.1.5
+ros-jazzy-wireless-watcher:
+- 1.1.5
+ros-jazzy-xacro:
+- 2.1.1
+ros-jazzy-yaets:
+- 1.0.4
+ros-jazzy-yaml-cpp-vendor:
+- 9.0.1
+ros-jazzy-yasmin:
+- 4.2.4
+ros-jazzy-yasmin-demos:
+- 4.2.4
+ros-jazzy-yasmin-editor:
+- 4.2.4
+ros-jazzy-yasmin-factory:
+- 4.2.4
+ros-jazzy-yasmin-msgs:
+- 4.2.4
+ros-jazzy-yasmin-ros:
+- 4.2.4
+ros-jazzy-yasmin-viewer:
+- 4.2.4
+ros-jazzy-zbar-ros:
+- 0.6.0
+ros-jazzy-zbar-ros-interfaces:
+- 0.6.0
+ros-jazzy-zed-description:
+- 0.1.3
+ros-jazzy-zed-msgs:
+- 5.2.1
+ros-jazzy-zenoh-bridge-dds:
+- 0.5.0
+ros-jazzy-zenoh-cpp-vendor:
+- 0.2.9
+ros-jazzy-zenoh-security-tools:
+- 0.2.9
+ros-jazzy-zlib-point-cloud-transport:
+- 4.0.4
+ros-jazzy-zmqpp-vendor:
+- 0.1.0
+ros-jazzy-zstd-image-transport:
+- 4.0.6
+ros-jazzy-zstd-point-cloud-transport:
+- 4.0.4
+ros-jazzy-zstd-vendor:
+- 0.26.10
+rosdistro:
+- 1.0.1
+rospkg:
+- 1.6.1
+rtree:
+- 1.4.1
+ruby:
+- 4.0.2
+rust:
+- 1.94.0
+rust_compiler:
+- rust
+s2geography:
+- 0.1.2
+s2geometry:
+- 0.11.1
+s2n:
+- 1.7.1
+scipy:
+- 1.17.1
+scotch:
+- 7.0.11
+sdl2:
+- '2'
+sdl2_image:
+- '2'
+sdl2_mixer:
+- '2'
+sdl2_net:
+- '2'
+sdl2_ttf:
+- '2'
+semver:
+- 3.0.4
+setproctitle:
+- 1.3.7
+setuptools:
+- 82.0.1
+sh:
+- 2.2.2
+shaderc:
+- '2025.5'
+shapely:
+- 2.1.2
+simde:
+- 0.8.2
+singular:
+- 4.4.1
+slepc:
+- '3.25'
+slepc4py:
+- '3.25'
+smbus2:
+- 0.4.3
+snappy:
+- 1.2
+soapysdr:
+- '0.8'
+socat:
+- 1.8.1.1
+sox:
+- 14.4.2
+spdlog:
+- '1.16'
+sphinx:
+- 9.1.0
+spirv-headers:
+- 1.4.341.0
+spirv-tools:
+- '2026.1'
+spirv_tools:
+- '2026'
+sqlite:
+- 3
+srm_ifce:
+- 1.24.6
+starlink_ast:
+- 9.3.1
+subversion:
+- 1.14.5
+suitesparse:
+- '7'
+suitesparse_mongoose:
+- '3'
+sundials:
+- '7.7'
+superlu_dist:
+- '9'
+svt_av1:
+- 4.0.1
+swig:
+- 4.4.1
+swig_abi:
+- '5'
+tabulate:
+- 0.10.0
+tar:
+- '1.35'
+target_goarch:
+- amd64
+- arm64
+- ppc64le
+target_gobin:
+- ${PREFIX}/bin/
+- '%PREFIX%\bin\'
+target_goexe:
+- null
+- .exe
+target_goos:
+- linux
+- darwin
+- windows
+tbb:
+- '2022'
+tbb-devel:
+- 2022.3.0
+tbb_devel:
+- '2022'
+tensorflow:
+- '2.16'
+termcolor:
+- 3.3.0
+thrift_cpp:
+- 0.22.0
+tiledb:
+- '2.30'
+tinyxml:
+- 2.6.2
+tinyxml2:
+- '11.0'
+tk:
+- 8.6
+toml:
+- 0.10.2
+tornado:
+- 6.5.5
+tqdm:
+- 4.67.3
+transforms3d:
+- 0.4.2
+twisted:
+- 25.5.0
+typeguard:
+- 4.5.1
+typing_extensions:
+- 4.15.0
+ucc:
+- 1
+ucx:
+- '1.20'
+uhd:
+- 4.9.0
+ujson:
+- 5.12.0
+uncrustify:
+- 0.82.0
+unidiff:
+- 0.7.5
+unzip:
+- '6.0'
+urdfdom:
+- '5.1'
+urdfdom_headers:
+- 2.1.1
+uvicorn:
+- 0.44.0
+uvloop:
+- 0.22.1
+validators:
+- 0.35.0
+vc:
+- 14
+vcstool:
+- 1.1.7
+vigra:
+- '1.12'
+virtualenv:
+- 21.2.4
+vlfeat:
+- 0.9.21
+volk:
+- '3.3'
+vtk:
+- 9.6.0
+vtk-base:
+- 9.6.1
+vtk_base:
+- 9.6.0
+waitress:
+- 3.0.2
+watchdog:
+- 6.0.0
+wayland:
+- 1.25.0
+wcslib:
+- '8'
+websocket-client:
+- 1.9.0
+websocketpp:
+- 0.8.2
+websockets:
+- '16.0'
+wget:
+- 1.25.0
+wheel:
+- 0.46.3
+whichcraft:
+- 0.6.1
+wxpython:
+- 4.2.5
+wxwidgets:
+- 3.3.2
+x264:
+- 1!164.*
+x265:
+- '3.5'
+xclip:
+- '0.13'
+xerces_c:
+- '3.3'
+xkeyboard-config:
+- '2.47'
+xmlrpc-c:
+- 1.54.06
+xorg-libx11:
+- 1.8.13
+xorg-libxaw:
+- 1.0.16
+xorg-libxcb:
+- '1.12'
+xorg-libxi:
+- 1.8.2
+xorg-libxmu:
+- 1.3.1
+xorg-libxrandr:
+- 1.5.5
+xorg-xorgproto:
+- '2025.1'
+xrootd:
+- '5'
+xsimd:
+- 14.1.0
+xtensor:
+- 0.27.1
+xxhash:
+- 0.8.3
+xz:
+- 5
+yaml:
+- 0.2.5
+yaml-cpp:
+- 0.8.0
+zbar:
+- 0.23.93
+zeroconf:
+- 1.0.0
+zeromq:
+- 4.3.5
+zfp:
+- 1.0
+zip:
+- '3.0'
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
+  - fortran_compiler_version
+  - c_stdlib_version
+  - cuda_compiler_version
+- - python
+  - is_python_min
+- - libarrow
+  - libarrow_all
+- - root_base
+  - root_cxx_standard
+zlib:
+- 1
+zlib_ng:
+- '2.3'
+zstd:
+- '1.5'
+zziplib:
+- 0.13.69

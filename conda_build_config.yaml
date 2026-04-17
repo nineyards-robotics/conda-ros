@@ -1,3 +1,17 @@
 # Local overrides for conda-forge-pinning.
-# Entries here take precedence over conda-forge's ecosystem pins.
-# Only add entries when we need to diverge from conda-forge.
+#
+# Entries here take precedence over conda-forge's ecosystem pins and
+# are applied before the dependency-resolution layer, so anything
+# listed here is excluded from auto-resolve to conda-forge latest.
+#
+# Kept empty by default — auto-resolve pins every scanned dep to its
+# current conda-forge version, which is enough for the build hash to
+# capture dependency changes. Add an entry here only when an actual
+# build failure or ABI problem demands a specific version, and note
+# the reason inline.
+
+# conda-forge-pinning ships python as a 5-version matrix (3.10–3.14),
+# which would build every python-using recipe 5 times. Pin to a single
+# interpreter so the build count stays manageable.
+python:
+  - 3.12.* *_cpython

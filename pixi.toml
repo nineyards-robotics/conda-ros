@@ -10,3 +10,4 @@ rattler-build = "*"
 
 [tasks]
 generate-recipes = "python -m pipeline.generate_recipes"
+generate-build-config = "python -m pipeline.generate_build_config"
