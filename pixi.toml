@@ -7,6 +7,7 @@ platforms = ["linux-64"]
 python = ">=3.11"
 pyyaml = "*"
 rattler-build = "*"
+rattler-index = "*"
 
 [tasks]
 generate-recipes = "python -m pipeline.generate_recipes"
@@ -14,3 +15,4 @@ generate-build-config = "python -m pipeline.generate_build_config"
 resolve-build-order = "python -m pipeline.resolve_build_order"
 run-build = "python -m pipeline.run_build"
 generate-snapshot-metapackage = "python -m pipeline.generate_snapshot_metapackage"
+serve-local = "rattler-index fs build/output && python -m http.server 8000 --directory build/output"
